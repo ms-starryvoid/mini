@@ -1,12 +1,15 @@
 {
   "name": "src",
+  "proxy":"http://localhost:8080",
   "version": "1.0.0",
   "description": "",
   "main": "serv.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
     ,"start":"node server.js",
-    "server":"nodemon server.js"
+    "server":"nodemon server.js",
+    "client":"npm start --prefix ./client",
+    "dev":"concurrently \"npm run server\" \"npm run client\""
   },
   "keywords": [],
   "author": "homie",
