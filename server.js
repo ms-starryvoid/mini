@@ -1,27 +1,38 @@
 const express = require('express')
 const colors= require('colors')
-const moragon = require('morgan')
-const dotenv= require('dotenv')
+const morgan = require('morgan')
+const dotenv= require('dotenv');
+const connectdb = require('./config/db');
+const cors = require('cors');
 
-//dotenv cofiguration
-dotenv.config();
 //rest obj
 const app = express()
+// Enable CORS
+app.use(cors());
+//dotenv cofiguration
+dotenv.config();
+//mongodb connection
+connectdb();
+
+
+
 
 //middleware
 
 app.use(express.json())
-app.use(moragon('dev'))
+app.use(morgan('dev'))
 
 
 //routes
 
-app.get("/",(req,res) => {
+/*app.get("/",(req,res) => {
     res.status(200).send({
         message:"server running",  
     });
 
-});
+});*/
+
+app.use('/api/v1/user',require('./routes/userRoute'))
 
 //listen
 const port= process.env.PORT
