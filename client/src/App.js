@@ -4,6 +4,8 @@ import {BrowserRouter as Router, Routes,Route} from 'react-router-dom'
 import Homepage from './pages/Homepage'
 import Login from './pages/login'
 import Signup from './pages/signup'
+import AshaHome from './pages/Asha/AshaHome';
+import AdminHome from './pages/AdminHome';
 function App() {
   return (
    
@@ -13,7 +15,8 @@ function App() {
     <Route  path='/' element= {<Homepage/>}></Route>
     <Route  path='/login' element= {<Login/>}></Route>
     <Route path='/signup' element= {<Signup/>}></Route>
-   </Routes>
+    <Route path='/login/adminhome' element ={<AdminHome/>}/>
+    </Routes>
    </Router>
    
    </>

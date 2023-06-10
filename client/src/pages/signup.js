@@ -1,10 +1,10 @@
 import React from 'react'
 import axios from 'axios'
 import {Form,Input,message} from 'antd'
-import {Link,redirect} from 'react-router-dom';
+import {Link,redirect, useNavigate} from 'react-router-dom';
 
-const signup = () => {
-  
+const Signup = () => {
+  const navigate= useNavigate()
   const OnFinishHandler = async (values) =>{
     //const navigate =useNavigate()
    try {
@@ -13,8 +13,8 @@ const signup = () => {
     if(res.data.success){
      
      message.success("Registered successfully")
-    //navigate('/login')
-    redirect('/login')
+    navigate('/login')
+    //redirect('/login')
     }
     else{
       message.error(res.data.message);
@@ -49,4 +49,4 @@ const signup = () => {
   )
 }
 
-export default signup
+export default Signup

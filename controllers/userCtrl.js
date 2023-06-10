@@ -1,8 +1,28 @@
 const userModel = require('../models/userModel')
 const bcrypt = require('bcryptjs')
+const jwt =require('jsonwebtoken')
 
+const loginController = async (req,res)=> {
+    try {
+        const user = await userModel.findOne({email:req.body.email})
+        if(!user)
+        {
+            return res.status(200).send({message:"user not found",success:false})
 
-const loginController = ()=> {
+        }
+        const isMatch = await bcrypt.compare(req.body.password,user.password)
+        if(!isMatch)
+        {
+            return res.status(200).send({message:"invalid email or password", success:false})
+
+        }
+        const token = jwt.sign({id:user._id},process.env.JWT_SECRET,{expiresIn: "1d"});
+        res.status(200).send({message:'Login successful', success: true})
+    } catch (error) {
+        console.log(error)
+        res.status(500).send({success:false, message:`signup error ${error.message}`})
+    
+    }
     
   
 }
@@ -29,4 +49,25 @@ const signupController = async (req,res)=> {
 
 }
 
-module.exports= { loginController,signupController}
+
+const authController = async (req,res)=>{
+    try {
+        const user = await userModel.findOne({_id:req.body.userId})
+        if(!user)
+        {
+            return res.status(200).send({message:'user not found', success:false}) 
+        }
+        else{
+            res.status(200).send({success:true, data :{
+                name:user.name,
+                email:user.email,
+            },
+        })
+        }
+    } catch (error) {
+        console.log(error)
+        res.status(500).send({message:' authentication error', success:false,error})
+    }
+
+}
+module.exports= { loginController,signupController,authController}

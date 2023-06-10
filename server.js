@@ -33,6 +33,9 @@ app.use(morgan('dev'))
 });*/
 
 app.use('/api/v1/user',require('./routes/userRoute'))
+app.use('/api/v1/user',require('./routes/userRoute'))
+
+
 
 //listen
 const port= process.env.PORT
