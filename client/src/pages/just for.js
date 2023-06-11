@@ -1,36 +1,46 @@
+
+
+
 import React from "react";
-import "../../styles/homepagestyle.css";
+import "../../styles.css";
 import { Button } from "antd";
 import { useNavigate } from "react-router-dom";
 
-function Asha_home() {
+function Admin_home() {
   const navigate = useNavigate();
   const OnclickNav = () => {
-    navigate("/login");
+    navigate("/");
   };
   return (
     <section>
       <div className="circle"></div>
-      <h2 className="heading1">Welcome back, Asha worker</h2>
+      <h2 className="heading1">Welcome back, Admin</h2>
 
-      <div className="container">
-        <div className="rounded-rectangle-long">
+      <div className="container-short">
+        <div className="rounded-rectangle">
           <div className="inside-button">
             <Button onClick={OnclickNav} className="inside-button">
-              Add Patients
+              View patients
             </Button>
           </div>
         </div>
 
-        <div className="rounded-rectangle-long">
+        <div className="rounded-rectangle">
           <Button onClick={OnclickNav} className="inside-button">
-            View Patient
+            Visit Schedules
+          </Button>
+        </div>
+      </div>
+      <div className="container-short">
+        <div className="rounded-rectangle">
+          <Button onClick={OnclickNav} className="inside-button">
+            Stock Details
           </Button>
         </div>
 
-        <div className="rounded-rectangle-long">
+        <div className="rounded-rectangle">
           <Button onClick={OnclickNav} className="inside-button">
-            Visit Schedule
+            Staff Details
           </Button>
         </div>
       </div>
@@ -38,4 +48,4 @@ function Asha_home() {
   );
 }
 
-export default Asha_home;
+export default Admin_home;

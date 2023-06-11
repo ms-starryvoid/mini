@@ -11,13 +11,13 @@ module.exports=async (req,res,next) =>{
             const token = req.headers['authorization'].split(" ")[1]
          JWT.verify(token,process.env.JWT_SECRET,(err,decode) => {
             if(err){
-                 return res.status(200).send({
+                 return res.status(400).send({
                 message:"Auth Failed",
                 success:false
             })
             }
             else{
-              req.body.userId= decode.Id
+              req.body.userId= decode.id
               next()
             }
             

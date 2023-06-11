@@ -14,6 +14,23 @@ const userSchema = new mongoose.Schema(
             type:String,
             required:[true,'name is required']
         },
+        ashaid:{
+            type:String,
+            required:[true,'id is a must']
+        },
+        isAdmin:{
+            type:Boolean,
+            default:false
+        },
+        isAsha:{
+            type:Boolean,
+            default:false
+        },
+        isPatient:
+        {
+            type:Boolean,
+            default:false
+        }
 
     }
 )
