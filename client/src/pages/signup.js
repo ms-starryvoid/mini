@@ -11,7 +11,7 @@ const Signup = () => {
   const OnFinishHandler = async (values) =>{
     //const navigate =useNavigate()
    try {
-    console.log("onfinish running")
+    console.log(values)
     //dispatch(showloading())
     const res = await axios.post('http://localhost:8080/api/v1/user/signup',values)
    // dispatch(hideLoading())

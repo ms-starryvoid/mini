@@ -5,8 +5,14 @@ import '../styles/homepagestyle.css'
 import { Button,Form } from 'antd';
 const AdminHome = () => {
     const navigate= useNavigate()
-    const OnclickNav = () => {
-        navigate("/");
+    const OnclickNavViewAsha = () => {
+        navigate("/viewasha");
+        // to clear local storage on logout
+        
+        localStorage.clear()
+      };
+      const OnclickNav = () => {
+        navigate("/viewasha");
         // to clear local storage on logout
         
         localStorage.clear()
@@ -56,7 +62,7 @@ const AdminHome = () => {
           </div>
   
           <div className="rounded-rectangle">
-            <Button onClick={OnclickNav} className="inside-button">
+            <Button onClick={OnclickNavViewAsha} className="inside-button">
               Staff Details
             </Button>
           </div>

@@ -4,10 +4,15 @@ const jwt =require('jsonwebtoken')
 const ashaModel = require('../models/ashaModel')
 
 
-const loginController = async (req,res)=> {
+const ashaloginController = async (req,res)=> {
     try {
         const user = await userModel.findOne({email:req.body.email})
         if(!user)
+        {
+            return res.status(200).send({message:"user not found",success:false})
+
+        }
+        if(!user.isAsha)
         {
             return res.status(200).send({message:"user not found",success:false})
 
@@ -68,8 +73,7 @@ const signupController = async (req,res)=> {
 
 }
 
-
-const authController = async (req,res)=>{
+const ashaauthController = async (req,res)=>{
     try {
         const user = await userModel.findOne({_id:req.body.userId})
         const ashaData = await ashaModel.findOne({asha_id:user.ashaid})
@@ -95,4 +99,6 @@ const authController = async (req,res)=>{
     }
 
 }
-module.exports= { loginController,signupController,authController}
+
+
+module.exports= { ashaloginController,signupController,ashaauthController}

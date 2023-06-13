@@ -1,51 +1,65 @@
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
+const ProfilePage = () => {
+  const [userData, setUserData] = useState(null);
 
+  useEffect(() => {
+    // Fetch user data from the backend API
+    const fetchUserData = async () => {
+      try {
+        const response = await axios.get('/api/user/profile'); // Replace with your API endpoint
+        setUserData(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
 
-import React from "react";
-import "../../styles.css";
-import { Button } from "antd";
-import { useNavigate } from "react-router-dom";
+    fetchUserData();
+  }, []);
 
-function Admin_home() {
-  const navigate = useNavigate();
-  const OnclickNav = () => {
-    navigate("/");
-  };
+  if (!userData) {
+    return <div>Loading...</div>;
+  }
+
   return (
-    <section>
-      <div className="circle"></div>
-      <h2 className="heading1">Welcome back, Admin</h2>
-
-      <div className="container-short">
-        <div className="rounded-rectangle">
-          <div className="inside-button">
-            <Button onClick={OnclickNav} className="inside-button">
-              View patients
-            </Button>
-          </div>
-        </div>
-
-        <div className="rounded-rectangle">
-          <Button onClick={OnclickNav} className="inside-button">
-            Visit Schedules
-          </Button>
-        </div>
-      </div>
-      <div className="container-short">
-        <div className="rounded-rectangle">
-          <Button onClick={OnclickNav} className="inside-button">
-            Stock Details
-          </Button>
-        </div>
-
-        <div className="rounded-rectangle">
-          <Button onClick={OnclickNav} className="inside-button">
-            Staff Details
-          </Button>
-        </div>
-      </div>
-    </section>
+    <div>
+      <h2>Welcome, {userData.name}!</h2>
+      <p>Email: {userData.email}</p>
+      <p>Progress: {userData.progress}%</p>
+      {/* Render any other user data or components as needed */}
+    </div>
   );
-}
+};
 
-export default Admin_home;
+export default ProfilePage;
+
+/* const mongoose = require('mongoose');
+
+// Establish the database connection
+mongoose.connect('mongodb://localhost:27017/mydatabase', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
+// Define a schema for the collection
+const userSchema = new mongoose.Schema({
+  name: String,
+  email: String,
+  age: Number,
+});
+
+// Create a model based on the schema
+const User = mongoose.model('User', userSchema);
+
+// Query the collection to retrieve data
+User.find({}, (err, users) => {
+  if (err) {
+    console.error(err);
+    // Handle the error
+  } else {
+    console.log(users);
+    // Process the retrieved data
+  }
+});
+*/ 

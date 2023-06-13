@@ -3,7 +3,7 @@ const mongoose= require('mongoose')
 const ashaSchema = new mongoose.Schema(
     {
         asha_id :{
-          type:Number,
+          type:String,
           required:[true,"asha worker id is required"]
 
         },
@@ -44,6 +44,6 @@ const ashaSchema = new mongoose.Schema(
     }
 )
 
-const ashaModel = mongoose.model('Asha',ashaSchema)
+const ashaModel = mongoose.model('ashadata',ashaSchema,'ashadata')
 
 module.exports = ashaModel

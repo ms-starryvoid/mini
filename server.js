@@ -15,7 +15,9 @@ dotenv.config();
 connectdb();
 
 
+const asha = require('./models/ashaModel')
 
+//dataasha()
 
 //middleware
 
@@ -35,8 +37,9 @@ app.use(morgan('dev'))
 app.use('/api/v1/user',require('./routes/userRoute'))
 app.use('/api/v1/user',require('./routes/userRoute'))
 
-
-
+app.use('/api/v1/user',require('./routes/adminRoute'))
+app.use('/api/v1/user',require('./routes/adminRoute'))
+app.use('/api/v1/user',require('./routes/adminRoute'))
 //listen
 const port= process.env.PORT
 app.listen(port,() =>{

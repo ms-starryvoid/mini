@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router'
 const Ashalogin = () => {
   const navigate = useNavigate()
   const OnFinishHandler= async () =>{
+    
     navigate('/ashahome')
 
   }

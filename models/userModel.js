@@ -16,7 +16,12 @@ const userSchema = new mongoose.Schema(
         },
         ashaid:{
             type:String,
-            required:[true,'id is a must']
+            default:'0'
+        },
+        patientid:{
+            type:String,
+            default:'0'
+
         },
         isAdmin:{
             type:Boolean,
@@ -36,5 +41,6 @@ const userSchema = new mongoose.Schema(
 )
 
 const userModel = mongoose.model('Users',userSchema)
+
 
 module.exports = userModel

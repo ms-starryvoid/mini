@@ -18,7 +18,7 @@ const Login = () => {
       if(res.data.success && res.data.isAdmin){
     localStorage.setItem("token",res.data.token)
     message.success("Login Successful")
-    navigate('/login/ashahome')
+    navigate('/login/adminhome')
    }
    else if(res.data.success && !(res.data.isAdmin))
    {

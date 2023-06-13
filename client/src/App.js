@@ -11,6 +11,10 @@ import Spinner from './components/Spinner';
 import ProtectedRoutes from './components/ProtectedRoutes';
 import PublicRoutes from './components/PublicRoutes';
 import Ashalogin from './pages/Asha/Ashalogin';
+import Viewasha from './pages/admin/Viewasha';
+import Ashadetail from './pages/admin/Ashadetail';
+import PatientHome from './pages/Patient/PatientHome';
+import Plogin from './pages/Patient/Plogin';
 function App() {
   const {loading} = useSelector(state => state.alerts)
   return (
@@ -30,14 +34,19 @@ function App() {
         {<Signup/>}
       </PublicRoutes>
     }></Route>
-    <Route path='/login/adminhome' element ={<ProtectedRoutes>
-      {<AdminHome/>}
-    </ProtectedRoutes>}/>
+    <Route path='/adminhome' element =/*{<ProtectedRoutes>*/
+      {<AdminHome/>}/>
+   
     <Route path='/ashalogin' element = {<Ashalogin/>}/>
-    <Route path='/ashahome' element =
-      {<Asha_Home/>}
-    />
-    
+    <Route path='/ashahome' element ={<Asha_Home/>}/>
+    <Route path='/patienthome' element ={<PatientHome/>}/>
+    <Route path='/patientlogin' element ={<Plogin/>}/>
+    <Route path='/viewasha' element ={<Viewasha/>}/>
+    <Route path='/ashadetail/:name' element ={<Ashadetail/>}/>
+    <Route path='/adminprofile/:name' element ={<Plogin/>}/>
+    <Route path='/ashaprofile/:name' element ={<Plogin/>}/>
+    <Route path='/patientprofile/:name' element ={<Plogin/>}/>
+
     </Routes>
    </Router>
    

@@ -10,4 +10,5 @@ const connectdb =async ()=>{
         console.log(`Mongodb server issue ${error}`)
     }
 };
+
 module.exports = connectdb;

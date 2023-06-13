@@ -1,6 +1,7 @@
 const express = require('express')
 const { loginController, signupController, authController } = require('../controllers/userCtrl')
 const authMiddleware = require("../middlewares/authMiddleware")
+const { ashaloginController } = require('../controllers/userAshaCtrl')
 
 
 
@@ -14,5 +15,6 @@ router.post('/login',loginController)
 router.post('/signup',signupController)
 //auth post
 router.post('/getUserData',authMiddleware, authController)
-
+//asha login post
+router.post('/ashalogin',ashaloginController)
 module.exports=router
