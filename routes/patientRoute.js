@@ -1,6 +1,6 @@
 const express=require('express')
 
-const { addpatientController, viewpatientController,getWorkerDetails } = require('../controllers/patientCtrl')
+const { addpatientController, viewpatientController,getWorkerDetails, getpatientDetails } = require('../controllers/patientCtrl')
 
 
 const router= express.Router()
@@ -16,7 +16,7 @@ router.post('/patientdetail/:name',async  (req, res) => {
     // Replace this with your actual implementation
     
     try {
-        const patientDetails = await getWorkerDetails(workerName);
+        const patientDetails = await getpatientDetails(workerName);
        if (patientDetails) {
        
       res.send(patientDetails);

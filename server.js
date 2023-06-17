@@ -41,8 +41,8 @@ app.use('/api/v1/user',require('./routes/adminRoute'))
 app.use('/api/v1/user',require('./routes/adminRoute'))
 app.use('/api/v1/user',require('./routes/adminRoute'))
 app.use('/api/v1/user',require('./routes/profileRoute'))
-app.use('api/v1/user',require('./routes/userRoute'))
-app.use('api/v1/user',require('./routes/patientRoute'))
+app.use('/api/v1/user',require('./routes/userRoute'))
+app.use('/api/v1/user',require('./routes/patientRoute'))
 //listen
 const port= process.env.PORT
 app.listen(port,() =>{

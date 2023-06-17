@@ -36,7 +36,7 @@ const Patientdetail = () => {
       <p  className='option'>Name: {workerDetails.name}</p>
       <p className='option'>Age: {workerDetails.age}</p>
       <p className='option'>Email: {workerDetails.email}</p>
-      <p className='option'>Patient id : {workerDetails.asha_id}</p>
+      <p className='option'>Patient id : {workerDetails.patient_id}</p>
       <p className='option'>Ward no: {workerDetails.ward_number}</p>
       {/* Display other worker details */}
     </div>
