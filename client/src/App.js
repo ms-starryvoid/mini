@@ -15,11 +15,6 @@ import Viewasha from './pages/admin/Viewasha';
 import Ashadetail from './pages/admin/Ashadetail';
 import PatientHome from './pages/Patient/PatientHome';
 import Plogin from './pages/Patient/Plogin';
-import AshaHome from './pages/Asha/AshaHome';
-import Ashaprofile from './pages/Asha/Ashaprofile';
-import Viewpatient from './pages/admin/Viewpatient';
-import Patientdetail from './pages/admin/Patientdetail';
-
 function App() {
   const {loading} = useSelector(state => state.alerts)
   return (
@@ -51,8 +46,7 @@ function App() {
     <Route path='/adminprofile/:name' element ={<Plogin/>}/>
     <Route path='/ashaprofile' element ={<Ashaprofile/>}/>
     <Route path='/patientprofile/:name' element ={<Plogin/>}/>
-    <Route path='/viewpatient' element ={<Viewpatient/>}/>
-    <Route path='/patientdetail/:name' element ={<Patientdetail/>}/>
+
     </Routes>
    </Router>
    
