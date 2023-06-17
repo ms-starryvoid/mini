@@ -15,6 +15,11 @@ import Viewasha from './pages/admin/Viewasha';
 import Ashadetail from './pages/admin/Ashadetail';
 import PatientHome from './pages/Patient/PatientHome';
 import Plogin from './pages/Patient/Plogin';
+import AshaHome from './pages/Asha/AshaHome';
+import Ashaprofile from './pages/Asha/Ashaprofile';
+import Viewpatient from './pages/admin/Viewpatient';
+import Patientdetail from './pages/admin/Patientdetail';
+
 function App() {
   const {loading} = useSelector(state => state.alerts)
   return (
@@ -26,27 +31,28 @@ function App() {
     <Route  path='/' element= 
     {<Homepage/>}
     ></Route>
-    <Route  path='/login' element= { <PublicRoutes>
+    <Route  path='/login' element= 
       {<Login/>}
-    </PublicRoutes>}></Route>
-    <Route path='/signup' element= {
-      <PublicRoutes>
+    ></Route>
+    <Route path='/signup' element= 
+      
         {<Signup/>}
-      </PublicRoutes>
-    }></Route>
+      
+    ></Route>
     <Route path='/adminhome' element =/*{<ProtectedRoutes>*/
       {<AdminHome/>}/>
    
     <Route path='/ashalogin' element = {<Ashalogin/>}/>
-    <Route path='/ashahome' element ={<Asha_Home/>}/>
+    <Route path='/ashahome' element ={<AshaHome/>}/>
     <Route path='/patienthome' element ={<PatientHome/>}/>
     <Route path='/patientlogin' element ={<Plogin/>}/>
     <Route path='/viewasha' element ={<Viewasha/>}/>
     <Route path='/ashadetail/:name' element ={<Ashadetail/>}/>
     <Route path='/adminprofile/:name' element ={<Plogin/>}/>
-    <Route path='/ashaprofile/:name' element ={<Plogin/>}/>
+    <Route path='/ashaprofile' element ={<Ashaprofile/>}/>
     <Route path='/patientprofile/:name' element ={<Plogin/>}/>
-
+    <Route path='/viewpatient' element ={<Viewpatient/>}/>
+    <Route path='/patientdetail/:name' element ={<Patientdetail/>}/>
     </Routes>
    </Router>
    

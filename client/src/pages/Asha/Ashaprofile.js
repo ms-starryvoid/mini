@@ -3,18 +3,16 @@ import { useLocation, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 const Ashaprofile= () => {
-  const location = useLocation();
-  const searchParams = new URLSearchParams(location.search);
-  const workerName = searchParams.get('name');
-  const [workerDetails, setprofileDetails] = useState(null);
-  const { name } = useParams();
+  
+  const [workerDetails, setprofileDetails] = useState(JSON.parse(localStorage.getItem('userData')) ||null);
+  ;
  
   
     
     
   const fetchprofileDetails = async () => {
     try {
-      const encodedName = encodeURIComponent(name);
+      const encodedName = encodeURIComponent(localStorage.userData.uid);
       const response = await axios.post(`http://localhost:8080/api/v1/user/ashadetail/${encodedName}`);
       setprofileDetails(response.data);
       
@@ -24,7 +22,7 @@ const Ashaprofile= () => {
   };
   useEffect(() => {
     fetchprofileDetails();
-  }, [workerName]);
+  }, []);
 
   if (!workerDetails) {
     return <p>Loading...</p>;

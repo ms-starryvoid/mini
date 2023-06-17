@@ -88,7 +88,8 @@ const ashaauthController = async (req,res)=>{
                 email:user.email,
                 uid:user.ashaid,
                 phone:ashaData.phone,
-                address:ashaData.address.housen
+                address:ashaData.address.housen,
+                age:ashaData.age
                 //isAdmin:user.isAdmin
             },
         })

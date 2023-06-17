@@ -24,7 +24,42 @@ const patientloginController = async(req,res)=>{
     
 
 }
+const patientsignupController = async (req,res)=> {
+    try{
+        const existingUser = await userModel.findOne({email:req.body.email})
+        if(existingUser)
+        {
+            return res.status(200).send({message:'user already exists',success:false})
+        }
+        const ashaData= await patientModel.findOne({patient_id:req.body.ashaid})
+        const existingashaUser = await userModel.findOne({ashaid:req.body.ashaid})
+        if(existingashaUser)
+        {
+            return res.send({message:'an account for provided patient already exists', success:false})
+        }
+        if(!ashaData)
+        {
+            return res.send({message: 'no such patient exists / invalid patient id', success:false})
+        }
+        const password=req.body.password
+        const salt =await bcrypt.genSalt(10)
+        const hashedPassword = await bcrypt.hash(password,salt)
+        req.body.password= hashedPassword
+        
+        const newUser= new userModel(req.body)
+        newUser.isPatient=true
+        await newUser.save()
+        
+        
+        res.status(201).send({message:'Register success',success:true});
+        
+     }catch(error)
+     {
+        console.log(error)
+        res.status(500).send({success:false, message:`signup error ${error.message}`})
+     }
 
+}
 
 const patientauthController = async (req,res)=>{
     try {
@@ -52,4 +87,4 @@ const patientauthController = async (req,res)=>{
     }
 
 }
-module.exports={patientloginController,patientauthController}
+module.exports={patientloginController,patientauthController,patientsignupController}

@@ -20,7 +20,7 @@ const loginController = async (req,res)=> {
         }
         const token = jwt.sign({id:user._id},process.env.JWT_SECRET,{expiresIn: "1d"});
         
-        res.status(200).send({message:'Login successful', success: true, token:token, isAdmin:user.isAdmin})
+        res.status(200).send({message:'Login successful', success: true, token:token, isAdmin:user.isAdmin,isAsha:user.isAsha})
         const uid= parseInt(user.ashaid)
         console.log(uid)
     } catch (error) {

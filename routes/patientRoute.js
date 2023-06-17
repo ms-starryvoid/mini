@@ -8,7 +8,7 @@ const router= express.Router()
 //add asha post route
 
 router.post('/addpatient',addpatientController)
-router.post('/patientname',viewpatientController)
+router.post('/patient',viewpatientController)
 router.post('/patientdetail/:name',async  (req, res) => {
     const workerName = decodeURIComponent(req.params.name);
   
@@ -16,10 +16,10 @@ router.post('/patientdetail/:name',async  (req, res) => {
     // Replace this with your actual implementation
     
     try {
-        const workerDetails = await getWorkerDetails(workerName);
-       if (workerDetails) {
+        const patientDetails = await getWorkerDetails(workerName);
+       if (patientDetails) {
        
-      res.send(workerDetails);
+      res.send(patientDetails);
     } else {
       res.status(404).json({ message: 'patient not found' });
     }

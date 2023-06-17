@@ -1,7 +1,7 @@
 
 const bcrypt = require('bcryptjs')
 const jwt =require('jsonwebtoken')
-const ashaModel = require('../models/patientModel')
+const patientModel = require('../models/patientModel')
 
 const addpatientController = async (req,res)=>{
     try {
@@ -34,7 +34,7 @@ const deletepatientController = async(req,res)=>{
 }
 const viewpatientController = async(req,res)=>{
     try {
-        const asha= await patientModel.find({},'name')
+        const asha= await patientModel.find({},'name patient_id')
         res.status(200).json(asha)
     } catch (error) {
         console.log(error)

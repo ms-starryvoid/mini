@@ -1,81 +1,93 @@
-import axios from 'axios'
-import React, {useEffect, useState} from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
-//import '../styles/homepagestyle.css'
-import { Button,Form } from 'antd';
-const AshaHome = () => {
-    const navigate= useNavigate()
-    const [userData, setUserData] = useState(null);
-    const onClickprofile =(name)=>{
-      console.log(name)
-    navigate(`/ashadetail/${encodeURIComponent(name)}`)
-    }
-    const OnclickNavViewAsha = () => {
-        navigate("/viewasha");
-        // to clear local storage on logout
-        
-        localStorage.clear()
-      };
-      const OnclickNav = () => {
-        navigate("/viewasha");
-        // to clear local storage on logout
-        
-        localStorage.clear()
-      };
- const getUserData= async()=>{
-    try {
-        const res= await axios.post('http://localhost:8080/api/v1/user/getUserData',{},{
-            headers:{
-                Authorization: 'Bearer ' + localStorage.getItem('token'),
-            },
-        })
-        setUserData(res.data);
-    } catch (error) {
-        console.log(error)
-    }
- }
- 
- useEffect(() => {
-    getUserData()
- },[])
- 
- 
-    return (
-        <section>
-        <div className="circle"></div>
-        <h2 className="heading1">Welcome back,{userData.name} </h2>
-  
-        <div className="container-short">
-          <div className="rounded-rectangle">
-            <div className="inside-button">
-              <Button onClick={OnclickNav} className="inside-button">
-                View patients
-              </Button>
-            </div>
-          </div>
-  
-          <div className="rounded-rectangle">
-            <Button onClick={OnclickNav} className="inside-button">
-              Visit Schedules
-            </Button>
-          </div>
-        </div>
-        <div className="container-short">
-          <div className="rounded-rectangle">
-            <Button onClick={OnclickNav} className="inside-button">
-              Stock Details
-            </Button>
-          </div>
-  
-          <div className="rounded-rectangle">
-            <Button onClick={OnclickNavViewAsha} className="inside-button">
-              Staff Details
-            </Button>
-          </div>
-          <li onClick={onClickprofile(userData.name)}>profile</li>
-        </div>
-      </section>
-  )
-}
+import { Button } from 'antd';
 
-export default AshaHome
+const AshaHome = () => {
+  const navigate = useNavigate();
+  const [userData, setUserData] = useState(JSON.parse(localStorage.getItem('userData')) || null);
+  const handleMouseEnter = (event) => {
+    event.target.style.cursor = 'pointer';
+  };
+  const onClickProfile = (uid) => {
+    console.log(uid);
+    navigate(`/ashaprofile`);
+  };
+
+  const onClickNavViewAsha = () => {
+    navigate("/viewasha");
+    localStorage.clear(); // to clear local storage on logout
+  };
+
+  const onClickNav = () => {
+    navigate("/viewasha");
+     // to clear local storage on logout
+  };
+  const onClickSignout =()=>{
+    localStorage.clear()
+    navigate('/ashalogin')
+  }
+
+  const getUserData = async () => {
+    try {
+      const res = await axios.post(
+        'http://localhost:8080/api/v1/user/getashaData',
+        {},
+        {
+          headers: {
+            Authorization: 'Bearer ' + localStorage.getItem('token'),
+          },
+        }
+      );
+      setUserData(res.data.data);
+      console.log(userData)
+      localStorage.setItem('userData', JSON.stringify(userData));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getUserData();
+    
+  }, []);
+
+  if (!userData) {
+    return <div>Loading...</div>; // Display a loading message while data is being fetched
+  }
+
+  return (
+    <section>
+      
+      <div className="circle"></div>
+      <Button onClick={onClickProfile}> profile</Button>
+      <h2 className="heading1">Welcome back, {userData.name}</h2>
+      <Button onClick={onClickSignout}> signout</Button>
+      <div className="container-short">
+        <div className="rounded-rectangle">
+          <div className="inside-button">
+            <Button onClick={onClickNav} className="inside-button">
+              View patients
+            </Button>
+          </div>
+        </div>
+
+        <div className="rounded-rectangle">
+          <Button onClick={onClickNav} className="inside-button">
+            Visit Schedules
+          </Button>
+        </div>
+      </div>
+      <div className="container-short">
+        <div className="rounded-rectangle">
+          <Button onClick={onClickNav} className="inside-button">
+            Stock Details
+          </Button>
+        </div>
+
+       </div>
+    </section>
+  );
+};
+
+export default AshaHome;

@@ -1,14 +1,36 @@
-import { Form,Button,Input,Checkbox } from 'antd'
+import { Form,Button,Input,Checkbox, message } from 'antd'
+import axios from 'axios'
 import React from 'react'
 import { useNavigate } from 'react-router'
 
 const Ashalogin = () => {
   const navigate = useNavigate()
-  const OnFinishHandler= async () =>{
-    
+  const OnFinishHandler= async (values) =>{
+    try {
+      //dispatch(showloading())
+      const res = await axios.post('http://localhost:8080/api/v1/user/login',values)
+    //dispatch(hideLoading())
+      if(res.data.success && res.data.isAsha){
+    localStorage.setItem("token",res.data.token)
+    message.success("Login Successful")
     navigate('/ashahome')
-
+   }
+   
+   else{
+    message.error("something went wrong")
+    message.error(res.data.message)
+   }
+      
+    } catch (error) {
+     // dispatch(hideloading())
+      console.log(error)
+      message.error("something went wrong")
+      
+    }
   }
+    //navigate('/ashahome')
+
+  
   return (
     <div><h1 className='heading1'> asha login
       </h1>

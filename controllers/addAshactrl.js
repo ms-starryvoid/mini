@@ -4,7 +4,7 @@ const jwt =require('jsonwebtoken')
 const ashaModel = require('../models/ashaModel')
 const ashaprofileController =async(name)=>{
     try {
-        const asha = await ashaModel.findOne({name:name})
+        const asha = await ashaModel.findOne({asha_id:name})
         return asha
     } catch (error) {
         
@@ -41,7 +41,8 @@ const deleteashaController = async(req,res)=>{
 }
 const viewAshaController = async(req,res)=>{
     try {
-        const asha= await ashaModel.find({},'name')
+        const asha= await ashaModel.find({},'name asha_id')
+        
         res.status(200).json(asha)
     } catch (error) {
         console.log(error)

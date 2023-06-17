@@ -4,19 +4,19 @@ import React , {useEffect, useState} from 'react'
 import axios from "axios";
 
 import './viewasha.css'
-const Viewasha = () => {
+const Viewpatient = () => {
   const navigate= useNavigate()
   const Onclicknav=(asha_id)=>{
     console.log(asha_id)
-    navigate(`/ashadetail/${encodeURIComponent(asha_id)}`)
+    navigate(`/patientdetail/${encodeURIComponent(asha_id)}`)
   }
   const [ashaWorker,setAshaworker] = useState([])
  const ashaview = async() =>
   {
        try{
-         const ashaname = await axios.post('http://localhost:8080/api/v1/user/ashaname')
-          setAshaworker(ashaname.data)
-          console.log(ashaname)
+         const patient = await axios.post('http://localhost:8080/api/v1/user/patient')
+          setAshaworker(patient.data)
+          console.log(patient)
        }
        catch(error)
        {
@@ -37,13 +37,13 @@ const Viewasha = () => {
   return (
     <>
     <h1 className='heading1'>
-      View ASHA worker list
+      View patientlist
     </h1>
-    <h3 color="white">Asha Workers</h3>
+    <h3 color="white">Patients</h3>
       <ul>
         {ashaWorker.map((worker) => (
-          <li key={worker.id}  className="option" onClick={() => Onclicknav(worker.name)} onMouseEnter={handleMouseEnter}>
-           Asha id:{worker.asha_id}     Name: {worker.name}
+          <li key={worker.id}  className="option" onClick={() => Onclicknav(worker.patient_id)} onMouseEnter={handleMouseEnter}>
+           patient:{worker.patient_id}     Name: {worker.name}
           </li>
         ))}
       </ul>
@@ -52,4 +52,4 @@ const Viewasha = () => {
   )
 }
 
-export default Viewasha
+export default Viewpatient
