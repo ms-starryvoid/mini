@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 import axios from 'axios';
+import api from '../../components/api';
+//import Spinner from '../../components/Spinner';
 
 const WorkerDetailsPage = () => {
   const location = useLocation();
@@ -15,7 +17,7 @@ const WorkerDetailsPage = () => {
   const fetchWorkerDetails = async () => {
     try {
       const encodedName = encodeURIComponent(name);
-      const response = await axios.post(`http://localhost:8080/api/v1/user/ashadetail/${encodedName}`);
+      const response = await api.post(`/api/v1/user/ashadetail/${encodedName}`);
       setWorkerDetails(response.data);
       
     } catch (error) {

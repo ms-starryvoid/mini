@@ -20,6 +20,7 @@ import Ashaprofile from './pages/Asha/Ashaprofile';
 import Addpatient from './pages/admin/Addpatient';
 import Viewpatient from './pages/admin/Viewpatient';
 import Patientdetail from './pages/admin/Patientdetail';
+import StockManagementPage from './pages/admin/Stockmanagemnetpage';
 function App() {
   const {loading} = useSelector(state => state.alerts)
   return (
@@ -54,6 +55,7 @@ function App() {
     <Route path='/addpatient' element={<Addpatient/>}/>
     <Route path='/viewpatient' element ={<Viewpatient/>}/>
     <Route path='/patientdetail/:name' element ={<Patientdetail/>}/>
+    <Route path='/stockmanagement' element={<StockManagementPage/>}/>
     </Routes>
    </Router>
    

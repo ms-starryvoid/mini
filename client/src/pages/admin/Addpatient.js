@@ -6,6 +6,7 @@ import { Button, Space, message } from 'antd';
 
 import { DatePicker, Form, Input, Select, Upload } from 'antd';
 import { useState } from 'react';
+import api from '../../components/api';
 
 const { RangePicker } = DatePicker;
 const { TextArea } = Input;
@@ -24,7 +25,7 @@ const Addpatient = () => {
     try {
       values.age=Number(values.age)
       values.phone=Number(values.phone)
-      const response = await axios.post('http://localhost:8080/api/v1/user/addpatient', values);
+      const response = await api.post('/api/v1/user/addpatient', values);
       console.log(response.data); 
       if(response.data.success){
      
