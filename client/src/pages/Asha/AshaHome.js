@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 import { Button } from 'antd';
+import api from '../../components/api';
 
 const AshaHome = () => {
   const navigate = useNavigate();
@@ -30,8 +31,8 @@ const AshaHome = () => {
 
   const getUserData = async () => {
     try {
-      const res = await axios.post(
-        'http://localhost:8080/api/v1/user/getashaData',
+      const res = await api.post(
+        '/api/v1/user/getashaData',
         {},
         {
           headers: {

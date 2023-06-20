@@ -56,6 +56,7 @@ function App() {
     <Route path='/viewpatient' element ={<Viewpatient/>}/>
     <Route path='/patientdetail/:name' element ={<Patientdetail/>}/>
     <Route path='/stockmanagement' element={<StockManagementPage/>}/>
+    <Route path='/adminhome' element={<AdminHome/>}/>
     </Routes>
    </Router>
    

@@ -3,6 +3,7 @@ import React, {useEffect} from 'react'
 import { useNavigate } from 'react-router';
 import '../styles/homepagestyle.css'
 import { Button,Form } from 'antd';
+import api from '../components/api';
 const AdminHome = () => {
     const navigate= useNavigate()
     const OnclickNavViewAsha = () => {
@@ -19,7 +20,7 @@ const AdminHome = () => {
       };
  const getUserData= async()=>{
     try {
-        const res= await axios.post('http://localhost:8080/api/v1/user/getUserData',{},{
+        const res= await api.post('/api/v1/user/getUserData',{},{
             headers:{
                 Authorization: 'Bearer ' + localStorage.getItem('token'),
             },

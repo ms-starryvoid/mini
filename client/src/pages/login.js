@@ -4,6 +4,7 @@ import{Link,useNavigate} from 'react-router-dom';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { showloading, hideLoading } from '../redux/features/alertSlice';
+import api from '../components/api';
 
 
 const Login = () => {
@@ -13,12 +14,12 @@ const Login = () => {
   const onFinishHandler = async(values)=>{
     try {
       //dispatch(showloading())
-      const res = await axios.post('http://localhost:8080/api/v1/user/login',values)
+      const res = await api.post('/api/v1/user/login',values)
     //dispatch(hideLoading())
       if(res.data.success && res.data.isAdmin){
     localStorage.setItem("token",res.data.token)
     message.success("Login Successful")
-    navigate('/login/adminhome')
+    navigate('/adminhome')
    }
    else if(res.data.success && !(res.data.isAdmin))
    {

@@ -2,13 +2,14 @@ import { Form,Button,Input,Checkbox, message } from 'antd'
 import axios from 'axios'
 import React from 'react'
 import { useNavigate } from 'react-router'
+import api from '../../components/api'
 
 const Ashalogin = () => {
   const navigate = useNavigate()
   const OnFinishHandler= async (values) =>{
     try {
       //dispatch(showloading())
-      const res = await axios.post('http://localhost:8080/api/v1/user/login',values)
+      const res = await api.post('/api/v1/user/login',values)
     //dispatch(hideLoading())
       if(res.data.success && res.data.isAsha){
     localStorage.setItem("token",res.data.token)
