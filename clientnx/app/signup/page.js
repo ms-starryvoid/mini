@@ -11,7 +11,7 @@ const page = () => {
         try {
             console.log(values)
             //dispatch(showloading())
-            const res = await api.post('http://localhost:8080/api/v1/user/signup',values)
+            const res = await api.post('/api/v1/user/signup',values)
            // dispatch(hideLoading())
             if(res.data.success){
              
