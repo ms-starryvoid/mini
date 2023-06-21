@@ -41,6 +41,7 @@ const AshaHome = () => {
         }
       );
       setUserData(res.data.data);
+      console.log(res.data)
       console.log(userData)
       localStorage.setItem('userData', JSON.stringify(userData));
     } catch (error) {
@@ -61,7 +62,7 @@ const AshaHome = () => {
     <section>
       
       <div className="circle"></div>
-      <Button onClick={onClickProfile}> profile</Button>
+      <Button onClick={onClickProfile (userData.uid)}> profile</Button>
       <h2 className="heading1">Welcome back, {userData.name}</h2>
       <Button onClick={onClickSignout}> signout</Button>
       <div className="container-short">

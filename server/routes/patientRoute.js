@@ -9,8 +9,8 @@ const router= express.Router()
 
 router.post('/addpatient',addpatientController)
 router.post('/patient',viewpatientController)
-router.post('/patientdetail/:name',async  (req, res) => {
-    const workerName = decodeURIComponent(req.params.name);
+router.post('/patientdetail',async  (req, res) => {
+    const workerName = req.body.patient_id
   
     // Logic to retrieve worker details based on the name
     // Replace this with your actual implementation

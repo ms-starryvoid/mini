@@ -29,8 +29,8 @@ const addashaController = async (req,res)=>{
 }
 const deleteashaController = async(req,res)=>{
     try{
-        const asha = await ashaModel.findOne({asha_id:req.body.asha_id})
-        asha.deleteOne()
+        const asha = await ashaModel.deleteOne({asha_id:req.body.asha_id})
+        
         return res.send({message:'deleted',success:true})
     }
     catch(error)

@@ -46,6 +46,11 @@ app.use('/api/v1/user',require('./routes/patientRoute'))
 app.use('/api/v1/user',require('./controllers/stockControll'))
 app.use('/api/v1/user',require('./controllers/stockControll'))
 app.use('/api/v1/user',require('./controllers/stockControll'))
+
+
+app.use('/api/v1/user',require('./routes/reportRoute'))
+app.use('/api/v1/user',require('./routes/reportRoute'))
+
 //listen
 const port= process.env.PORT
 app.listen(port,() =>{
