@@ -78,7 +78,7 @@ const authController = async (req,res)=>{
             return res.status(200).send({message:'user not found', success:false}) 
         }
         else{
-            //const userdata = await ashaModel.findOne({asha_id:ashaid})
+             console.log(user)//const userdata = await ashaModel.findOne({asha_id:ashaid})
             res.status(200).send({success:true, data :{
                 name:user.name,
                 email:user.email,
