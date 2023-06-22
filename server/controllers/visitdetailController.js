@@ -8,7 +8,8 @@ const visitModel = require('../models/visitModel');
 
 
 const visitDateCtrl =async(req,res)=>{
-    const { month, year } = req.query;
+    const { month, year } = req.body;
+    console.log(month)
     try{
         const startDate = new Date(`${year}-${month}-01`);
     const endDate = new Date(startDate.getFullYear(), startDate.getMonth() + 1, 0);
@@ -16,7 +17,7 @@ const visitDateCtrl =async(req,res)=>{
     const visits = await visitModel.find({
       day: { $gte: startDate, $lte: endDate },
     });
-
+      console.log(visits)
       res.json({success:true,visits})
     }catch(error)
     {
@@ -51,6 +52,7 @@ const visitDetail =async(req,res)=>{
 
 
 const reportentryCtrl = async (req,res)=>{
+    console.log(req.body)
     const {visitDate,patient_id, blood_sugar, blood_pressure, remarks } = req.body;
     try {
        const visit = await visitModel.findOne({patient_id:patient_id,day:visitDate}) 
