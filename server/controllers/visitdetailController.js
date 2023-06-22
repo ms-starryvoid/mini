@@ -18,7 +18,7 @@ const visitDateCtrl =async(req,res)=>{
    console.log(startDate)
    console.log(endDateT)
     const visits = await visitModel.find({
-      day: { $gte: startDateT, $lte: endDateT },
+      day: { $gte: startDate, $lte: endDateT },
     });
       console.log(visits)
       res.json({success:true,visits})
