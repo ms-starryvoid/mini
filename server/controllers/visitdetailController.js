@@ -22,7 +22,7 @@ const visitDateCtrl =async(req,res)=>{
       day: { $gte: startDate, $lte: endDateT },
     });
       console.log(visits)
-      res.json({success:true,visits})
+      res.json({success:true},{data:visits})
     }catch(error)
     {
         console.log(error)
