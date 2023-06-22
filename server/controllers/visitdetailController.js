@@ -13,7 +13,8 @@ const visitDateCtrl =async(req,res)=>{
     try{
         const startDate = new Date(`${year}-${month}-01`);
     const endDate = new Date(startDate.getFullYear(), startDate.getMonth() + 1, 0);
-
+   console.log(startDate)
+   console.log(endDate)
     const visits = await visitModel.find({
       day: { $gte: startDate, $lte: endDate },
     });
