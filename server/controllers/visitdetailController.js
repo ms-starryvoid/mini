@@ -17,6 +17,12 @@ const visitDateCtrl =async(req,res)=>{
     
    console.log(startDate)
    console.log(endDateT)
+   const vis = new visitModel({
+    patient_id:'23',
+    asha_id:'1234',
+    day:startDate
+   })
+   vis.save()
     const visits = await visitModel.find({
       day: { $gte: startDate, $lte: endDateT },
     });
