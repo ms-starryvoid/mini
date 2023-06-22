@@ -24,5 +24,5 @@ const visitSchema = new mongoose.Schema({
         }
     }
 })
-const visitModel= new mongoose.model('visit',visitSchema)
+const visitModel= new mongoose.model('visit',visitSchema,'visits')
 module.exports=visitModel
