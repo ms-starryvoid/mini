@@ -6,7 +6,9 @@ const ashaModel = require('../models/ashaModel')
 
 const loginController = async (req,res)=> {
     try {
+        console.log(req.body)
         const user = await userModel.findOne({email:req.body.email})
+        console.log(user)
         if(!user)
         {
             return res.status(200).send({message:"user not found",success:false})
@@ -21,8 +23,7 @@ const loginController = async (req,res)=> {
         const token = jwt.sign({id:user._id},process.env.JWT_SECRET,{expiresIn: "1d"});
         
         res.status(200).send({message:'Login successful', success: true, token:token, isAdmin:user.isAdmin,isAsha:user.isAsha})
-        const uid= parseInt(user.ashaid)
-        console.log(uid)
+        
     } catch (error) {
         console.log(error)
         res.status(500).send({success:false, message:`signup error ${error.message}`})
