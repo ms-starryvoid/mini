@@ -68,7 +68,7 @@ const Login = () => {
                 <Form.Item
                   className="form-label"
                   label="Username"
-                  name="username"
+                  name="email"
                   rules={[
                     {
                       required: true,
