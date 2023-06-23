@@ -66,11 +66,11 @@ const Login = () => {
                 <Form.Item
                   className="form-label"
                   label="Username"
-                  name="username"
+                  name="email"
                   rules={[
                     {
                       required: true,
-                      message: "Please input your username!",
+                      message: "Please input your email!",
                     },
                   ]}
                   style={{ color: "#ffffff" }}
