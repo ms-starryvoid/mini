@@ -3,6 +3,7 @@ const express = require('express');
 const router = express.Router();
 const stockModel= require('../models/stockModel')
 const stockreqModel = require('../models/stockreqmodel');
+const patientModel = require('../models/patientModel');
 
 
 // Get stock list
@@ -47,6 +48,7 @@ router.put('/stockupdate', async (req, res) => {
 router.get('/requests', async (req, res) => {
   try {
     const pendingRequests = await stockreqModel.find({ status: 'pending' });
+    
     res.json(pendingRequests);
   } catch (error) {
     console.log(error);
