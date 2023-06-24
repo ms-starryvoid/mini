@@ -737,3 +737,67 @@ h2.stockdetails1 {
   cursor: pointer;
   border-color: transparent;
 }
+
+.container-profile {
+  position: relative;
+  height: 100vh;
+}
+
+.rectangle-profile {
+  position: absolute;
+  width: 50%;
+  height: 60%;
+  border-radius: 41px;
+  background-color: rgba(219, 219, 249, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  text-align: left;
+  font-weight: 100;
+  line-height: 1.5;
+  padding-left: 70px;
+  /* padding: 20px; */
+  right: 1in;
+  bottom: 1in;
+  font-size: 20px;
+  color: white;
+}
+
+.circle-profile {
+  position: absolute;
+  left: 1in;
+  top: 3in;
+  /* top: calc(50% + 5vh); */
+  transform: translateY(-50%);
+  width: 45vh;
+  height: 45vh;
+  border-radius: 50%;
+  background-color: rgba(219, 219, 249, 0.3);
+}
+
+.heading-profile{
+  font-size: 50px;
+  padding-top: 0.5in;
+  padding-left: 0.5in;
+  color: white;
+}
+
+
+.line-profile {
+width: 90%;
+height: 1px;
+background-color: white;
+}
+
+
+.smalltext-profile {
+font-size: 14px; 
+color: white;
+background-color: transparent;
+border: 0px;
+bottom: 15px; 
+left: 270px;
+cursor: pointer;
+position: absolute; 
+}
