@@ -1,0 +1,106 @@
+body {
+    background-color: #1B2143;
+    background-size: 1440px 1024px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .circle1 {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    top: -306px;
+    left: -250px;
+    border-radius: 50%;
+    background-color: rgba(98, 105, 164, 0.72);
+    filter: blur(300px);
+  }
+  .circle2 {
+    position: absolute;
+    width: 572px;
+    height: 572px;
+    top: 758px;
+    left: -97px;
+    border-radius: 50%;
+    background-color: rgba(98, 105, 164, 0.72);
+    filter: blur(300px);
+  }
+  .circle3 {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top: -60px;
+    left: 890px;
+    border-radius: 50%;
+    background-color: rgba(98, 105, 164, 0.72);
+    filter: blur(300px);
+  }
+  h2.report{
+    position: absolute;
+    color: #FFFFFF;
+    font-family: 'Poppins',sans-serif;
+    font-size: 36px;
+    top: 80px;
+    left: 130px;
+}
+.rect{
+    width: 1250px;
+    height: 440px;
+    position: absolute;
+    left: 57px;
+    top: 180px;
+    border-radius: 41px;
+    background-color: rgba(219, 219, 249, 0.44);
+  }
+  .rectcontainer{
+    width: 1180px;
+    height: 340px;
+    position: absolute;
+    left: 100px;
+    top: 250px;
+    border-radius: 41px;
+    overflow: 'hidden';
+    overflow-y: scroll;
+  }
+  .rectcontainer::-webkit-scrollbar {
+    width: 5px; 
+  }
+  
+  .rectcontainer::-webkit-scrollbar-thumb {
+    background-color: #ffffff; 
+    border-radius: 10px;
+  } 
+
+  .rectcontainer::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-color: #ffffff; 
+  } 
+
+  .line{
+    position: absolute;
+    left: 85px;
+    top: 250px;
+    width: 1200px;
+    height: 0.3px;
+     background-color: #FDFDFD;
+}
+ p.date{
+    position: relative;
+    color: #FFFFFF;
+    font-family: 'Poppins',sans-serif;
+    font-size: 18px;
+    left: 1000px;
+    top: -42px;
+
+} 
+.reportno{
+    display: contents;
+    color: #FFFFFF;
+    font-size: 22px;
+    position: relative;
+    left: 10px;
+}
+.firstreport{
+    position: absolute;
+    left: 20px;
+}

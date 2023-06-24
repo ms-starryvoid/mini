@@ -21,6 +21,7 @@ import Addpatient from './pages/admin/Addpatient';
 import Viewpatient from './pages/admin/Viewpatient';
 import Patientdetail from './pages/admin/Patientdetail';
 import StockManagementPage from './pages/admin/Stockmanagemnetpage';
+import Viewreport from './pages/Patient/Viewreport';
 function App() {
   const {loading} = useSelector(state => state.alerts)
   return (
@@ -57,6 +58,8 @@ function App() {
     <Route path='/patientdetail/:name' element ={<Patientdetail/>}/>
     <Route path='/stockmanagement' element={<StockManagementPage/>}/>
     <Route path='/adminhome' element={<AdminHome/>}/>
+    <Route path='/viewreport' element={<Viewreport/>}/>
+
     </Routes>
    </Router>
    
