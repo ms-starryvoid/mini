@@ -22,6 +22,8 @@ import Viewpatient from './pages/admin/Viewpatient';
 import Patientdetail from './pages/admin/Patientdetail';
 import StockManagementPage from './pages/admin/Stockmanagemnetpage';
 import Viewreport from './pages/Patient/Viewreport';
+import Viewpatientprf from './pages/admin/Viewpatientprf';
+import Delete from './pages/admin/Delete';
 function App() {
   const {loading} = useSelector(state => state.alerts)
   return (
@@ -59,6 +61,9 @@ function App() {
     <Route path='/stockmanagement' element={<StockManagementPage/>}/>
     <Route path='/adminhome' element={<AdminHome/>}/>
     <Route path='/viewreport' element={<Viewreport/>}/>
+    <Route path='/viewpatientprf' element={<Viewpatientprf/>}/>
+    <Route path="/delete" element={<Delete/>}></Route>
+
 
     </Routes>
    </Router>

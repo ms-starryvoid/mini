@@ -39,6 +39,10 @@ const ashaSchema = new mongoose.Schema(
         phone:{
             type:Number,
             required:[true,'number is required']
+        },
+        ward_number:{
+            type:Number,
+            default:1
         }
 
     }
