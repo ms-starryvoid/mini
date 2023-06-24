@@ -500,7 +500,3 @@ nav{
     transition: all 0.2s;
   }
   
-  .nav__link:hover:before{
-   width: 100%;
-  }
-}

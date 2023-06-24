@@ -12,10 +12,10 @@ const Login = () => {
   //on finish handler function
   const onFinishHandler = async (values) => {
     try {
-      console.log(values)
+      console.log(values);
       //dispatch(showloading())
       const res = await api.post("/api/v1/user/login", values);
-      console.log(res)
+      console.log(res);
       //dispatch(hideLoading())
       if (res.data.success && res.data.isAdmin) {
         localStorage.setItem("token", res.data.token);
@@ -68,11 +68,11 @@ const Login = () => {
                 <Form.Item
                   className="form-label"
                   label="Username"
-                  name="username"
+                  name="email"
                   rules={[
                     {
                       required: true,
-                      message: "Please input your username!",
+                      message: "Please input your email!",
                     },
                   ]}
                   style={{ color: "#ffffff" }}
