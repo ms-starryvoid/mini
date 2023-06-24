@@ -393,3 +393,197 @@ img {
     margin-top: -10px;
   }
   
+  
+.listContainer {
+  height: 400px;
+  display: contents;
+  overflow-y: scroll;
+  padding: 10px;
+}
+
+h2.stockdetails {
+  position: absolute;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-size: 26px;
+  left: 20px;
+  font-weight: 600;
+}
+h2.stockdetails1 {
+  position: absolute;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-size: 45px;
+  top: 60px;
+  left: 70px;
+  font-weight: 600;
+}
+
+.list-checkbox {
+  margin-top: 83px;
+}
+
+.listItem-checkbox {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.comment-checkbox {
+  margin-left: 10px;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-size: 21px;
+}
+
+.addbox {
+  background-color: rgba(219, 219, 249, 0.44);
+  position: relative;
+  width: 150px;
+  height: 50px;
+  border-radius: 41px;
+  margin-left: 200px;
+  text-align: justify;
+  justify-content: center;
+}
+.patientList {
+  list-style-type: none;
+  padding: 20px;
+  margin: 20px;
+}
+
+.patientItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-size: 22px;
+  justify-content: space-between;
+}
+.patientItem1 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-left: 30px;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-size: 22px;
+  justify-content: space-between;
+}
+
+
+.inside-button3 {
+  position: relative;
+  background-color: transparent;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-size: 25px;
+  margin-left: 23px;
+  margin-top: 5px;
+  cursor: pointer;
+  border-color: transparent;
+}
+.inside-button4 {
+  position: relative;
+  background-color: transparent;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-size: 25px;
+  margin-right: 140px;
+  margin-top: 5px;
+  cursor: pointer;
+  border-color: transparent;
+}
+
+
+.roundrect1 {
+  width: 600px;
+  height: 200px;
+  position: absolute;
+  left: 680px;
+  top: 175px;
+  border-radius: 41px;
+  background-color: rgba(219, 219, 249, 0.44);
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.roundrect1::-webkit-scrollbar {
+  width: 5px;
+  /* Width of the scrollbar */
+}
+
+.roundrect1::-webkit-scrollbar-thumb {
+  background-color: #ffffff; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Radius of the scrollbar thumb */
+}
+
+.roundrect1::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-color: #ffffff; /* Color of the scrollbar track */
+}
+
+.roundrect2 {
+  width: 600px;
+  height: 216px;
+  position: absolute;
+  left: 680px;
+  top: 400px;
+  border-radius: 41px;
+  background-color: rgba(219, 219, 249, 0.44);
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.roundrect2::-webkit-scrollbar {
+  width: 5px;
+  /* Width of the scrollbar */
+}
+
+.roundrect2::-webkit-scrollbar-thumb {
+  background-color: #ffffff; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Radius of the scrollbar thumb */
+}
+
+.roundrect2::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-color: #ffffff; /* Color of the scrollbar track */
+}
+
+.roundrect::-webkit-scrollbar {
+  width: 5px;
+  /* Width of the scrollbar */
+}
+
+.roundrect::-webkit-scrollbar-thumb {
+  background-color: #ffffff; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Radius of the scrollbar thumb */
+}
+
+.roundrect::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-color: #ffffff; /* Color of the scrollbar track */
+}
+
+.roundrect {
+  width: 580px;
+  height: 450px;
+  position: absolute;
+  left: 50px;
+  top: 175px;
+  border-radius: 41px;
+  background-color: transparent;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+.roundrect3 {
+  width: 600px;
+  height: 460px;
+  position: absolute;
+  left: 50px;
+  top: 175px;
+  border-radius: 41px;
+  background-color: rgba(219, 219, 249, 0.44);
+}
+
