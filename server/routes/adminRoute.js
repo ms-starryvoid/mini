@@ -10,7 +10,7 @@ router.post('/addasha',addashaController)
 router.post('/ashaname',viewAshaController)
 router.post('/ashadetail/:name',async  (req, res) => {
     const workerName = decodeURIComponent(req.params.name);
-  
+     console.log(name)
     // Logic to retrieve worker details based on the name
     // Replace this with your actual implementation
     
