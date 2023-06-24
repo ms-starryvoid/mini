@@ -1,5 +1,6 @@
 const express=require('express')
 const { addashaController, viewAshaController,getWorkerDetails } = require('../controllers/addAshactrl')
+const ashaModel = require('../models/ashaModel')
 
 
 const router= express.Router()
@@ -28,4 +29,25 @@ router.post('/ashadetail',async  (req, res) => {
         
     
   });
+
+
+  router.post('/api/v1/user/ashaprofileupdate', async (req, res) => {
+    try {
+      const name = req.body.name;
+      const updatedData = req.body;
+  
+      // Logic to update ASHA profile based on name
+      // Replace this with your actual implementation
+  
+      const Profile = await ashaModel.findOne({asha_id:name});
+
+     Profile.email=updatedData.email
+     Profile.phone=updatedData.phone
+     await Profile.updateOne()
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({ message: 'Internal server error' });
+    }
+  });
+  
 module.exports = router
