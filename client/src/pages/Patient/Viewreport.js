@@ -27,6 +27,15 @@ const Viewreport = () => {
             </div>
 
         </li>
+        <li className='reportlist2'>
+            <div className='secreport'>
+            <Button onClick={OnclickNav} className="reportno2">
+             Report#2
+        </Button>
+        <p className='date2'>2023-12-05</p>
+            </div>
+
+        </li>
       </div>
       <div className='line'></div>
 
