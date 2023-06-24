@@ -17,7 +17,7 @@ const AdminProfile = () => {
      const name = userData.data.uid;
       console.log(name)
       const encodedid= encodeURIComponent(name)
-    const res =  await api.post(`/api/v1/user/ashaprofile`,name)
+    const res =  await api.post(`/api/v1/user/ashadetail`,name)
     setuserdetails(res.data)
     console.log(res.data)
       
@@ -29,7 +29,7 @@ const AdminProfile = () => {
   }
 
   const Editprofile= async()=>{
-    const res = await api.post(`api/v1/user/ashaprofileupdate/:${userdetails.asha_id}`, values)
+    const res = await api.post(`api/v1/user/ashaprofileupdate`, values)
   }
   useEffect(()=>{
     getdata()

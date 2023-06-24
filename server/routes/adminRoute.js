@@ -8,7 +8,7 @@ const router= express.Router()
 
 router.post('/addasha',addashaController)
 router.post('/ashaname',viewAshaController)
-router.post('/ashadetail/:name',async  (req, res) => {
+router.post('/ashadetail',async  (req, res) => {
     const workerName = req.body.name;
      console.log(workerName)
     // Logic to retrieve worker details based on the name
