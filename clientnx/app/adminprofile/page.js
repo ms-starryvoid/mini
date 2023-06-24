@@ -14,10 +14,10 @@ const AdminProfile = () => {
       const userData = JSON.parse(storedData);
 
   
-     const name = userData.data.name;
+     const name = userData.data.uid;
       console.log(name)
       const encodedid= encodeURIComponent(name)
-    const res = api.post(`/api/v1/user/ashaprofile/:${encodedid}`)
+    const res =  await api.post(`/api/v1/user/ashaprofile`,name)
     setuserdetails(res.data)
     console.log(res.data)
       
@@ -29,7 +29,7 @@ const AdminProfile = () => {
   }
 
   const Editprofile= async()=>{
-    const res = api.post(`api/v1/user/ashaprofileupdate/:${userdetails.asha_id}`, values)
+    const res = await api.post(`api/v1/user/ashaprofileupdate/:${userdetails.asha_id}`, values)
   }
   useEffect(()=>{
     getdata()
