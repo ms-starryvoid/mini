@@ -32,7 +32,8 @@ const page = () => {
      
     }
   return (
-    <div>
+    <div className='container'>
+      <div className='signupcontainer'>
       <Form layout="vertical"
       onFinish={OnFinishHandler}
       className='signup-form'>
@@ -51,6 +52,7 @@ const page = () => {
         </Form.Item>
         <button type="submit">register</button>
       </Form>
+      </div>
     </div>
   )
 }

@@ -5,6 +5,7 @@ import api from "@/api";
 import { Form, Input, message, Checkbox, Button } from "antd";
 import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
+import Navbar from "../Nav";
 const AshaHome = () => {
   const router = useRouter();
   const OnclickNavViewP = () => {
@@ -51,6 +52,7 @@ const AshaHome = () => {
   }, []);
   return (
     <section>
+      <Navbar></Navbar>
       <div className="circle"></div>
       <h2 className="heading1">Welcome back, Asha Worker</h2>
 
