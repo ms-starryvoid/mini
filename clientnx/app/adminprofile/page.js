@@ -87,7 +87,7 @@ const AdminProfile = () => {
             <p>Gender: {userdetails.gender}</p>
             <p>Email: {userdetails.email}</p>
             <p>Phone: {userdetails.phone}</p>
-            <p>Address: {userdetails.address}</p>
+            
             <div className="line-profile" />
             <Button className="smalltext-profile" onClick={handleEdit}>Edit profile</Button>
           </>

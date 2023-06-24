@@ -31,7 +31,7 @@ router.post('/ashadetail',async  (req, res) => {
   });
 
 
-  router.post('/api/v1/user/ashaprofileupdate', async (req, res) => {
+  router.post('/ashaprofileupdate', async (req, res) => {
     try {
       const name = req.body.name;
       const updatedData = req.body;
