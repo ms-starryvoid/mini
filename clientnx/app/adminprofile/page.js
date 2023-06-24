@@ -4,23 +4,50 @@ import api from "@/api";
 
 import { Form, Input, message, Checkbox, Button } from "antd";
 import { useRouter } from "next/navigation";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const AdminProfile = () => {
+  const [userdetails,setuserdetails]=useState([])
+  const getdata= async()=>{
+    try {
+      const storedData= localStorage.getItem('userData')
+      const userData = JSON.parse(storedData);
+
+  
+     const name = userData.data.name;
+      console.log(name)
+      const encodedid= encodeURIComponent(name)
+    const res = api.post(`/api/v1/user/ashaprofile/:${encodedid}`)
+    setuserdetails(res.data)
+    console.log(res.data)
+      
+    } catch (error) {
+      console.log(error)
+      
+    }
+   
+  }
+
+  const Editprofile= async()=>{
+    const res = api.post(`api/v1/user/ashaprofileupdate/:${userdetails.asha_id}`, values)
+  }
+  useEffect(()=>{
+    getdata()
+  },[])
     const router = useRouter();
     return (
       <div className="container-profile">
         <h1 className="heading-profile">Admin's Profile</h1>
         <div className="circle-profile" />
         <div className="rectangle-profile">
-          <p>Name        :</p>
-          <p>Age         :</p>
-          <p>Gender      :</p>
-          <p>email       :</p>
-          <p>phone no.   :</p>
-          <p>address     :</p>
+          <p>Name        : {userdetails.name}</p>
+          <p>Age         :{userdetails.age} </p>
+          <p>Gender      :{userdetails.gender}</p>
+          <p>email       :{userdetails.email}</p>
+          <p>phone no.   :{userdetails.email}</p>
+          <p>address     : {userdetails.address} </p>
           <div className="line-profile" />
-          <Button className="smalltext-profile">Edit profile</Button>  
+          <Button className="smalltext-profile" onClick={Editprofile}>Edit profile</Button>  
         </div>
       </div>
     );

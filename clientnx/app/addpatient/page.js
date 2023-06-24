@@ -71,7 +71,10 @@ const Addpatient = () => {
                 </Form.Item>
                 <Form.Item label="Gender" name="gender">
                   <Select>
-                    <Select.Option value="demo">Demo</Select.Option>
+                    <Select.Option value="male">male</Select.Option>
+                  </Select>
+                  <Select>
+                    <Select.Option value="female">female</Select.Option>
                   </Select>
                 </Form.Item>
                 <Form.Item label="Address" name="address">
@@ -93,7 +96,7 @@ const Addpatient = () => {
                 <Form.Item label="Visit Date" name="visitDate">
                   <DatePicker />
                 </Form.Item>
-                <Form.Item label="Ward number" name="wardNumber">
+                <Form.Item label="Ward number" name="ward_number">
                   <Input />
                 </Form.Item>
                 <Form.Item label="Asha Worker" name="ashaWorker">
