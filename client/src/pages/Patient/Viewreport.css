@@ -104,3 +104,24 @@ body {
     position: absolute;
     left: 20px;
 }
+.secreport{
+    position: absolute;
+    left: 20px;
+    top: 80px;
+}
+p.date2{
+    position: relative;
+    color: #FFFFFF;
+    font-family: 'Poppins',sans-serif;
+    font-size: 18px;
+    left: 1000px;
+    top: -42px;
+
+} 
+.reportno2{
+    display: contents;
+    color: #FFFFFF;
+    font-size: 22px;
+    position: relative;
+    left: 10px;
+}
