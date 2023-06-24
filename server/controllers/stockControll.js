@@ -61,7 +61,7 @@ router.put('/requests/:id', async (req, res) => {
   const { id } = req.params;
   console.log(id)
   try {
-    const stockRequest = await stockreqModel.findOneAndUpdate({stock_name:id} , { status: 'approved' },
+    const stockRequest = await stockreqModel.findOneAndUpdate({stock_name:id} , { status: req.body.status },
     { new: true });
     console.log(stockRequest)
     if (!stockRequest) {

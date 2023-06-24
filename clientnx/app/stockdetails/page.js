@@ -8,9 +8,31 @@ import React, { useEffect, useState } from "react";
 
 const StockDetails = () => {
   const router = useRouter();
-  const [StockRequests, setStockRequests]=useState( { 
-    
-  } || null)
+  const [StockRequests, setStockRequests]=useState([])
+  const approveStockRequest = async (request) => {
+    console.log(request)
+    try {
+      await api.put(`/api/v1/user/requests/${request.stock_name}`, {
+        status: 'approved',
+      });
+      console.log('Stock request approved');
+      fetchStockRequests();
+    } catch (error) {
+      console.error('Error approving stock request:', error);
+    }
+  };
+  const rejectStockRequest = async (request) => {
+    console.log(request)
+    try {
+      await api.put(`/api/v1/user/requests/${request.stock_name}`, {
+        status: 'rejected',
+      });
+      console.log('Stock request rejected');
+      fetchStockRequests();
+    } catch (error) {
+      console.error('Error approving stock request:', error);
+    }
+  };
   const fetchstockreqs= async()=>{
     try {
       const response = await api.get('/api/v1/user/requests');
@@ -124,7 +146,7 @@ useEffect(()=>{
                 checked={item.isChecked}
                 onChange={() => handleCheckboxChange(item.id)}
               />
-              <span className="comment-checkbox">{item.stock_name} quantity {item.quantity} requested by {item.patient_id}</span>
+              <span className="comment-checkbox">{item.stock_name} quantity {item.request_quantity} requested by {item.patient_id}</span>
             </li>
           ))}
         </ul>

@@ -21,3 +21,4 @@ const stockreqCtrl= async (req,res)=>{
     }
 
 }
+module.exports={stockreqCtrl}

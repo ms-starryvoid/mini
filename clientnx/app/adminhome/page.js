@@ -16,12 +16,19 @@ const AdminHome = () => {
   const OnClickProfile = () => {
     router.push("/");
   };
-  const OnclickNav = () => {
-    router.push("/viewasha");
+  const Onclickstock = () => {
+    router.push("/stockdetail");
     // to clear local storage on logout
 
-    localStorage.clear();
+    
   };
+  const Onclickviewpatient=()=>{
+    router.push('/viewpatient')
+  }
+
+  const Onclickvisit=()=>{
+    router.push('/visitdetail')
+  }
   const getUserData = async () => {
     try {
       const res = await api.post(
@@ -52,21 +59,21 @@ const AdminHome = () => {
       <div className="container-short">
         <div className="rounded-rectangle">
           <div className="inside-button">
-            <Button onClick={OnclickNav} className="inside-button">
+            <Button onClick={Onclickviewpatient} className="inside-button">
               View patients
             </Button>
           </div>
         </div>
 
         <div className="rounded-rectangle">
-          <Button onClick={OnclickNav} className="inside-button">
+          <Button onClick={Onclickvisit} className="inside-button">
             Visit Schedules
           </Button>
         </div>
       </div>
       <div className="container-short">
         <div className="rounded-rectangle">
-          <Button onClick={OnclickNav} className="inside-button">
+          <Button onClick={Onclickstock} className="inside-button">
             Stock Details
           </Button>
         </div>

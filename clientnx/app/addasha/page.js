@@ -33,7 +33,7 @@ const Addpatient = () => {
     try {
       values.age=Number(values.age)
       values.phone=Number(values.phone)
-      const response = await api.post('/api/v1/user/addpatient', values);
+      const response = await api.post('/api/v1/user/addasha', values);
       console.log(response.data); 
       if(response.data.success){
 
