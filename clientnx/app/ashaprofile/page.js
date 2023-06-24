@@ -10,7 +10,7 @@ const AshaProfile = () => {
     const router = useRouter();
     return (
       <div className="container-profile">
-        <h1 className="heading-profile">Asha's Profile</h1>
+        <h1 className="heading-profile"> Asha's Profile</h1>
         <div className="circle-profile" />
         <div className="rectangle-profile">
           <p>Name        :</p>

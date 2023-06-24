@@ -53,7 +53,7 @@ const viewAshaController = async(req,res)=>{
 const getWorkerDetails= async(workerName)=>{
     try {
        
-        const worker = await ashaModel.findOne({name:workerName})
+        const worker = await ashaModel.findOne({asha_id:workerName})
         
         return worker
     } catch (error) {
