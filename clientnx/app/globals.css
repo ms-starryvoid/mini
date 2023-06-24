@@ -360,10 +360,12 @@ body {
 }
 
 .form-container {
-  width: 694px;
-  height: 800px;
-  display: block;
+  width: 100%;
+  height: 200px;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .form-label {
@@ -387,7 +389,9 @@ body {
 }
 .form-input {
   position: relative;
-  width: 100%;
+  background-color: rgba(219, 219, 249, 0.3);
+  margin-top: 20px;
+  width: 300px;
 }
 .form-item-remember {
   margin-top: -10px;
@@ -708,13 +712,11 @@ h2.stockdetails1 {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
-  margin-left: 30px;
   color: #ffffff;
   font-family: "Poppins", sans-serif;
   font-size: 22px;
   justify-content: space-between;
 }
-
 .inside-button3 {
   position: relative;
   background-color: transparent;
@@ -736,4 +738,28 @@ h2.stockdetails1 {
   margin-top: 5px;
   cursor: pointer;
   border-color: transparent;
+}
+.inside-button5 {
+  position: relative;
+  background-color: transparent;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-size: 25px;
+  cursor: pointer;
+  border-color: transparent;
+  border-style: hidden;
+  margin-left: 10px;
+}
+
+.addbox2 {
+  background-color: rgba(219, 219, 249, 0.44);
+  position: relative;
+  width: 200px;
+  height: 40px;
+  border-radius: 41px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
