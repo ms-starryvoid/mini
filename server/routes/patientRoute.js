@@ -1,6 +1,7 @@
 const express=require('express')
 
 const { addpatientController, viewpatientController,getWorkerDetails, getpatientDetails } = require('../controllers/patientCtrl')
+const { getApprovedRequests, getPendingRequests } = require('../controllers/stockreqControl')
 
 
 const router= express.Router()
@@ -29,4 +30,7 @@ router.post('/patientdetail',async  (req, res) => {
         
     
   });
+
+  router.post('/approvedreq',getApprovedRequests)
+  router.post('/pendingreq',getPendingRequests)
 module.exports = router

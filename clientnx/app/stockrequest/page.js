@@ -9,6 +9,8 @@ import React, { useEffect, useState } from "react";
 const StockRequest = () => {
   const router = useRouter();
   const [items,setItems]=useState([])
+  const [appitems,setappItems]=useState([])
+  const [penditems,setpendItems]=useState([])
   
   const fetchstockdetails = async () => {
     try {
@@ -19,7 +21,7 @@ const StockRequest = () => {
       console.error("Error fetching stock items:", error);
     }
   };
-  const OnclickNavReq = async () => {
+  const OnclickNavReq = async (stock_name) => {
    try {
     const storedData= localStorage.getItem('userData')
     const userData = JSON.parse(storedData);
@@ -27,7 +29,7 @@ const StockRequest = () => {
 
    const patient_id = '1001';
     console.log(patient_id)
-    
+      const request_quantity=1;
      const res = await api.post('api/v1/user/stockrequests',
       {stock_name:stock_name,patient_id:patient_id,request_quantity:request_quantity})
      
@@ -35,9 +37,24 @@ const StockRequest = () => {
     console.log(error)
    }
   };
+  const fetchapprovedreq= async()=>{
+    try {
+       const patient_id='1001'
+      const res = await api.post('api/v1/user/approvedreq',{patient_id:patient_id})
+     setappItems(res.data)
+      console.log(res.data)
+    } catch (error) {
+      console.log(error)
+    }
+
+  }
+  const fetchpendingreq=()=>{
+
+  }
 
   useEffect(()=>{
   fetchstockdetails()
+  fetchapprovedreq()
   },[])
   return (
     <section>
@@ -53,7 +70,7 @@ const StockRequest = () => {
             <li className="patientItem" key={item.id}>
               {item.stock_name}
               <div className="addbox">
-                <Button onClick={()=>{handleRequest} }className="inside-button5">
+                <Button onClick={()=>{OnclickNavReq(item.stock_name)} }className="inside-button5">
                   Request
                 </Button>
               </div>

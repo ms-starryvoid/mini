@@ -21,4 +21,40 @@ const stockreqCtrl= async (req,res)=>{
     }
 
 }
-module.exports={stockreqCtrl}
+const getPendingRequests = async (req, res) => {
+    try {
+      const patientId = req.body.patient_id;
+      const pendingRequests = await stockreqModel.find({
+        patient_id: patientId,
+        status: "pending",
+      }).populate("stock_id", "stock_name");
+  
+      res.status(200).send({
+        pendingRequests,
+        success: true,
+      });
+    } catch (error) {
+      console.log(error);
+      res.status(500).send({ message: "Internal server error", success: false });
+    }
+  };
+  
+  const getApprovedRequests = async (req, res) => {
+    try {
+      const patientId = req.body.patient_id;
+      const approvedRequests = await stockreqModel.find({
+        patient_id: patientId,
+        status: "approved",
+      }).populate("stock_id", "stock_name");
+  
+      res.status(200).send({
+        approvedRequests,
+        success: true,
+      });
+    } catch (error) {
+      console.log(error);
+      res.status(500).send({ message: "Internal server error", success: false });
+    }
+  };
+  
+module.exports={stockreqCtrl,getApprovedRequests,getPendingRequests}
