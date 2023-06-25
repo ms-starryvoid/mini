@@ -25,10 +25,9 @@ const stockreqCtrl= async (req,res)=>{
 const getPendingRequests = async (req, res) => {
     try {
       const patientId = req.body.patient_id;
-      const pendingRequests = await stockreqModel.find({
-        patient_id:patientId,
-        status:'pending',
-      })
+      const pendingRequests = await stockreqModel.find({patient_id:patientId,status:'pending'})
+      
+    
       console.log(pendingRequests)
       res.status(200).send({
         pendingRequests,
@@ -46,7 +45,7 @@ const getPendingRequests = async (req, res) => {
       console.log(patientId)
       const approvedRequests = await stockreqModel.find({
         patient_id:patientId,
-        status:'approved',
+        status:'approved'
       })
       console.log(approvedRequests)
   
