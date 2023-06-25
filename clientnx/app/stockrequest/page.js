@@ -41,7 +41,7 @@ const StockRequest = () => {
     try {
        const patient_id='1001'
       const res = await api.post('api/v1/user/approvedreq',{patient_id:patient_id})
-     setappItems(res.data)
+     setappItems(res.data.approvedRequests)
       console.log(res.data)
     } catch (error) {
       console.log(error)
@@ -52,7 +52,7 @@ const StockRequest = () => {
     try {
       const patient_id='1001'
      const res = await api.post('api/v1/user/pendingreq',{patient_id:patient_id})
-    setpendItems(res.data)
+    setpendItems(res.data.pendingRequests)
      console.log(res.data)
    } catch (error) {
      console.log(error)

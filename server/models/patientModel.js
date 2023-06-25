@@ -41,7 +41,7 @@ const patientSchema = new mongoose.Schema(
               required:[true,'number is required']
           },
           assignd_asha:{
-            type:Number
+            type:String
           },
           ward_number:{type:Number},
           previous_visit:{
