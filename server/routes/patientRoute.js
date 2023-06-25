@@ -33,5 +33,5 @@ router.post('/patientdetail',async  (req, res) => {
 
   router.post('/approvedreq',getApprovedRequests)
   router.post('/pendingreq',getPendingRequests)
-  router.post('stockrequets',stockreqCtrl)
+  router.post('/stockrequets',stockreqCtrl)
 module.exports = router
