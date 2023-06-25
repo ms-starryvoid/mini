@@ -26,5 +26,5 @@ const stockreqSchema = new mongoose.Schema(
     }
 )
 
-const stockreqModel =mongoose.model('Stockreq',stockreqSchema)
+const stockreqModel =mongoose.model('Stockreq',stockreqSchema,'stockreqs')
 module.exports=stockreqModel
