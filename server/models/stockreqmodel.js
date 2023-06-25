@@ -13,7 +13,7 @@ const stockreqSchema = new mongoose.Schema(
         required: true,
         },
         patient_id:{
-            type:Number
+            type:String
         },
         request_quantity:{
             type:Number
