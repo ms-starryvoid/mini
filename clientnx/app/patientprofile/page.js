@@ -4,7 +4,7 @@ import api from "@/api";
 
 import { Form, Input, message, Checkbox, Button } from "antd";
 import { useRouter } from "next/navigation";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const PatientProfile = () => {
   const [userdetails,setuserdetails]=useState([])
@@ -28,6 +28,9 @@ const PatientProfile = () => {
       }
      
     }
+    useEffect(()=>{
+      getdata()
+    },[])
   
     return (
       <div className="container-profile">
