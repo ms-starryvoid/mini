@@ -93,11 +93,15 @@ const StockRequest = () => {
         <h2 className="stockdetails">Accepted Requests</h2>
         <div className="list-checkbox">
           <ul className="patientList">
-          {appitems.map((item) => (
-              <li className="patientItem" key={item.id}>
-                {item.stock_name}
-              </li>
-            ))}
+          {appitems.length > 0 ? (
+        appitems.map((item) => (
+          <li className="patientItem" key={item.id}>
+            {item.stock_name}
+          </li>
+        ))
+      ) : (
+        <li>No approved requests</li>
+      )}
           </ul>
         </div>
       </div>
@@ -105,11 +109,15 @@ const StockRequest = () => {
         <h2 className="stockdetails">Pending Requests</h2>
         <div className="list-checkbox">
           <ul className="patientList">
-          {penditems.map((item) => (
-              <li className="patientItem" key={item.id}>
-                {item.stock_name}
-              </li>
-            ))}
+          {penditems.length > 0 ? (
+        penditems.map((item) => (
+          <li className="patientItem" key={item.id}>
+            {item.stock_name}
+          </li>
+        ))
+      ) : (
+        <li>No pending requests</li>
+      )}
           </ul>
         </div>
       </div>

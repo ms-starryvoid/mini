@@ -27,8 +27,8 @@ const getPendingRequests = async (req, res) => {
       const patientId = req.body.patient_id;
       const pendingRequests = await stockreqModel.find({
         patient_id: patientId,
-        status: "pending",
-      }).populate("stock_id", "stock_name");
+        
+      })
       console.log(pendingRequests)
       res.status(200).send({
         pendingRequests,
