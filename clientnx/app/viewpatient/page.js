@@ -7,12 +7,26 @@ import { useRouter } from "next/navigation";
 
 const PatientView = () => {
   const router = useRouter();
+  const [patient,setpatient]=useState([])
   const OnclickNav = () => {
     router.push("/login");
   };
   const OnclickNavProfile = () => {
     router.push("/profile");
   };
+  const fetchpatient=async()=>{
+   try {
+    const res = await api.post('/api/v1/user/patient')
+    console.log(res.data)
+    setpatient(res.data)
+    
+   } catch (error) {
+    console.log(error)
+   }
+  }
+  useEffect(()=>{
+    fetchpatient()
+  },[])
   return (
     <section>
       <div className="circle1"></div>
@@ -23,11 +37,13 @@ const PatientView = () => {
       <div className="roundrect3"></div>
       <div className="roundrect">
         <ul className="patientList">
-          <li className="patientItem">
-            <Button onClick={OnclickNavProfile} className="inside-button4">
-              Edna Jason
-            </Button>
-          </li>
+        {patient.map((p, index) => (
+            <li className="patientItem" key={index}>
+              <Button onClick={OnclickNavProfile} className="inside-button4">
+                {p.name}
+              </Button>
+            </li>
+          ))}
         </ul>
       </div>
 
@@ -41,7 +57,7 @@ const PatientView = () => {
       <div className="roundrect2">
         <div className="addbox-centre1">
           <h2 className="inside-button1">Total patients </h2>
-          <div className="inside-button6">25</div>
+          <div className="inside-button6">{patient.length}</div>
         </div>
       </div>
     </section>

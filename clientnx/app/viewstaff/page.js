@@ -7,12 +7,27 @@ import { useRouter } from "next/navigation";
 
 const StaffView = () => {
   const router = useRouter();
+  const [asha,setasha]=useState([])
+
+  const getasha=async()=>{
+    try {
+      const res = await api.post('/api/v1/user/ashaname')
+      console.log(res.data)
+      setasha(res.data)
+    } catch (error) {
+      console.log(error)
+    }
+
+  }  
   const OnclickNav = () => {
     router.push("/login");
   };
   const OnclickNavProfile = () => {
     router.push("/profile");
   };
+  useEffect(()=>{
+    getasha()
+  },[])
   return (
     <section>
       <div className="circle1"></div>
@@ -23,11 +38,13 @@ const StaffView = () => {
       <div className="roundrect3"></div>
       <div className="roundrect">
         <ul className="patientList">
-          <li className="patientItem">
-            <Button onClick={OnclickNavProfile} className="inside-button4">
-              Edna Jason
-            </Button>
-          </li>
+        {asha.map((worker, index) => (
+            <li className="patientItem" key={index}>
+              <Button onClick={OnclickNavProfile} className="inside-button4">
+                {worker.name}
+              </Button>
+            </li>
+          ))}
         </ul>
       </div>
 
@@ -41,7 +58,7 @@ const StaffView = () => {
       <div className="roundrect2">
         <div className="addbox-centre1">
           <h2 className="inside-button1">Total staffs </h2>
-          <div className="inside-button6">25</div>
+          <div className="inside-button6">{asha.length}</div>
         </div>
       </div>
     </section>
