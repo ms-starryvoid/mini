@@ -25,12 +25,12 @@ const StockRequest = () => {
    try {
     const storedData= localStorage.getItem('userData')
     const userData = JSON.parse(storedData);
-
+    console.log(stock_name)
 
    const patient_id = '1001';
     console.log(patient_id)
       const request_quantity=1;
-     const res = await api.post('api/v1/user/stockrequests',
+     const res = await api.post('api/v1/user/stockrequets',
       {stock_name:stock_name,patient_id:patient_id,request_quantity:request_quantity})
      
    } catch (error) {

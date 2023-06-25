@@ -4,6 +4,7 @@ const stockreqModel = require('../models/stockreqmodel')
 
 const stockreqCtrl= async (req,res)=>{
     try {
+        console.log(req.body)
         const Sreq= await stockModel.findOne({stock_name:req.body.stock_name})
         if(!Sreq){
             return res.status(200).send({message: 'stock not found', success :false})
@@ -13,7 +14,8 @@ const stockreqCtrl= async (req,res)=>{
         {
             return res.status(200).send({message:"not enough quantity", success: false})
         }
-        const stockreq = await stockreqModel.insertMany({stock_id:Sreq.stock_id , request_quantity: Stockrequestquantity,patient_id:req.body.patient_id,status:'pending'})
+        const reqno=req.body.patient_id+Sreq.stock_id
+        const stockreq = await stockreqModel.insertMany({stock_id:Sreq.stock_id , request_quantity: Stockrequestquantity,patient_id:req.body.patient_id,status:'pending', requestno:reqno,stock_name:req.body.stock_name})
 
         
         
