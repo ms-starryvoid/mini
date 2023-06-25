@@ -7,8 +7,9 @@ import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 const PatientProfile = () => {
-  const [userdetails,setuserdetails]=useState([])
+    const [userdetails,setuserdetails]=useState([])
     const router = useRouter();
+
     const getdata= async()=>{
       try {
         const storedData= localStorage.getItem('userData')
@@ -28,6 +29,33 @@ const PatientProfile = () => {
       }
      
     }
+
+    const handleEdit = () => {
+      setEditing(true);
+    };
+  
+    const handleCancel = () => {
+      setEditing(false);
+    };
+  
+    const handleSubmit = async (values) => {
+      try {
+        const storedData= localStorage.getItem('userData')
+        const userData = JSON.parse(storedData);
+  
+    
+       const name = userData.data.uid;
+        console.log(name)
+        const res = await api.post(`/api/v1/user/ashaprofileupdate`,{name:name}, values);
+        // Handle success, show message or perform any additional actions
+        message.success("Profile updated successfully");
+        setEditing(false);
+      } catch (error) {
+        // Handle error, show error message or perform any additional actions
+        console.log(error);
+      }
+    };
+
     useEffect(()=>{
       getdata()
     },[])
