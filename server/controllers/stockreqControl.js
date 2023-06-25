@@ -29,7 +29,7 @@ const getPendingRequests = async (req, res) => {
         patient_id: patientId,
         status: "pending",
       }).populate("stock_id", "stock_name");
-  
+      console.log(pendingRequests)
       res.status(200).send({
         pendingRequests,
         success: true,
@@ -43,10 +43,12 @@ const getPendingRequests = async (req, res) => {
   const getApprovedRequests = async (req, res) => {
     try {
       const patientId = req.body.patient_id;
+      console.log(patientId)
       const approvedRequests = await stockreqModel.find({
         patient_id: patientId,
         status: "approved",
-      }).populate("stock_id", "stock_name");
+      })
+      console.log(approvedRequests)
   
       res.status(200).send({
         approvedRequests,

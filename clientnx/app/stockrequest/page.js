@@ -48,13 +48,23 @@ const StockRequest = () => {
     }
 
   }
-  const fetchpendingreq=()=>{
+  const fetchpendingreq= async()=>{
+    try {
+      const patient_id='1001'
+     const res = await api.post('api/v1/user/pendreq',{patient_id:patient_id})
+    setpendItems(res.data)
+     console.log(res.data)
+   } catch (error) {
+     console.log(error)
+   }
+
 
   }
 
   useEffect(()=>{
   fetchstockdetails()
   fetchapprovedreq()
+  fetchpendingreq()
   },[])
   return (
     <section>
@@ -83,7 +93,11 @@ const StockRequest = () => {
         <h2 className="stockdetails">Accepted Requests</h2>
         <div className="list-checkbox">
           <ul className="patientList">
-            <li className="patientItem">Walker</li>
+          {approvedItems.map((item) => (
+              <li className="patientItem" key={item.id}>
+                {item.stock_name}
+              </li>
+            ))}
           </ul>
         </div>
       </div>
@@ -91,7 +105,11 @@ const StockRequest = () => {
         <h2 className="stockdetails">Pending Requests</h2>
         <div className="list-checkbox">
           <ul className="patientList">
-            <li className="patientItem">Walker</li>
+          {pendingItems.map((item) => (
+              <li className="patientItem" key={item.id}>
+                {item.stock_name}
+              </li>
+            ))}
           </ul>
         </div>
       </div>
