@@ -1,5 +1,6 @@
 
-const {stockModel,stockreqModel} = require('../models/stockModel')
+const stockModel= require('../models/stockModel')
+const stockreqModel = require('../models/stockreqmodel')
 
 const stockreqCtrl= async (req,res)=>{
     try {
