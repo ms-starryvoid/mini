@@ -9,8 +9,8 @@ import React, { useEffect, useState } from "react";
 const StockRequest = () => {
   const router = useRouter();
   const [items,setItems]=useState([])
-  const [appitems,setappItems]=useState([])
-  const [penditems,setpendItems]=useState([])
+  const [appitems,setappItems]=useState([] ||["no approved"])
+  const [penditems,setpendItems]=useState([]||['no pending'])
   
   const fetchstockdetails = async () => {
     try {
@@ -51,7 +51,7 @@ const StockRequest = () => {
   const fetchpendingreq= async()=>{
     try {
       const patient_id='1001'
-     const res = await api.post('api/v1/user/pendreq',{patient_id:patient_id})
+     const res = await api.post('api/v1/user/pendingreq',{patient_id:patient_id})
     setpendItems(res.data)
      console.log(res.data)
    } catch (error) {
