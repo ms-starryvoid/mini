@@ -25,9 +25,9 @@ const StockRequest = () => {
     const userData = JSON.parse(storedData);
 
 
-   const patient_id = userData.data.uid;
+   const patient_id = '1001';
     console.log(patient_id)
-    patient_id='1000'
+    
      const res = await api.post('api/v1/user/stockrequests',
       {stock_name:stock_name,patient_id:patient_id,request_quantity:request_quantity})
      
