@@ -12,7 +12,7 @@ const stockreqCtrl= async (req,res)=>{
         {
             return res.status(200).send({message:"not enough quantity", success: false})
         }
-        const stockreq = await stockreqModel.insertMany({stock_id:Sreq.stock_id , request_quantity: Stockrequestquantity})
+        const stockreq = await stockreqModel.insertMany({stock_id:Sreq.stock_id , request_quantity: Stockrequestquantity,patient_id:req.body.patient_id})
 
         
         

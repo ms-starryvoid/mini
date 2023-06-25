@@ -8,11 +8,14 @@ import React, { useEffect, useState } from "react";
 
 const StockRequest = () => {
   const router = useRouter();
+  const [stockitem,setstockitem]=useState([])
   const OnclickNavReq = async () => {
-    router.push("/viewasha");
-    // to clear local storage on logout
-
-    localStorage.clear();
+   try {
+     const res = await api.post('api/v1/user/stockrequests')
+     
+   } catch (error) {
+    console.log(error)
+   }
   };
   return (
     <section>
