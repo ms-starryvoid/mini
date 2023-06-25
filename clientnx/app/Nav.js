@@ -1,9 +1,6 @@
-
-'use client'
+"use client";
 import Link from "next/link";
-
 import React, { useState } from "react";
-
 import NavItem from "./navbar";
 
 const MENU_LIST = [
@@ -20,7 +17,7 @@ const Navbar = () => {
       <nav className={`nav`}>
         <Link href={"/"}>
           <a>
-            <h1 className="logo">CodeWithMarish</h1>
+            <h1 className="home">HomeCare</h1>
           </a>
         </Link>
         <div

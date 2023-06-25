@@ -5,6 +5,7 @@ import api from '@/api'
 import { Form, Input, message } from 'antd'
 import { useRouter } from 'next/navigation'
 import React from 'react'
+import Layout from "../layout"
 
 const page = () => {
     const router = useRouter()
@@ -32,6 +33,7 @@ const page = () => {
      
     }
   return (
+    <Layout>
     <div className='container'>
       <div className='signupcontainer'>
       <Form layout="vertical"
@@ -54,6 +56,7 @@ const page = () => {
       </Form>
       </div>
     </div>
+    </Layout>
   )
 }
 

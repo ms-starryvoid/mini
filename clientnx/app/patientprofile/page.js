@@ -1,82 +1,84 @@
-'use client'
+"use client";
 
 import api from "@/api";
 
 import { Form, Input, message, Checkbox, Button } from "antd";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
+import Layout from "../layout";
 
 const PatientProfile = () => {
-    const [userdetails,setuserdetails]=useState([])
-    const router = useRouter();
+  const [userdetails, setuserdetails] = useState([]);
+  const router = useRouter();
 
-    const getdata= async()=>{
-      try {
-        const storedData= localStorage.getItem('userData')
-        const userData = JSON.parse(storedData);
-  
-    
-       const name = userData.data.uid;
-        console.log(name)
-        
-      const res =  await api.post(`/api/v1/user/patientdetail`,{name:name})
-      setuserdetails(res.data)
-      console.log(res.data)
-        
-      } catch (error) {
-        console.log(error)
-        
-      }
-     
+  const getdata = async () => {
+    try {
+      const storedData = localStorage.getItem("userData");
+      const userData = JSON.parse(storedData);
+
+      const name = userData.data.uid;
+      console.log(name);
+
+      const res = await api.post(`/api/v1/user/patientdetail`, { name: name });
+      setuserdetails(res.data);
+      console.log(res.data);
+    } catch (error) {
+      console.log(error);
     }
+  };
 
-    const handleEdit = () => {
-      setEditing(true);
-    };
-  
-    const handleCancel = () => {
+  const handleEdit = () => {
+    setEditing(true);
+  };
+
+  const handleCancel = () => {
+    setEditing(false);
+  };
+
+  const handleSubmit = async (values) => {
+    try {
+      const storedData = localStorage.getItem("userData");
+      const userData = JSON.parse(storedData);
+
+      const name = userData.data.uid;
+      console.log(name);
+      const res = await api.post(
+        `/api/v1/user/ashaprofileupdate`,
+        { name: name },
+        values
+      );
+      // Handle success, show message or perform any additional actions
+      message.success("Profile updated successfully");
       setEditing(false);
-    };
-  
-    const handleSubmit = async (values) => {
-      try {
-        const storedData= localStorage.getItem('userData')
-        const userData = JSON.parse(storedData);
-  
-    
-       const name = userData.data.uid;
-        console.log(name)
-        const res = await api.post(`/api/v1/user/ashaprofileupdate`,{name:name}, values);
-        // Handle success, show message or perform any additional actions
-        message.success("Profile updated successfully");
-        setEditing(false);
-      } catch (error) {
-        // Handle error, show error message or perform any additional actions
-        console.log(error);
-      }
-    };
+    } catch (error) {
+      // Handle error, show error message or perform any additional actions
+      console.log(error);
+    }
+  };
 
-    useEffect(()=>{
-      getdata()
-    },[])
-  
-    return (
+  useEffect(() => {
+    getdata();
+  }, []);
+
+  return (
+    <Layout>
       <div className="container-profile">
         <h1 className="heading-profile">Patient's Profile</h1>
         <div className="circle-profile" />
         <div className="rectangle-profile">
-          <p>Name        :   {userdetails.name}</p>
-          <p>Patient ID  :{userdetails.patient_id}</p>
-          <p>Age         :{userdetails.age}</p>
-          <p>Gender      :{userdetails.gender}</p>
-          <p>email       :{userdetails.email}</p>
-          <p>phone no.   :{userdetails.phone}</p>
-          
+          <p>Name : {userdetails.name}</p>
+          <p>Patient ID :{userdetails.patient_id}</p>
+          <p>Age :{userdetails.age}</p>
+          <p>Gender :{userdetails.gender}</p>
+          <p>email :{userdetails.email}</p>
+          <p>phone no. :{userdetails.phone}</p>
+
           <div className="line-profile" />
-          <Button className="smalltext-profile">Edit profile</Button> 
+          <Button className="smalltext-profile">Edit profile</Button>
         </div>
       </div>
-    );
-  };
+    </Layout>
+  );
+};
 
-  export default PatientProfile;
+export default PatientProfile;
