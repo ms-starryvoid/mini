@@ -93,7 +93,7 @@ const StockRequest = () => {
         <h2 className="stockdetails">Accepted Requests</h2>
         <div className="list-checkbox">
           <ul className="patientList">
-          {approvedItems.map((item) => (
+          {appitems.map((item) => (
               <li className="patientItem" key={item.id}>
                 {item.stock_name}
               </li>
@@ -105,7 +105,7 @@ const StockRequest = () => {
         <h2 className="stockdetails">Pending Requests</h2>
         <div className="list-checkbox">
           <ul className="patientList">
-          {pendingItems.map((item) => (
+          {penditems.map((item) => (
               <li className="patientItem" key={item.id}>
                 {item.stock_name}
               </li>
