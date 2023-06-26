@@ -12,7 +12,7 @@ const SignupAs = () => {
     router.push("/");
   };
   const OnclickNavAdmin = () => {
-    router.push("/adminhome");
+    router.push("/adminlogin");
     // to clear local storage on logout
 
     localStorage.clear();
@@ -29,27 +29,7 @@ const SignupAs = () => {
 
     localStorage.clear();
   };
-  const getUserData = async () => {
-    try {
-      const res = await api.post(
-        "/api/v1/user/getUserData",
-        {},
-        {
-          headers: {
-            Authorization: "Bearer " + localStorage.getItem("token"),
-          },
-        }
-      );
-      console.log(res);
-      localStorage.setItem("userData", JSON.stringify(res.data));
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    getUserData();
-  }, []);
+  
   return (
     <section>
       <div className="circle"></div>
