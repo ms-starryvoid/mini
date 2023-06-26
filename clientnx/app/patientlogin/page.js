@@ -33,6 +33,7 @@ const Login = () => {
       // dispatch(hideloading())
       console.log(error);
       message.error("something went wrong");
+      message.error(res.data.message);
     }
   };
   return (

@@ -1,135 +1,61 @@
-"use client";
-import { useRouter } from "next/navigation";
-import React, { useState, useEffect } from "react";
-import { Button, Checkbox, Form, Input } from "antd";
-import Layout from "../layout";
+'use client'
 
-const onFinish = (values) => {
-  console.log("Success:", values);
-};
-const onFinishFailed = (errorInfo) => {
-  console.log("Failed:", errorInfo);
-};
+import api from '@/api'
 
-const Signup = () => {
-  const [patientId, setPatientId] = useState("");
-  const [email, setEmail] = useState("");
-  const router = useRouter();
-  const handleSubmit = (e) => {
-    const isEmailValid = /^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(
-      email
-    );
+import { Form, Input, message } from 'antd'
+import { useRouter } from 'next/navigation'
+import React from 'react'
+import Layout from "../layout"
 
-    if (!isEmailValid) {
-      alert("Please enter a valid email address.");
+const page = () => {
+    const router = useRouter()
+    const OnFinishHandler= async(values)=>{
+        try {
+            console.log(values)
+            //dispatch(showloading())
+            const res = await api.post('/api/v1/user/patientsignup',values)
+           // dispatch(hideLoading())
+            if(res.data.success){
+             
+             message.success("Registered successfully")
+             router.push('/patientlogin')
+            //redirect('/login')
+            }
+            else{
+              message.error(res.data.message);
+            }
+           } catch (error) {
+            console.log(error)
+            
+            message.error("something went wrong")
+        
+           }
+     
     }
-    e.preventDefault();
-
-    if (!patientId.trim() || !email.trim()) {
-      return;
-    }
-
-    router.push("/ashalogin");
-  };
-
-  useEffect(() => {
-    if (!patientId.trim() || !email.trim()) {
-      return;
-    }
-  }, [patientId, email]);
-
   return (
     <Layout>
-      <section>
-        <div className="circle"></div>
-        <div className="patientsignup-container">
-          <div className="patientsignup-rounded-rectangle">
-            <h1 className="signup-heading">Sign Up</h1>
-            <Form
-              onSubmit={handleSubmit}
-              name="basic"
-              labelCol={{
-                span: 6,
-              }}
-              wrapperCol={{
-                span: 14,
-              }}
-              style={{
-                maxWidth: 400,
-              }}
-              initialValues={{
-                remember: true,
-              }}
-              onFinish={onFinish}
-              onFinishFailed={onFinishFailed}
-              autoComplete="off"
-            >
-              <Form.Item
-                label="Patient ID"
-                name="patientId"
-                rules={[
-                  {
-                    required: true,
-                    message: "Please input your Patient ID!",
-                  },
-                ]}
-              >
-                <Input onChange={(e) => setPatientId(e.target.value)} />
-              </Form.Item>
-
-              <Form.Item
-                label="Email"
-                name="email"
-                rules={[
-                  {
-                    required: true,
-                    message: "Please input your email!",
-                  },
-                ]}
-              >
-                <Input onChange={(e) => setEmail(e.target.value)} />
-              </Form.Item>
-
-              <Form.Item
-                label="Password"
-                name="password"
-                rules={[
-                  {
-                    required: true,
-                    message: "Please input your password!",
-                  },
-                ]}
-              >
-                <Input onChange={(e) => setEmail(e.target.value)} />
-              </Form.Item>
-
-              <Form.Item
-                name="remember"
-                valuePropName="checked"
-                wrapperCol={{
-                  offset: 8,
-                  span: 16,
-                }}
-              >
-                <Checkbox>Remember me</Checkbox>
-              </Form.Item>
-
-              <Form.Item
-                wrapperCol={{
-                  offset: 8,
-                  span: 16,
-                }}
-              >
-                <Button type="primary" htmlType="submit" >
-                  Submit
-                </Button>
-              </Form.Item>
-            </Form>
-          </div>
-        </div>
-      </section>
+    <div className='container'>
+      <div className='signupcontainer'>
+      <Form layout="vertical"
+      onFinish={OnFinishHandler}
+      className='signup-form'>
+        <h3> signup</h3>
+        
+        <Form.Item label= 'PATIENT Id' name ='patient_id'>
+        <Input type="text"  required/>
+        </Form.Item>
+        <Form.Item label ="email" name="email">
+        <Input type="text" required/>
+        </Form.Item>
+        <Form.Item label ="password" name="password">
+          <Input type="password" required/>
+        </Form.Item>
+        <button type="submit">register</button>
+      </Form>
+      </div>
+    </div>
     </Layout>
-  );
-};
+  )
+}
 
-export default Signup;
+export default page

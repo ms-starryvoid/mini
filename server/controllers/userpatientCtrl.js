@@ -36,8 +36,9 @@ const patientsignupController = async (req,res)=> {
         {
             return res.status(200).send({message:'user already exists',success:false})
         }
-        const ashaData= await patientModel.findOne({patient_id:req.body.ashaid})
-        const existingashaUser = await userModel.findOne({ashaid:req.body.ashaid})
+        const ashaData= await patientModel.findOne({patient_id:req.body.patient_id})
+        console.log(ashaData)
+        const existingashaUser = await userModel.findOne({ashaid:req.body.patient_id})
         if(existingashaUser)
         {
             return res.send({message:'an account for provided patient already exists', success:false})
