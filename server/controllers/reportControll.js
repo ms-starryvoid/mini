@@ -1,5 +1,5 @@
-import  reportModel  from "../models/reportModel"
-import visitModel from "../models/visitModel"
+const  reportModel  =require("../models/reportModel");
+const visitModel =require("../models/visitModel")
 
  const addreportController = async(req,res)=>{
    try {
