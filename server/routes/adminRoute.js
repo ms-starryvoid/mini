@@ -1,7 +1,7 @@
 const express=require('express')
 const { addashaController, viewAshaController,getWorkerDetails, deleteashaController } = require('../controllers/addAshactrl')
 const ashaModel = require('../models/ashaModel')
-const router = require('./reportRoute')
+
 
 
 const router= express.Router()
