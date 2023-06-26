@@ -5,7 +5,8 @@ import api from "@/api";
 import { Form, Input, message, Checkbox, Button } from "antd";
 import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
-import Navbar from "../Nav";
+import Layout from "../layout";
+
 const AshaHome = () => {
   const router = useRouter();
   const OnclickNavViewP = () => {
@@ -51,33 +52,34 @@ const AshaHome = () => {
     getUserData();
   }, []);
   return (
-    <section>
-      <Navbar></Navbar>
-      <div className="circle"></div>
-      <h2 className="heading1">Welcome back, Asha Worker</h2>
+    <Layout>
+      <section>
+        <div className="circle"></div>
+        <h2 className="heading1">Welcome back, Asha Worker</h2>
 
-      <div className="container">
-        <div className="rounded-rectangle-long">
-          <div className="inside-button">
-            <Button onClick={OnclickNavViewP} className="inside-button">
-              View Patient
+        <div className="container">
+          <div className="rounded-rectangle-long">
+            <div className="inside-button">
+              <Button onClick={OnclickNavViewP} className="inside-button">
+                View Patient
+              </Button>
+            </div>
+          </div>
+
+          <div className="rounded-rectangle-long">
+            <Button onClick={OnclickNavViewS} className="inside-button">
+              Visit Schedule
+            </Button>
+          </div>
+
+          <div className="rounded-rectangle-long">
+            <Button onClick={OnclickNavAddP} className="inside-button">
+              Add Patient
             </Button>
           </div>
         </div>
-
-        <div className="rounded-rectangle-long">
-          <Button onClick={OnclickNavViewS} className="inside-button">
-            Visit Schedule
-          </Button>
-        </div>
-
-        <div className="rounded-rectangle-long">
-          <Button onClick={OnclickNavAddP} className="inside-button">
-            Add Patient
-          </Button>
-        </div>
-      </div>
-    </section>
+      </section>
+    </Layout>
   );
 };
 

@@ -5,6 +5,7 @@ import api from "@/api";
 import { Form, Input, message, Checkbox, Button } from "antd";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
+import Layout from "../layout"
 
 const StockDetails = () => {
   const router = useRouter();
@@ -134,6 +135,7 @@ const StockDetails = () => {
   };
 
   return (
+    <Layout>
     <section>
       <div className="circle1"></div>
       <div className="circle2"></div>
@@ -225,6 +227,7 @@ const StockDetails = () => {
         </div>
       </div>
     </section>
+    </Layout>
   );
 };
 
