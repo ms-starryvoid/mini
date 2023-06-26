@@ -42,20 +42,20 @@ const Signup = () => {
     <Layout>
       <section>
         <div className="circle"></div>
-        <div className="container">
-          <div className="rounded-rectangle-login">
-            <h2 className="heading3">Sign Up</h2>
+        <div className="patientsignup-container">
+          <div className="patientsignup-rounded-rectangle">
+          <h1 className="signup-heading">Sign Up</h1>
             <Form
               onSubmit={handleSubmit}
               name="basic"
               labelCol={{
-                span: 8,
+                span: 6,
               }}
               wrapperCol={{
-                span: 16,
+                span: 14,
               }}
               style={{
-                maxWidth: 600,
+                maxWidth: 400,
               }}
               initialValues={{
                 remember: true,
@@ -89,6 +89,19 @@ const Signup = () => {
               >
                 <Input onChange={(e) => setEmail(e.target.value)} />
               </Form.Item>
+
+              {/* <Form.Item
+                label="Password"
+                name="password"
+                rules={[
+                  {
+                    required: true,
+                    message: "Please input your password!",
+                  },
+                ]}
+              >
+                <Input onChange={(e) => setEmail(e.target.value)} />
+              </Form.Item> */}
 
               <Form.Item
                 name="remember"
