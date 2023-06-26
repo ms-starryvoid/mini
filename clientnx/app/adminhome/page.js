@@ -10,7 +10,7 @@ import Layout from "../layout";
 const AdminHome = () => {
   const router = useRouter();
   const OnclickNavViewAsha = () => {
-    router.push("/viewasha");
+    router.push("/viewstaff");
     // to clear local storage on logout
 
     localStorage.clear();
