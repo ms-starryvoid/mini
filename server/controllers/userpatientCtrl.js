@@ -4,11 +4,11 @@ const userModel = require("../models/userModel")
 const patientloginController = async(req,res)=>{
     try {
         const patient = await userModel.findOne({email:req.body.email})
-    if(!patient.isPatient)
+    if(!patient)
     {
         return res.status(400).send({message:"NOT A PATIENT",success:false})
     }
-    if(!patient)
+    if(!patient.isPatient)
     {
         return res.status(200).send({message:"user not found",success:false})
 
