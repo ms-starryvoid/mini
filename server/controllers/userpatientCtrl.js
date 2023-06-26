@@ -6,7 +6,7 @@ const patientloginController = async(req,res)=>{
         const patient = await userModel.findOne({email:req.body.email})
     if(!patient)
     {
-        return res.status(400).send({message:"NOT A PATIENT",success:false})
+        return res.status(400).send({message:"user not found",success:false})
     }
     if(!patient.isPatient)
     {
