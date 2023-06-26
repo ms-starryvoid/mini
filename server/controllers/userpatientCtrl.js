@@ -1,6 +1,7 @@
 const patientModel = require("../models/patientModel")
 const userModel = require("../models/userModel")
-
+const bcrypt = require('bcryptjs')
+const jwt =require('jsonwebtoken')
 const patientloginController = async(req,res)=>{
     try {
         console.log(req.body)
