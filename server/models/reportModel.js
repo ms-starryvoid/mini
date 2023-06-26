@@ -24,5 +24,5 @@ const reportSchema = new mongoose.Schema(
 
     }
 )
-const reportModel =mongoose.model('Report',stockreqSchema)
+const reportModel =mongoose.model('Report',reportSchema)
 module.exports={reportModel}
