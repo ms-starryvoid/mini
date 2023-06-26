@@ -23,7 +23,7 @@ const patientloginController = async(req,res)=>{
     }
     const token = jwt.sign({id:patient._id},process.env.JWT_SECRET,{expiresIn: "1d"});
     
-    res.status(200).send({message:'Login successful', success: true, token:token, isAdmin:user.isAdmin})
+    res.status(200).send({message:'Login successful', success: true, token:token, isAdmin:patient.isAdmin})
     
     } catch (error) {
         console.log(error)
