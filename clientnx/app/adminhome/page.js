@@ -53,39 +53,41 @@ const AdminHome = () => {
 
   return (
     <Layout>
-      <section>
-        <div className="circle"></div>
-        <h2 className="heading1">Welcome back, Admin</h2>
+      <section className="zoom-out">
+        <div className="page-container75">
+          <div className="circle"></div>
+          <h2 className="heading1">Welcome back, Admin</h2>
 
-        <div className="container-short">
-          <div className="rounded-rectangle">
-            <div className="inside-button">
-              <Button onClick={Onclickviewpatient} className="inside-button">
-                View patients
+          <div className="container-short">
+            <div className="rounded-rectangle">
+              <div className="inside-button">
+                <Button onClick={Onclickviewpatient} className="inside-button">
+                  View patients
+                </Button>
+              </div>
+            </div>
+
+            <div className="rounded-rectangle">
+              <Button onClick={Onclickvisit} className="inside-button">
+                Visit Schedules
               </Button>
             </div>
           </div>
+          <div className="container-short">
+            <div className="rounded-rectangle">
+              <Button onClick={Onclickstock} className="inside-button">
+                Stock Details
+              </Button>
+            </div>
 
-          <div className="rounded-rectangle">
-            <Button onClick={Onclickvisit} className="inside-button">
-              Visit Schedules
-            </Button>
-          </div>
-        </div>
-        <div className="container-short">
-          <div className="rounded-rectangle">
-            <Button onClick={Onclickstock} className="inside-button">
-              Stock Details
-            </Button>
-          </div>
-
-          <div className="rounded-rectangle">
-            <Button onClick={OnclickNavViewAsha} className="inside-button">
-              Staff Details
-            </Button>
-            {/*<Button onClick={OnClickProfile} className='inside-button'>
+            <div className="rounded-rectangle">
+              <Button onClick={OnclickNavViewAsha} className="inside-button">
+                Staff Details
+              </Button>
+              {/*<Button onClick={OnClickProfile} className='inside-button'>
                 Profile
             </Button>*/}
+            </div>
           </div>
         </div>
       </section>

@@ -863,21 +863,13 @@ h2.stockdetails1 {
   cursor: pointer;
   position: absolute;
 }
-.page-container75 {
-  width: 75vw;
-  height: 75vh;
-}
-.page-container50 {
-  width: 50vw;
-  height: 50vh;
-}
 
- .patientsignup-container {
+.patientsignup-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-} 
+}
 
 /* .signupcontainer {
   width: 40%;
@@ -895,7 +887,7 @@ h2.stockdetails1 {
   width: 400px;
   height: 400px;
   border-radius: 41px;
-  background-color: rgba(219, 219, 249, 0.3); 
+  background-color: rgba(219, 219, 249, 0.3);
 
   padding-top: 10px;
   margin-top: -20vh;
@@ -915,3 +907,15 @@ h2.stockdetails1 {
   font-weight: 500;
 }
 
+.page-container75 {
+  max-height: 1000px;
+  margin: 0 auto;
+}
+
+.zoom-out {
+  transform: scale(0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85vh;
+}

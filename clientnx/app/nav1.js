@@ -7,7 +7,6 @@ const MENU_LIST = [
   { text: "Home", href: "/" },
   { text: "About Us", href: "/about" },
   { text: "Contact", href: "/contact" },
-  { text: "Logout", href: "/" },
 ];
 const Navbar = () => {
   const [navActive, setNavActive] = useState(null);

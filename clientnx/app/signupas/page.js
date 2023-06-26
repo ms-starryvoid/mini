@@ -5,7 +5,7 @@ import api from "@/api";
 import { Form, Input, message, Checkbox, Button } from "antd";
 import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
-import Layout from "../layout";
+import Layout from "../layout1";
 const SignupAs = () => {
   const router = useRouter();
   

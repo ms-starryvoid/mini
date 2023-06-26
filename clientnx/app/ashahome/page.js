@@ -53,29 +53,31 @@ const AshaHome = () => {
   }, []);
   return (
     <Layout>
-      <section>
-        <div className="circle"></div>
-        <h2 className="heading1">Welcome back, Asha Worker</h2>
+      <section className="zoom-out">
+        <div className="page-container75">
+          <div className="circle"></div>
+          <h2 className="heading1">Welcome back, Asha Worker</h2>
 
-        <div className="container">
-          <div className="rounded-rectangle-long">
-            <div className="inside-button">
-              <Button onClick={OnclickNavViewP} className="inside-button">
-                View Patient
+          <div className="container">
+            <div className="rounded-rectangle-long">
+              <div className="inside-button">
+                <Button onClick={OnclickNavViewP} className="inside-button">
+                  View Patient
+                </Button>
+              </div>
+            </div>
+
+            <div className="rounded-rectangle-long">
+              <Button onClick={OnclickNavViewS} className="inside-button">
+                Visit Schedule
               </Button>
             </div>
-          </div>
 
-          <div className="rounded-rectangle-long">
-            <Button onClick={OnclickNavViewS} className="inside-button">
-              Visit Schedule
-            </Button>
-          </div>
-
-          <div className="rounded-rectangle-long">
-            <Button onClick={OnclickNavAddP} className="inside-button">
-              Add Patient
-            </Button>
+            <div className="rounded-rectangle-long">
+              <Button onClick={OnclickNavAddP} className="inside-button">
+                Add Patient
+              </Button>
+            </div>
           </div>
         </div>
       </section>

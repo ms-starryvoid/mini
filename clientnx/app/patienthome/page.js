@@ -53,29 +53,31 @@ const PatientHome = () => {
   }, []);
   return (
     <Layout>
-      <section>
-        <div className="circle"></div>
-        <h2 className="heading1">Welcome back, Edna</h2>
+      <section className="zoom-out">
+        <div className="page-container75">
+          <div className="circle"></div>
+          <h2 className="heading1">Welcome back, Edna</h2>
 
-        <div className="container">
-          <div className="rounded-rectangle-long">
-            <div className="inside-button">
-              <Button onClick={OnclickNavViewR} className="inside-button">
-                View Report
+          <div className="container">
+            <div className="rounded-rectangle-long">
+              <div className="inside-button">
+                <Button onClick={OnclickNavViewR} className="inside-button">
+                  View Report
+                </Button>
+              </div>
+            </div>
+
+            <div className="rounded-rectangle-long">
+              <Button onClick={OnclickNavViewS} className="inside-button">
+                Visit Schedule
               </Button>
             </div>
-          </div>
 
-          <div className="rounded-rectangle-long">
-            <Button onClick={OnclickNavViewS} className="inside-button">
-              Visit Schedule
-            </Button>
-          </div>
-
-          <div className="rounded-rectangle-long">
-            <Button onClick={OnclickNavStockR} className="inside-button">
-              Stock Request
-            </Button>
+            <div className="rounded-rectangle-long">
+              <Button onClick={OnclickNavStockR} className="inside-button">
+                Stock Request
+              </Button>
+            </div>
           </div>
         </div>
       </section>
