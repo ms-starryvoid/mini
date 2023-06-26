@@ -79,8 +79,7 @@ const Addpatient = () => {
                   <Form.Item label="Gender" name="gender">
                     <Select>
                       <Select.Option value="male">male</Select.Option>
-                    </Select>
-                    <Select>
+                   
                       <Select.Option value="female">female</Select.Option>
                     </Select>
                   </Form.Item>
