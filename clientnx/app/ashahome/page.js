@@ -9,7 +9,7 @@ import Layout from "../layout";
 
 const AshaHome = () => {
   const router = useRouter();
-  const [ashadata,setashadata]=useState([])
+  const [ashadata, setashadata] = useState([]);
   const OnclickNavViewP = () => {
     router.push("/viewreport");
     // to clear local storage on logout
@@ -43,8 +43,8 @@ const AshaHome = () => {
         }
       );
       console.log(res);
-      setashadata(res.data.data)
-      console.log(ashadata)
+      setashadata(res.data.data);
+      console.log(ashadata);
       localStorage.setItem("userData", JSON.stringify(res.data));
     } catch (error) {
       console.log(error);
@@ -57,29 +57,30 @@ const AshaHome = () => {
   return (
     <Layout>
       <section className="zoom-out">
-        <div className="page-container75"></div>
-        <div className="circle"></div>
-        <h2 className="heading1">Welcome back, {ashadata.name}</h2>
+        <div className="page-container75">
+          <div className="circle"></div>
+          <h2 className="heading1">Welcome back, {ashadata.name}</h2>
 
-        <div className="container">
-          <div className="rounded-rectangle-long">
-            <div className="inside-button">
-              <Button onClick={OnclickNavViewP} className="inside-button">
-                View Patient
+          <div className="container">
+            <div className="rounded-rectangle-long">
+              <div className="inside-button">
+                <Button onClick={OnclickNavViewP} className="inside-button">
+                  View Patient
+                </Button>
+              </div>
+            </div>
+
+            <div className="rounded-rectangle-long">
+              <Button onClick={OnclickNavViewS} className="inside-button">
+                Visit Schedule
               </Button>
             </div>
-          </div>
 
-          <div className="rounded-rectangle-long">
-            <Button onClick={OnclickNavViewS} className="inside-button">
-              Visit Schedule
-            </Button>
-          </div>
-
-          <div className="rounded-rectangle-long">
-            <Button onClick={OnclickNavAddP} className="inside-button">
-              Add Patient
-            </Button>
+            <div className="rounded-rectangle-long">
+              <Button onClick={OnclickNavAddP} className="inside-button">
+                Add Patient
+              </Button>
+            </div>
           </div>
         </div>
       </section>
