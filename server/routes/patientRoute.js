@@ -1,13 +1,13 @@
 const express=require('express')
 
-const { addpatientController, viewpatientController,getWorkerDetails, getpatientDetails } = require('../controllers/patientCtrl')
+const { addpatientController, viewpatientController,getWorkerDetails, getpatientDetails, deletepatientController } = require('../controllers/patientCtrl')
 const { getApprovedRequests, getPendingRequests, stockreqCtrl } = require('../controllers/stockreqControl')
 
 
 const router= express.Router()
 
 //add asha post route
-
+router.post('/deletepatient',deletepatientController)
 router.post('/addpatient',addpatientController)
 router.post('/patient',viewpatientController)
 router.post('/patientdetail',async  (req, res) => {

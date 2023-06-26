@@ -41,7 +41,7 @@ const PatientHome = () => {
           },
         }
       );
-      console.log(res);
+      console.log(res.data);
       localStorage.setItem("userData", JSON.stringify(res.data));
     } catch (error) {
       console.log(error);

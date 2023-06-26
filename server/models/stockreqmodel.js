@@ -4,7 +4,7 @@ const stockreqSchema = new mongoose.Schema(
     {
         requestNo: {
             type: String,
-            required: true,
+            
             unique: true,
           },
         stock_name:{

@@ -2,7 +2,8 @@ const patientModel = require("../models/patientModel")
 const userModel = require("../models/userModel")
 
 const patientloginController = async(req,res)=>{
-    const patient = await userModel.findOne({email:req.body.email})
+    try {
+        const patient = await userModel.findOne({email:req.body.email})
     if(!patient.isPatient)
     {
         return res.status(400).send({message:"NOT A PATIENT",success:false})
@@ -22,6 +23,9 @@ const patientloginController = async(req,res)=>{
     
     res.status(200).send({message:'Login successful', success: true, token:token, isAdmin:user.isAdmin})
     
+    } catch (error) {
+        console.log(error)
+    }
 
 }
 const patientsignupController = async (req,res)=> {

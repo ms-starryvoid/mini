@@ -1,12 +1,13 @@
 const express=require('express')
-const { addashaController, viewAshaController,getWorkerDetails } = require('../controllers/addAshactrl')
+const { addashaController, viewAshaController,getWorkerDetails, deleteashaController } = require('../controllers/addAshactrl')
 const ashaModel = require('../models/ashaModel')
+const router = require('./reportRoute')
 
 
 const router= express.Router()
 
 //add asha post route
-
+router.post('/ashadelete',deleteashaController)
 router.post('/addasha',addashaController)
 router.post('/ashaname',viewAshaController)
 router.post('/ashadetail',async  (req, res) => {
