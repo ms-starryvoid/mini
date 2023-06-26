@@ -8,27 +8,24 @@ import React, { useEffect } from "react";
 import Layout from "../layout";
 const SignupAs = () => {
   const router = useRouter();
-  const OnClickProfile = () => {
-    router.push("/");
-  };
+  
   const OnclickNavAdmin = () => {
     router.push("/adminlogin");
     // to clear local storage on logout
 
-    localStorage.clear();
   };
   const OnclickNavAsha = () => {
-    router.push("/ashahome");
+    router.push("/ashalogin");
     // to clear local storage on logout
-
-    localStorage.clear();
+;
   };
   const OnclickNavPatient = () => {
-    router.push("/patienthome");
+    router.push("/patientlogin");
     // to clear local storage on logout
 
-    localStorage.clear();
+ 
   };
+ 
   
   return (
     <Layout>

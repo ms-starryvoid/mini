@@ -1,8 +1,14 @@
+'use client'
+import { useRouter } from 'next/navigation';
 import React from 'react'
 
 const just = () => {
+  const router = useRouter();
+  const { name } = router.query?.name || '';
   return (
-    <div>just</div>
+    <div>just 
+      <p>{name} </p>
+    </div>
   )
 }
 

@@ -40,9 +40,7 @@ const page = () => {
       onFinish={OnFinishHandler}
       className='signup-form'>
         <h3> signup</h3>
-        <Form.Item label ="name" name="name">
-          <Input type="text" required/>
-        </Form.Item>
+        
         <Form.Item label= 'ASHA Id' name ='ashaid'>
         <Input type="text"  required/>
         </Form.Item>

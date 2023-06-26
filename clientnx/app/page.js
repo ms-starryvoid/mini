@@ -7,10 +7,10 @@ import homeicon from '../public/homecare.png'
 export default function Home() {
   const router = useRouter();
   const OnclickNav = () => {
-    router.push("/adminlogin");
+    router.push("/loginas");
   };
   const OnclickNavS = () => {
-    router.push("/signup");
+    router.push("/signupas");
   };
   return (
     <section>

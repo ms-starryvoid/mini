@@ -30,7 +30,8 @@ const addashaController = async (req,res)=>{
 const deleteashaController = async(req,res)=>{
     try{
         const asha = await ashaModel.deleteOne({asha_id:req.body.asha_id})
-        
+        const user= await userModel.deleteOne({asha_id:req.body.patient_id})
+
         return res.send({message:'deleted',success:true})
     }
     catch(error)

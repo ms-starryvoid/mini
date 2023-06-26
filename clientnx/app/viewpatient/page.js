@@ -9,10 +9,10 @@ const PatientView = () => {
   const router = useRouter();
   const [patient,setpatient]=useState([])
   const OnclickNav = () => {
-    router.push("/login");
+    router.push("/addpatient");
   };
-  const OnclickNavProfile = () => {
-    router.push("/profile");
+  const OnclickNavProfile = (uid) => {
+    router.push("/just?name="+uid);
   };
   const fetchpatient=async()=>{
    try {
@@ -39,7 +39,7 @@ const PatientView = () => {
         <ul className="patientList">
         {patient.map((p, index) => (
             <li className="patientItem" key={index}>
-              <Button onClick={OnclickNavProfile} className="inside-button4">
+              <Button onClick={()=>{OnclickNavProfile(p.patient_id)}} className="inside-button4">
                 {p.name}
               </Button>
             </li>

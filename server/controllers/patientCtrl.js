@@ -23,8 +23,10 @@ const addpatientController = async (req,res)=>{
 }
 const deletepatientController = async(req,res)=>{
     try{
-        const asha = await patientModel.findOne({asha_id:req.body.asha_id})
+        const asha = await patientModel.findOne({patient_id:req.body.patient_id})
+        const user= await userModel.findOne({asha_id:req.body.patient_id})
         asha.deleteOne()
+        user.deleteOne()
         return res.send({message:'deleted',success:true})
     }
     catch(error)

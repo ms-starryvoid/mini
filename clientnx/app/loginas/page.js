@@ -9,48 +9,25 @@ import Layout from "../layout";
 
 const LoginAs = () => {
   const router = useRouter();
-  const OnClickProfile = () => {
-    router.push("/");
-  };
+  
   const OnclickNavAdmin = () => {
-    router.push("/adminhome");
+    router.push("/adminlogin");
     // to clear local storage on logout
 
-    localStorage.clear();
   };
   const OnclickNavAsha = () => {
-    router.push("/ashahome");
+    router.push("/ashalogin");
     // to clear local storage on logout
 
-    localStorage.clear();
+    
   };
   const OnclickNavPatient = () => {
-    router.push("/patienthome");
+    router.push("/patientlogin");
     // to clear local storage on logout
 
-    localStorage.clear();
+ 
   };
-  const getUserData = async () => {
-    try {
-      const res = await api.post(
-        "/api/v1/user/getUserData",
-        {},
-        {
-          headers: {
-            Authorization: "Bearer " + localStorage.getItem("token"),
-          },
-        }
-      );
-      console.log(res);
-      localStorage.setItem("userData", JSON.stringify(res.data));
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    getUserData();
-  }, []);
+ 
   return (
     <Layout>
       <section>

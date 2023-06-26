@@ -36,6 +36,7 @@ const Addpatient = () => {
     try {
       values.age = Number(values.age);
       values.phone = Number(values.phone);
+      values.ward_number=Number(values.ward_number)
       const response = await api.post("/api/v1/user/addpatient", values);
       console.log(response.data);
       if (response.data.success) {
@@ -83,9 +84,8 @@ const Addpatient = () => {
                       <Select.Option value="female">female</Select.Option>
                     </Select>
                   </Form.Item>
-                  <Form.Item label="Address" name="address">
-                    <Input />
-                  </Form.Item>
+                  
+                  
                   <Form.Item label="Phone" name="phone">
                     <Input />
                   </Form.Item>
@@ -99,13 +99,13 @@ const Addpatient = () => {
                   <Form.Item label="Patient ID" name="patient_id">
                     <Input />
                   </Form.Item>
-                  <Form.Item label="Visit Date" name="visitDate">
+                  <Form.Item label="birthday" name="visit_date">
                     <DatePicker />
                   </Form.Item>
                   <Form.Item label="Ward number" name="ward_number">
                     <Input />
                   </Form.Item>
-                  <Form.Item label="Asha Worker" name="ashaWorker">
+                  <Form.Item label="Asha Worker" name="assignd_asha">
                     <Input />
                   </Form.Item>
                 </p>

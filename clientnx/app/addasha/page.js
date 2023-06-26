@@ -42,6 +42,7 @@ const Addpatient = () => {
     try {
       values.age = Number(values.age);
       values.phone = Number(values.phone);
+      values.ward_number=Number(values.ward_number)
       const response = await api.post("/api/v1/user/addasha", values);
       console.log(response.data);
       if (response.data.success) {
@@ -84,14 +85,11 @@ const Addpatient = () => {
                   <Form.Item label="Gender" name="gender">
                     <Select>
                       <Select.Option value="male">male</Select.Option>
-                    </Select>
-                    <Select>
+                    
                       <Select.Option value="female">female</Select.Option>
                     </Select>
                   </Form.Item>
-                  <Form.Item label="Address" name="address">
-                    <Input />
-                  </Form.Item>
+                  
                   <Form.Item label="Phone" name="phone">
                     <Input />
                   </Form.Item>

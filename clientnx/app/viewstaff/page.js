@@ -20,7 +20,7 @@ const StaffView = () => {
 
   }  
   const OnclickNav = () => {
-    router.push("/login");
+    router.push("/addahsa");
   };
   const OnclickNavProfile = () => {
     router.push("/profile");
