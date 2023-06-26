@@ -871,3 +871,47 @@ h2.stockdetails1 {
   width: 50vw;
   height: 50vh;
 }
+
+ .patientsignup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+} 
+
+/* .signupcontainer {
+  width: 40%;
+  max-width: 600px;
+  height: auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+} */
+
+.patientsignup-rounded-rectangle {
+  position: relative;
+  display: block;
+  width: 400px;
+  height: 400px;
+  border-radius: 41px;
+  background-color: rgba(219, 219, 249, 0.3); 
+
+  padding-top: 10px;
+  margin-top: -20vh;
+  text-align: left;
+  justify-content: center;
+}
+
+.signup-heading {
+  color: #f5f5f5;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 40px;
+  top: 650px;
+  left: 532px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  font-weight: 500;
+}
+
