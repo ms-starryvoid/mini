@@ -3,6 +3,7 @@ const userModel = require("../models/userModel")
 
 const patientloginController = async(req,res)=>{
     try {
+        console.log(req.body)
         const patient = await userModel.findOne({email:req.body.email})
     if(!patient)
     {
