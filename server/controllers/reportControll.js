@@ -1,4 +1,4 @@
-import { reportModel } from "../models/reportModel"
+import  reportModel  from "../models/reportModel"
 import visitModel from "../models/visitModel"
 
  const addreportController = async(req,res)=>{
