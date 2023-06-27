@@ -22,7 +22,8 @@ const StaffView = () => {
   const OnclickNav = () => {
     router.push("/addahsa");
   };
-  const OnclickNavProfile = () => {
+  const OnclickNavProfile = (workerid) => {
+    
     router.push("/profile");
   };
   useEffect(()=>{
@@ -40,7 +41,7 @@ const StaffView = () => {
         <ul className="patientList">
         {asha.map((worker, index) => (
             <li className="patientItem" key={index}>
-              <Button onClick={OnclickNavProfile} className="inside-button4">
+              <Button onClick={OnclickNavProfile(worker.asha_id)} className="inside-button4">
                 {worker.name}
               </Button>
             </li>
