@@ -23,7 +23,7 @@ const patientloginController = async(req,res)=>{
     }
     const token = jwt.sign({id:patient._id},process.env.JWT_SECRET,{expiresIn: "1d"});
     
-    res.status(200).send({message:'Login successful', success: true, token:token, isAdmin:patient.isAdmin})
+    res.status(200).send({message:'Login successful', success: true, token:token, isAdmin:patient.isAdmin,isPatient:isPatient})
     
     } catch (error) {
         console.log(error)
@@ -37,9 +37,9 @@ const patientsignupController = async (req,res)=> {
         {
             return res.status(200).send({message:'user already exists',success:false})
         }
-        const ashaData= await patientModel.findOne({patient_id:req.body.patient_id})
+        const ashaData= await patientModel.findOne({patient_id:req.body.ashaid})
         console.log(ashaData)
-        const existingashaUser = await userModel.findOne({ashaid:req.body.patient_id})
+        const existingashaUser = await userModel.findOne({ashaid:req.body.ashaid})
         if(existingashaUser)
         {
             return res.send({message:'an account for provided patient already exists', success:false})

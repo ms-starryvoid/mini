@@ -41,7 +41,7 @@ const page = () => {
       className='signup-form'>
         <h3> signup</h3>
         
-        <Form.Item label= 'PATIENT Id' name ='patient_id'>
+        <Form.Item label= 'PATIENT Id' name ='ashaid'>
         <Input type="text"  required/>
         </Form.Item>
         <Form.Item label ="email" name="email">

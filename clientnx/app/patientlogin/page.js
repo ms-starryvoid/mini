@@ -18,13 +18,10 @@ const Login = () => {
       const res = await api.post("/api/v1/user/patientlogin", values);
       console.log(res);
       //dispatch(hideLoading())
-      if (res.data.success && res.data.isPatient) {
+      if (res.data.success ) {
         localStorage.setItem("token", res.data.token);
         message.success("Login Successful");
         router.push("/patienthome");
-      } else if (res.data.success && !res.data.isPatient) {
-        message.error("YOu are not a registered patient");
-        router.push("/");
       } else {
         message.error("something went wrong");
         message.error(res.data.message);

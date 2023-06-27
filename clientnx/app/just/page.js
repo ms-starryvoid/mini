@@ -1,15 +1,23 @@
 'use client'
-import { useRouter } from 'next/navigation';
-import React from 'react'
+import { useParams, useRouter } from 'next/navigation';
+
+import React from 'react';
 
 const just = () => {
   const router = useRouter();
-  const { name } = router.query?.name || '';
-  return (
-    <div>just 
-      <p>{name} </p>
-    </div>
-  )
-}
+  const { name } = router.query || {};
+  const decodedName = decodeURIComponent(name)
+  if (decodedName) {
+    return (
+      <div>just {decodedName}
+        <p>{decodedName} </p>
+      </div>
+    );
+  } else {
+    return (
+      <div>No name passed</div>
+    );
+  }
+};
 
-export default just
+export default  just

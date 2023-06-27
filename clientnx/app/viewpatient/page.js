@@ -12,7 +12,12 @@ const PatientView = () => {
     router.push("/addpatient");
   };
   const OnclickNavProfile = (uid) => {
-    router.push("/just?name="+uid);
+    console.log(uid)
+    router.push({
+      pathname: '/just',
+      query: { name: uid }
+    });
+    
   };
   const fetchpatient=async()=>{
    try {
