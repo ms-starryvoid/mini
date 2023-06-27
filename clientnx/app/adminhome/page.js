@@ -11,12 +11,9 @@ const AdminHome = () => {
   const router = useRouter();
   const OnclickNavViewAsha = () => {
     router.push("/viewstaff");
-    // to clear local storage on logout
-
-    localStorage.clear();
   };
   const OnClickProfile = () => {
-    router.push("/");
+    router.push("/adminprofile");
   };
   const Onclickstock = () => {
     router.push("/stockdetail");

@@ -30,7 +30,8 @@ const LoginAs = () => {
  
   return (
     <Layout>
-      <section>
+      <section className="zoom-out">
+      <div className="page-container75">
         <div className="circle"></div>
         <div className="container">
           <div className="rounded-rectangle-huge">
@@ -59,6 +60,7 @@ const LoginAs = () => {
               </div>
             </div>
           </div>
+        </div>
         </div>
       </section>
     </Layout>

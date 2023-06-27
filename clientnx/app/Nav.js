@@ -33,6 +33,8 @@ const Navbar = () => {
           {MENU_LIST.map((menu, idx) => (
             <div
               onClick={() => {
+                if (idx === 3 && typeof window !== "undefined"){
+                  window.localStorage.clear()}
                 setActiveIdx(idx);
                 setNavActive(false);
               }}

@@ -11,24 +11,15 @@ const PatientHome = () => {
   const router = useRouter();
   const OnclickNavViewR = () => {
     router.push("/viewreport");
-    // to clear local storage on logout
-
-    localStorage.clear();
   };
   const OnClickProfile = () => {
     router.push("/");
   };
   const OnclickNavViewS = () => {
     router.push("/viewschedule");
-    // to clear local storage on logout
-
-    localStorage.clear();
   };
   const OnclickNavStockR = () => {
     router.push("/stockrequest");
-    // to clear local storage on logout
-
-    localStorage.clear();
   };
   const getUserData = async () => {
     try {
