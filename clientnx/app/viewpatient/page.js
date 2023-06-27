@@ -11,16 +11,13 @@ const PatientView = () => {
   const OnclickNav = () => {
     router.push("/addpatient");
   };
-  const OnclickNavProfile = (uid) => {
-    console.log(uid)
-    router.push({
-      pathname: '/just',
-      query: { name: uid }
-    });
+  const onclickNavProfile = (uid) => {
+    router.push(`/just/${uid}`);
     
   };
   const fetchpatient=async()=>{
    try {
+    console.log("req sending...")
     const res = await api.post('/api/v1/user/patient')
     console.log(res.data)
     setpatient(res.data)
@@ -44,9 +41,12 @@ const PatientView = () => {
         <ul className="patientList">
         {patient.map((p, index) => (
             <li className="patientItem" key={index}>
-              <Button onClick={()=>{OnclickNavProfile(p.patient_id)}} className="inside-button4">
+              <button onClick={()=>{
+                console.log("adsad")
+                onclickNavProfile(p.patient_id)
+                }} className="inside-button4">
                 {p.name}
-              </Button>
+              </button>
             </li>
           ))}
         </ul>
