@@ -5,7 +5,6 @@ import api from "@/api";
 import { Form, Input, message, Checkbox, Button } from "antd";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import Layout from "../layout";
 
 const AdminProfile = () => {
   const [userdetails, setuserdetails] = useState([]);
@@ -60,45 +59,43 @@ const AdminProfile = () => {
   }, []);
   const router = useRouter();
   return (
-    <Layout>
-      <div className="container-profile">
-        <h1 className="heading-profile">Admin's Profile</h1>
-        <div className="circle-profile" />
-        <div className="rectangle-profile">
-          {editing ? (
-            <Form onFinish={handleSubmit} initialValues={userdetails}>
-              <Form.Item name="email" label="Email">
-                <Input />
-              </Form.Item>
-              <Form.Item name="phone" label="Phone">
-                <Input />
-              </Form.Item>
-              <Form.Item name="address" label="Address">
-                <Input />
-              </Form.Item>
-              <div className="line-profile" />
-              <Button type="primary" htmlType="submit">
-                Save
-              </Button>
-              <Button onClick={handleCancel}>Cancel</Button>
-            </Form>
-          ) : (
-            <>
-              <p>Name: {userdetails.name}</p>
-              <p>Age: {userdetails.age}</p>
-              <p>Gender: {userdetails.gender}</p>
-              <p>Email: {userdetails.email}</p>
-              <p>Phone: {userdetails.phone}</p>
+    <div className="container-profile">
+      <h1 className="heading-profile">Admin's Profile</h1>
+      <div className="circle-profile" />
+      <div className="rectangle-profile">
+        {editing ? (
+          <Form onFinish={handleSubmit} initialValues={userdetails}>
+            <Form.Item name="email" label="Email">
+              <Input />
+            </Form.Item>
+            <Form.Item name="phone" label="Phone">
+              <Input />
+            </Form.Item>
+            <Form.Item name="address" label="Address">
+              <Input />
+            </Form.Item>
+            <div className="line-profile" />
+            <Button type="primary" htmlType="submit">
+              Save
+            </Button>
+            <Button onClick={handleCancel}>Cancel</Button>
+          </Form>
+        ) : (
+          <>
+            <p>Name: {userdetails.name}</p>
+            <p>Age: {userdetails.age}</p>
+            <p>Gender: {userdetails.gender}</p>
+            <p>Email: {userdetails.email}</p>
+            <p>Phone: {userdetails.phone}</p>
 
-              <div className="line-profile" />
-              <Button className="smalltext-profile" onClick={handleEdit}>
-                Edit profile
-              </Button>
-            </>
-          )}
-        </div>
+            <div className="line-profile" />
+            <Button className="smalltext-profile" onClick={handleEdit}>
+              Edit profile
+            </Button>
+          </>
+        )}
       </div>
-    </Layout>
+    </div>
   );
 };
 

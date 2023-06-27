@@ -5,7 +5,6 @@ import api from "@/api";
 import { Form, Input, message, Checkbox, Button } from "antd";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import Layout from "../layout";
 
 const PatientProfile = () => {
   const [userdetails, setuserdetails] = useState([]);
@@ -61,7 +60,6 @@ const PatientProfile = () => {
   }, []);
 
   return (
-    <Layout>
       <div className="container-profile">
         <h1 className="heading-profile">Patient's Profile</h1>
         <div className="circle-profile" />
@@ -77,7 +75,6 @@ const PatientProfile = () => {
           <Button className="smalltext-profile">Edit profile</Button>
         </div>
       </div>
-    </Layout>
   );
 };
 

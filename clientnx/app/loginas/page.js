@@ -5,32 +5,25 @@ import api from "@/api";
 import { Form, Input, message, Checkbox, Button } from "antd";
 import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
-import Layout from "../layout";
 
 const LoginAs = () => {
   const router = useRouter();
-  
+
   const OnclickNavAdmin = () => {
     router.push("/adminlogin");
     // to clear local storage on logout
-
   };
   const OnclickNavAsha = () => {
     router.push("/ashalogin");
     // to clear local storage on logout
-
-    
   };
   const OnclickNavPatient = () => {
     router.push("/patientlogin");
     // to clear local storage on logout
-
- 
   };
- 
+
   return (
-    <Layout>
-      <section className="zoom-out">
+    <section className="zoom-out">
       <div className="page-container75">
         <div className="circle"></div>
         <div className="container">
@@ -61,9 +54,8 @@ const LoginAs = () => {
             </div>
           </div>
         </div>
-        </div>
-      </section>
-    </Layout>
+      </div>
+    </section>
   );
 };
 

@@ -5,7 +5,6 @@ import api from "@/api";
 import { Form, Input, message, Checkbox, Button } from "antd";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import Layout from "../layout"
 
 const StockDetails = () => {
   const router = useRouter();
@@ -135,7 +134,6 @@ const StockDetails = () => {
   };
 
   return (
-    <Layout>
     <section>
       <div className="circle1"></div>
       <div className="circle2"></div>
@@ -209,21 +207,21 @@ const StockDetails = () => {
                 {item.stock_name} quantity {item.request_quantity} requested by{" "}
                 {item.patient_id}
                 <Button
-                    onClick={() => {
-                      OnclickAcc();
-                    }}
-                    className="inside-button5"
-                  >
-                    Accept
-                  </Button>
-                  <Button
-                    onClick={() => {
-                      OnclickAcc();
-                    }}
-                    className="inside-button7"
-                  >
-                    Reject
-                  </Button>
+                  onClick={() => {
+                    OnclickAcc();
+                  }}
+                  className="inside-button5"
+                >
+                  Accept
+                </Button>
+                <Button
+                  onClick={() => {
+                    OnclickAcc();
+                  }}
+                  className="inside-button7"
+                >
+                  Reject
+                </Button>
               </span>
             </li>
           ))}
@@ -243,7 +241,6 @@ const StockDetails = () => {
         </div>
       </div>
     </section>
-    </Layout>
   );
 };
 
