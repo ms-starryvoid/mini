@@ -1,6 +1,6 @@
 "use client";
 import api from "@/api";
-import { Button } from "antd";
+import { Button, message } from "antd";
 import React, { useEffect, useState } from "react";
 import {useRouter} from 'next/navigation'
 
@@ -31,10 +31,12 @@ function Page({ params }) {
       console.log(res);
       if(res.status==204)
       setData("Patient deleted successfully!")
+      message.success("deleted successfully")
       router.push('/viewpatient')
     } catch (err) {
       console.log(err);
       setData("Patient could not be deleted due to an error!")
+      message.error("Patient could not be deleted due to an error!")
     }
   };
   if (data && data != null && typeof data !=="string")
