@@ -5,7 +5,6 @@ import api from "@/api";
 import { Form, Input, message, Checkbox, Button } from "antd";
 import { useRouter } from "next/navigation";
 import React from "react";
-import Layout from "../layout";
 
 const Login = () => {
   const router = useRouter();
@@ -23,7 +22,7 @@ const Login = () => {
         message.success("Login Successful");
         router.push("/adminhome");
       } else if (res.data.success && !res.data.isAdmin) {
-        message.error("YOu are not admin");
+        message.error("You are not admin");
         router.push("/");
       } else {
         message.error("something went wrong");
@@ -36,99 +35,92 @@ const Login = () => {
     }
   };
   return (
-    <Layout>
-      <section>
-        <div className="circle"></div>
-        <div className="container-short">
-          <h2 className="heading5">Hello!</h2>
+    <section>
+      <div className="circle"></div>
+      <div className="patientsignup-container">
+        <div className="patientsignup-rounded-rectangle">
+          <h1 className="signup-heading">Admin login</h1>
+          <Form
+            name="basic"
+            labelCol={{
+              span: 6,
+            }}
+            wrapperCol={{
+              span: 14,
+            }}
+            style={{
+              maxWidth: 400,
+            }}
+            initialValues={{
+              remember: true,
+            }}
+            onFinish={onFinishHandler}
+            autoComplete="off"
+          >
+            <Form.Item
+              label="Username"
+              name="email"
+              rules={[
+                {
+                  required: true,
+                  message: "Please input your email!",
+                },
+              ]}
+            >
+              <Input />
+            </Form.Item>
+
+            <Form.Item
+              label="Password"
+              name="password"
+              rules={[
+                {
+                  required: true,
+                  message: "Please input your password!",
+                },
+              ]}
+            >
+              <Input />
+            </Form.Item>
+
+            {/* <Form.Item
+                label="Password"
+                name="password"
+                rules={[
+                  {
+                    required: true,
+                    message: "Please input your password!",
+                  },
+                ]}
+              >
+                <Input onChange={(e) => setEmail(e.target.value)} />
+              </Form.Item> */}
+
+            <Form.Item
+              name="remember"
+              valuePropName="checked"
+              wrapperCol={{
+                offset: 8,
+                span: 16,
+              }}
+            >
+              <Checkbox>Remember me</Checkbox>
+            </Form.Item>
+
+            <Form.Item
+              wrapperCol={{
+                offset: 8,
+                span: 16,
+              }}
+            >
+              <Button type="primary" htmlType="submit">
+                Submit
+              </Button>
+            </Form.Item>
+          </Form>
         </div>
-        <div className="container-short">
-          <div className="rounded-rectangle-login">
-            <h2 className="heading4">Login</h2>
-
-            <div className="container">
-              <div>
-                <Form
-                  className="form-container"
-                  name="basic"
-                  labelCol={{
-                    span: 8,
-                  }}
-                  wrapperCol={{
-                    span: 16,
-                  }}
-                  style={{
-                    maxWidth: 600,
-                    maxHeight: 600,
-                  }}
-                  initialValues={{
-                    remember: true,
-                  }}
-                  onFinish={onFinishHandler}
-                  autoComplete="off"
-                >
-                  <Form.Item
-                    className="form-label"
-                    label="Username"
-                    name="email"
-                    rules={[
-                      {
-                        required: true,
-                        message: "Please input your email!",
-                      },
-                    ]}
-                    style={{ color: "#ffffff" }}
-                  >
-                    <Input className="form-input" />
-                  </Form.Item>
-
-                  <Form.Item
-                    className="form-label"
-                    label="Password"
-                    name="password"
-                    rules={[
-                      {
-                        required: true,
-                        message: "Please input your password!",
-                      },
-                    ]}
-                  >
-                    <Input.Password className="form-input" />
-                  </Form.Item>
-
-                  <Form.Item
-                    className="form-label form-item-remember"
-                    name="remember"
-                    valuePropName="checked"
-                    wrapperCol={{
-                      offset: 8,
-                      span: 16,
-                    }}
-                  >
-                    <Checkbox>Remember me</Checkbox>
-                  </Form.Item>
-
-                  <Form.Item
-                    wrapperCol={{
-                      offset: 8,
-                      span: 16,
-                    }}
-                  >
-                    <Button type="primary" htmlType="submit">
-                      Submit
-                    </Button>
-                  </Form.Item>
-                </Form>
-              </div>
-
-              <div></div>
-
-              <div></div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </Layout>
+      </div>
+    </section>
   );
 };
 

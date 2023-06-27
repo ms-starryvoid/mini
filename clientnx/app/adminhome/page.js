@@ -5,21 +5,17 @@ import api from "@/api";
 import { Form, Input, message, Checkbox, Button } from "antd";
 import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
-import Layout from "../layout";
 
 const AdminHome = () => {
   const router = useRouter();
   const OnclickNavViewAsha = () => {
     router.push("/viewstaff");
-    // to clear local storage on logout
-
-    localStorage.clear();
   };
   const OnClickProfile = () => {
-    router.push("/");
+    router.push("/adminprofile");
   };
   const Onclickstock = () => {
-    router.push("/stockdetail");
+    router.push("/stockdetails");
     // to clear local storage on logout
   };
   const Onclickviewpatient = () => {
@@ -52,46 +48,44 @@ const AdminHome = () => {
   }, []);
 
   return (
-    <Layout>
-      <section className="zoom-out">
-        <div className="page-container75">
-          <div className="circle"></div>
-          <h2 className="heading1">Welcome back, Admin</h2>
+    <section className="zoom-out">
+      <div className="page-container75">
+        <div className="circle"></div>
+        <h2 className="heading1">Welcome back, Admin</h2>
 
-          <div className="container-short">
-            <div className="rounded-rectangle">
-              <div className="inside-button">
-                <Button onClick={Onclickviewpatient} className="inside-button">
-                  View patients
-                </Button>
-              </div>
-            </div>
-
-            <div className="rounded-rectangle">
-              <Button onClick={Onclickvisit} className="inside-button">
-                Visit Schedules
+        <div className="container-short">
+          <div className="rounded-rectangle">
+            <div className="inside-button">
+              <Button onClick={Onclickviewpatient} className="inside-button">
+                View patients
               </Button>
             </div>
           </div>
-          <div className="container-short">
-            <div className="rounded-rectangle">
-              <Button onClick={Onclickstock} className="inside-button">
-                Stock Details
-              </Button>
-            </div>
 
-            <div className="rounded-rectangle">
-              <Button onClick={OnclickNavViewAsha} className="inside-button">
-                Staff Details
-              </Button>
-              {/*<Button onClick={OnClickProfile} className='inside-button'>
-                Profile
-            </Button>*/}
-            </div>
+          <div className="rounded-rectangle">
+            <Button onClick={Onclickvisit} className="inside-button">
+              Visit Schedules
+            </Button>
           </div>
         </div>
-      </section>
-    </Layout>
+        <div className="container-short">
+          <div className="rounded-rectangle">
+            <Button onClick={Onclickstock} className="inside-button">
+              Stock Details
+            </Button>
+          </div>
+
+          <div className="rounded-rectangle">
+            <Button onClick={OnclickNavViewAsha} className="inside-button">
+              Staff Details
+            </Button>
+            {/*<Button onClick={OnClickProfile} className='inside-button'>
+                Profile
+            </Button>*/}
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
 

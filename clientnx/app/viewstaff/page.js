@@ -20,11 +20,11 @@ const StaffView = () => {
 
   }  
   const OnclickNav = () => {
-    router.push("/addahsa");
+    router.push("/addasha");
   };
   const OnclickNavProfile = (workerid) => {
     
-    router.push("/profile");
+   // router.push("/profile");
   };
   useEffect(()=>{
     getasha()
