@@ -1,14 +1,16 @@
 "use client";
 import api from "@/api";
 import { Button } from "antd";
-import e from "cors";
 import React, { useEffect, useState } from "react";
+import {useRouter} from 'next/navigation'
 
 function Page({ params }) {
+  const router = useRouter()
   console.log(params.slug);
   const [data, setData] = useState(null);
   useEffect(() => {
     const fetchData = async () => {
+      setData("loading...")
       try {
         const res = await api.post("/api/v1/user/patientdetail", {
           patient_id: params.slug,
@@ -27,14 +29,15 @@ function Page({ params }) {
     try {
         const res = await api.post('/api/v1/user/deletepatient',{patient_id: params.slug })
       console.log(res);
-      if(res.status==200)
-      alert("Patient deleted successfully!")
+      if(res.status==204)
+      setData("Patient deleted successfully!")
+      router.push('/viewpatient')
     } catch (err) {
       console.log(err);
-      alert("Patient could not be deleted due to an error!")
+      setData("Patient could not be deleted due to an error!")
     }
   };
-  if (data && data != null)
+  if (data && data != null && typeof data !=="string")
     return (
       <div
         style={{
@@ -101,7 +104,7 @@ function Page({ params }) {
           gap: "1.2rem",
         }}
       >
-        loading...
+        {typeof data==="string" && data}
       </div>
     );
 }
