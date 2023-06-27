@@ -15,7 +15,7 @@ const AdminHome = () => {
     router.push("/adminprofile");
   };
   const Onclickstock = () => {
-    router.push("/stockdetail");
+    router.push("/stockdetails");
     // to clear local storage on logout
   };
   const Onclickviewpatient = () => {
