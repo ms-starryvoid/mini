@@ -17,7 +17,7 @@ const page = () => {
       // dispatch(hideLoading())
       if (res.data.success) {
         message.success("Registered successfully");
-        router.push("/adminlogin");
+        router.push("/ashalogin");
         //redirect('/login')
       } else {
         message.error(res.data.message);
