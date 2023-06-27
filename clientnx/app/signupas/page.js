@@ -15,7 +15,7 @@ const SignupAs = () => {
     // to clear local storage on logout
   };
   const OnclickNavAsha = () => {
-    router.push("/ashasignup");
+    router.push("/signup");
     // to clear local storage on logout
   };
   const OnclickNavPatient = () => {
