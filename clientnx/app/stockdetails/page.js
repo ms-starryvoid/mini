@@ -208,6 +208,22 @@ const StockDetails = () => {
               <span className="comment-checkbox">
                 {item.stock_name} quantity {item.request_quantity} requested by{" "}
                 {item.patient_id}
+                <Button
+                    onClick={() => {
+                      OnclickAcc();
+                    }}
+                    className="inside-button5"
+                  >
+                    Accept
+                  </Button>
+                  <Button
+                    onClick={() => {
+                      OnclickAcc();
+                    }}
+                    className="inside-button7"
+                  >
+                    Reject
+                  </Button>
               </span>
             </li>
           ))}
