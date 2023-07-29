@@ -2,6 +2,8 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import NavItem from "./navbar";
+import * as Ast from "/assets";
+import Image from "next/image";
 
 const MENU_LIST = [
   { text: "Home", href: "/" },
@@ -33,8 +35,9 @@ const Navbar = () => {
           {MENU_LIST.map((menu, idx) => (
             <div
               onClick={() => {
-                if (idx === 3 && typeof window !== "undefined"){
-                  window.localStorage.clear()}
+                if (idx === 3 && typeof window !== "undefined") {
+                  window.localStorage.clear();
+                }
                 setActiveIdx(idx);
                 setNavActive(false);
               }}

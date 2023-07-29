@@ -14,7 +14,7 @@ img {
 }
 
 .heading1 {
-  color: #f5f5f5;
+  color: #000000;
   text-align: center;
   font-family: "Poppins", sans-serif;
   font-size: 52px;
@@ -26,7 +26,7 @@ img {
 }
 
 .heading3 {
-  color: #f5f5f5;
+  color: #000000;
   text-align: center;
   font-family: "Poppins", sans-serif;
   font-size: 53px;
@@ -37,7 +37,7 @@ img {
 }
 
 .heading5 {
-  color: #f5f5f5;
+  color: #000000;
   text-align: center;
   font-family: "Poppins", sans-serif;
   font-size: 90px;
@@ -48,7 +48,7 @@ img {
 }
 
 .heading4 {
-  color: #f5f5f5;
+  color: #000000;
   text-align: center;
   font-family: "Poppins", sans-serif;
   font-size: 40px;
@@ -58,7 +58,7 @@ img {
 }
 
 .heading2 {
-  color: #f5f5f5;
+  color: #000000;
   text-align: center;
   font-family: "Poppins", sans-serif;
   font-size: 52px;
@@ -67,9 +67,19 @@ img {
   margin-top: 450px;
   font-weight: 500;
 }
+.heading-main {
+  color: #000000;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 52px;
+  top: 662px;
+  left: 532px;
+  margin-top: 50px;
+  font-weight: 500;
+}
 
 .option {
-  color: #f5f5f5;
+  color: #000000;
   font-family: "Poppins", sans-serif;
   font-size: 30px;
   top: 557px;
@@ -106,7 +116,7 @@ img {
 }
 p.name {
   position: absolute;
-  color: #f5f5f5;
+  color: #000000;
   font-family: "Poppins", sans-serif;
   font-size: 35px;
   top: 15px;
@@ -115,7 +125,7 @@ p.name {
 }
 p.center {
   position: relative;
-  color: #f5f5f5;
+  color: #000000;
   font-family: "Noto Sans Bengali UI";
   font-size: 16px;
   font-weight: lighter;
@@ -124,7 +134,7 @@ p.center {
 p.admin {
   font-weight: 600;
   position: absolute;
-  color: #f5f5f5;
+  color: #000000;
   font-family: "Poppins", sans-serif;
   font-size: 64px;
   top: 174px;
@@ -132,7 +142,7 @@ p.admin {
 }
 p.home {
   position: absolute;
-  color: #f5f5f5;
+  color: #000000;
   font-family: "Noto Nastaliq Urdu";
   font-size: 29px;
   top: 21px;
@@ -141,7 +151,7 @@ p.home {
 }
 p.about {
   position: absolute;
-  color: #f5f5f5;
+  color: #000000;
   font-family: "Noto Nastaliq Urdu";
   font-size: 29px;
   top: 21px;
@@ -150,7 +160,7 @@ p.about {
 }
 p.logout {
   position: absolute;
-  color: #f5f5f5;
+  color: #000000;
   font-family: "Noto Nastaliq Urdu";
   font-size: 29px;
   top: 21px;
@@ -159,7 +169,7 @@ p.logout {
 }
 p.patients {
   position: absolute;
-  color: #f5f5f5;
+  color: #000000;
   font-family: "Poppins", sans-serif;
   font-size: 36px;
   top: 505px;
@@ -167,7 +177,7 @@ p.patients {
 }
 p.stock {
   position: absolute;
-  color: #f5f5f5;
+  color: #000000;
   font-family: "Poppins", sans-serif;
   font-size: 36px;
   top: 815px;
@@ -175,7 +185,7 @@ p.stock {
 }
 p.visit {
   position: absolute;
-  color: #f5f5f5;
+  color: #000000;
   font-family: "Poppins", sans-serif;
   font-size: 36px;
   top: 505px;
@@ -183,14 +193,16 @@ p.visit {
 }
 p.staff {
   position: absolute;
-  color: #f5f5f5;
+  color: #000000;
   font-family: "Poppins", sans-serif;
   font-size: 36px;
   top: 815px;
   left: 900px;
 }
 body {
-  background-color: #1b2143;
+  background-color: azure;
+  font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
+  font-synthesis: none;
   background-size: 1440px 1024px;
   position: relative;
   overflow: hidden;
@@ -255,7 +267,7 @@ body {
   width: 486px;
   height: 267px;
   border-radius: 41px;
-  background-color: rgba(219, 219, 249, 0.44);
+  background-color: #1e7b85;
   margin-bottom: 60px;
   margin-right: 60px;
   padding: px;
@@ -265,8 +277,8 @@ body {
 .inside-button {
   position: relative;
   display: contents;
-  background-color: rgba(219, 219, 249, 0.44);
-  color: #f5f5f5;
+  background-color: #1e7b85;
+  color: beige;
   font-family: "Poppins", sans-serif;
   font-size: 36px;
   margin-bottom: 30px;
@@ -275,8 +287,8 @@ body {
 .inside-button1 {
   position: relative;
   display: contents;
-  background-color: rgba(219, 219, 249, 0.44);
-  color: #f5f5f5;
+  background-color: #1e7b85;
+  color: beige;
   font-family: "Poppins", sans-serif;
   font-size: 29px;
   bottom: 10px;
@@ -298,7 +310,7 @@ body {
   width: 339px;
   height: 374px;
   border-radius: 41px;
-  background-color: rgba(219, 219, 249, 0.44);
+  background-color: #1e7b85;
   margin-right: 60px;
   padding: px;
   text-align: center;
@@ -310,7 +322,7 @@ body {
   width: 217px;
   height: 93px;
   border-radius: 41px;
-  background-color: rgba(219, 219, 249, 0.44);
+  background-color: #1e7b85;
   margin-bottom: 60px;
   margin-right: 60px;
   padding: px;
@@ -372,7 +384,7 @@ body {
   position: relative;
   width: 470px;
   height: 90px;
-  color: #f5f5f5 !important;
+  color: #000000 !important;
   font-family: "Poppins", sans-serif !important;
   font-size: 100px !important;
   flex: 0 0 200px;
@@ -382,7 +394,7 @@ body {
   position: relative;
   width: 470px;
   height: 100px;
-  color: #f5f5f5;
+  color: #000000;
   font-family: "Poppins", sans-serif;
   font-size: 50px;
   flex: 0 0 200px;
@@ -408,7 +420,7 @@ body {
   max-width: 600px;
   height: auto;
   padding: 20px;
-  background-color: #f5f5f5;
+  background-color: #000000;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
@@ -432,12 +444,10 @@ header {
 }
 
 .home {
-  position: absolute;
-  color: #f5f5f5;
+  color: #000000;
   font-size: 18px;
-  top: 21px;
-  left: 20px;
   font-weight: 100;
+  margin-right: 10px;
 }
 nav {
   display: flex;
@@ -445,12 +455,13 @@ nav {
   align-items: center;
   background-color: transparent;
 }
+
 .nav__menu-bar {
   display: flex;
   flex-direction: column;
   row-gap: 6px;
   cursor: pointer;
-  color: #f5f5f5;
+  color: #000000;
 }
 .nav__menu-bar div {
   width: 40px;
@@ -470,7 +481,7 @@ nav {
   transition: all 0.2s;
   min-height: calc(100vh - 60px);
   background-color: transparent;
-  color: #f5f5f5;
+  color: #000000;
 }
 .nav__menu-list.active {
   right: 0;
@@ -479,7 +490,7 @@ nav {
   font-size: 18px;
   position: relative;
   transition: all 0.2s;
-  color: #f5f5f5;
+  color: #000000;
 }
 
 .nav__link:hover {
@@ -503,7 +514,7 @@ nav {
     width: fit-content;
     column-gap: 24px;
     align-items: center;
-    color: #f5f5f5;
+    color: #000000;
   }
   .nav__link::before {
     content: "";
@@ -524,7 +535,7 @@ nav {
     left: 57px;
     top: 300px;
     border-radius: 41px;
-    background-color: rgba(219, 219, 249, 0.44);
+    background-color: #1e7b85;
   }  */
 
 /* .alignment{
@@ -569,7 +580,7 @@ nav {
   left: 680px;
   top: 175px;
   border-radius: 41px;
-  background-color: rgba(219, 219, 249, 0.44);
+  background-color: #1e7b85;
   overflow: hidden;
   overflow-y: scroll;
 }
@@ -580,13 +591,13 @@ nav {
 }
 
 .roundrect1::-webkit-scrollbar-thumb {
-  background-color: #f5f5f5; /* Color of the scrollbar thumb */
+  background-color: #000000; /* Color of the scrollbar thumb */
   border-radius: 10px; /* Radius of the scrollbar thumb */
 }
 
 .roundrect1::-webkit-scrollbar-track {
   background-color: transparent;
-  border-color: #f5f5f5; /* Color of the scrollbar track */
+  border-color: #000000; /* Color of the scrollbar track */
 }
 
 .roundrect2 {
@@ -596,7 +607,7 @@ nav {
   left: 680px;
   top: 400px;
   border-radius: 41px;
-  background-color: rgba(219, 219, 249, 0.44);
+  background-color: #1e7b85;
   overflow: hidden;
   overflow-y: scroll;
 }
@@ -607,13 +618,13 @@ nav {
 }
 
 .roundrect2::-webkit-scrollbar-thumb {
-  background-color: #f5f5f5; /* Color of the scrollbar thumb */
+  background-color: #000000; /* Color of the scrollbar thumb */
   border-radius: 10px; /* Radius of the scrollbar thumb */
 }
 
 .roundrect2::-webkit-scrollbar-track {
   background-color: transparent;
-  border-color: #f5f5f5; /* Color of the scrollbar track */
+  border-color: #000000; /* Color of the scrollbar track */
 }
 
 .roundrect::-webkit-scrollbar {
@@ -622,13 +633,13 @@ nav {
 }
 
 .roundrect::-webkit-scrollbar-thumb {
-  background-color: #f5f5f5; /* Color of the scrollbar thumb */
+  background-color: #000000; /* Color of the scrollbar thumb */
   border-radius: 10px; /* Radius of the scrollbar thumb */
 }
 
 .roundrect::-webkit-scrollbar-track {
   background-color: transparent;
-  border-color: #f5f5f5; /* Color of the scrollbar track */
+  border-color: #000000; /* Color of the scrollbar track */
 }
 
 .roundrect {
@@ -649,7 +660,7 @@ nav {
   left: 50px;
   top: 175px;
   border-radius: 41px;
-  background-color: rgba(219, 219, 249, 0.44);
+  background-color: #1e7b85;
 }
 
 .listContainer {
@@ -661,7 +672,7 @@ nav {
 
 h2.stockdetails {
   position: absolute;
-  color: #f5f5f5;
+  color: #000000;
   font-family: "Poppins", sans-serif;
   font-size: 26px;
   left: 20px;
@@ -670,7 +681,7 @@ h2.stockdetails {
 }
 h2.stockdetails1 {
   position: absolute;
-  color: #f5f5f5;
+  color: #000000;
   font-family: "Poppins", sans-serif;
   font-size: 45px;
   top: 70px;
@@ -691,12 +702,12 @@ h2.stockdetails1 {
 
 .comment-checkbox {
   margin-left: 10px;
-  color: #f5f5f5;
+  color: #000000;
   font-family: "Poppins", sans-serif;
   font-size: 21px;
 }
 .addbox {
-  background-color: rgba(219, 219, 249, 0.44);
+  background-color: #1e7b85;
   position: relative;
   width: 150px;
   height: 50px;
@@ -715,7 +726,7 @@ h2.stockdetails1 {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
-  color: #f5f5f5;
+  color: #000000;
   font-family: "Poppins", sans-serif;
   font-size: 22px;
   justify-content: space-between;
@@ -725,7 +736,7 @@ h2.stockdetails1 {
   align-items: center;
   margin-bottom: 10px;
   margin-left: 30px;
-  color: #f5f5f5;
+  color: #000000;
   font-family: "Poppins", sans-serif;
   font-size: 22px;
   justify-content: space-between;
@@ -734,7 +745,7 @@ h2.stockdetails1 {
 .inside-button3 {
   position: relative;
   background-color: transparent;
-  color: #f5f5f5;
+  color: #000000;
   font-family: "Poppins", sans-serif;
   font-size: 25px;
   margin-left: 23px;
@@ -745,7 +756,7 @@ h2.stockdetails1 {
 .inside-button4 {
   position: relative;
   background-color: transparent;
-  color: #f5f5f5;
+  color: #000000;
   font-family: "Poppins", sans-serif;
   font-size: 25px;
   margin-right: 140px;
@@ -756,7 +767,7 @@ h2.stockdetails1 {
 .inside-button5 {
   position: relative;
   background-color: transparent;
-  color: #f5f5f5;
+  color: #000000;
   font-family: "Poppins", sans-serif;
   font-size: 25px;
   cursor: pointer;
@@ -768,7 +779,7 @@ h2.stockdetails1 {
 .inside-button7 {
   position: relative;
   background-color: transparent;
-  color: #f5f5f5;
+  color: #000000;
   font-family: "Poppins", sans-serif;
   font-size: 25px;
   cursor: pointer;
@@ -778,7 +789,7 @@ h2.stockdetails1 {
 }
 
 .addbox2 {
-  background-color: rgba(219, 219, 249, 0.44);
+  background-color: #1e7b85;
   position: relative;
   width: 200px;
   height: 40px;
@@ -804,7 +815,7 @@ h2.stockdetails1 {
 .inside-button6 {
   position: relative;
   background-color: transparent;
-  color: #f5f5f5;
+  color: #000000;
   font-family: "Poppins", sans-serif;
   font-size: 50px;
   cursor: pointer;
@@ -821,7 +832,7 @@ h2.stockdetails1 {
 
 .center1 {
   position: relative;
-  color: #f5f5f5;
+  color: #000000;
   text-align: center;
   font-family: "Poppins", sans-serif;
   font-size: medium;
@@ -897,7 +908,7 @@ h2.stockdetails1 {
   max-width: 600px;
   height: auto;
   padding: 20px;
-  background-color: #f5f5f5;
+  background-color: #000000;
   border: 1px solid #ccc;
   border-radius: 4px;
 } */
@@ -917,7 +928,7 @@ h2.stockdetails1 {
 }
 
 .signup-heading {
-  color: #f5f5f5;
+  color: #000000;
   text-align: center;
   font-family: "Poppins", sans-serif;
   font-size: 40px;
@@ -939,4 +950,24 @@ h2.stockdetails1 {
   justify-content: center;
   align-items: center;
   height: 90vh;
+}
+
+.huge-logo {
+  width: 300px;
+  height: 300px;
+  margin-top: 100px;
+  margin-left: 125px;
+  align-items: centre;
+}
+.nav-icon {
+  width: 50px;
+  height: 50px;
+}
+.nav-content {
+  display: flex;
+  align-items: center;
+}
+.nav-link {
+  display: flex;
+  align-items: center;
 }
