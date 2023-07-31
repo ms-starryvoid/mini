@@ -5,7 +5,6 @@ import api from "@/api";
 import { Form, Input, message } from "antd";
 import { useRouter } from "next/navigation";
 import React from "react";
-import Layout from "../layout";
 
 const page = () => {
   const router = useRouter();
@@ -29,30 +28,29 @@ const page = () => {
     }
   };
   return (
-    <Layout>
-      <div className="container">
-        <div className="signupcontainer">
-          <Form
-            layout="vertical"
-            onFinish={OnFinishHandler}
-            className="signup-form"
-          >
-            <h3> signup</h3>
-
-            <Form.Item label="ASHA Id" name="ashaid">
-              <Input type="text" required />
-            </Form.Item>
-            <Form.Item label="email" name="email">
-              <Input type="text" required />
-            </Form.Item>
-            <Form.Item label="password" name="password">
-              <Input type="password" required />
-            </Form.Item>
-            <button type="submit">register</button>
-          </Form>
-        </div>
+    <div className="container">
+      <div className="signupcontainer">
+        <h2 className="signup-heading">Sign up</h2>
+        <Form
+          layout="vertical"
+          onFinish={OnFinishHandler}
+          className="signup-form"
+        >
+          <Form.Item label="ASHA Id" name="ashaid">
+            <Input type="text" required />
+          </Form.Item>
+          <Form.Item label="Email" name="email">
+            <Input type="text" required />
+          </Form.Item>
+          <Form.Item label="Password" name="password">
+            <Input type="password" required />
+          </Form.Item>
+          <div className="centered-button-container">
+            <button type="submit">Register</button>
+          </div>
+        </Form>
       </div>
-    </Layout>
+    </div>
   );
 };
 

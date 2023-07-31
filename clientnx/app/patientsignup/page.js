@@ -30,23 +30,24 @@ const page = () => {
   return (
     <div className="container">
       <div className="signupcontainer">
+        <h2 className="signup-heading">Patient Sign Up</h2>
         <Form
           layout="vertical"
           onFinish={OnFinishHandler}
           className="signup-form"
         >
-          <h3> signup</h3>
-
-          <Form.Item label="PATIENT Id" name="ashaid">
+          <Form.Item label="Patient Id" name="ashaid">
             <Input type="text" required />
           </Form.Item>
-          <Form.Item label="email" name="email">
+          <Form.Item label="Email" name="email">
             <Input type="text" required />
           </Form.Item>
-          <Form.Item label="password" name="password">
+          <Form.Item label="Password" name="password">
             <Input type="password" required />
           </Form.Item>
-          <button type="submit">register</button>
+          <div className="centered-button-container">
+            <button type="submit">Register</button>
+          </div>
         </Form>
       </div>
     </div>

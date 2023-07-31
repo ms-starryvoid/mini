@@ -449,9 +449,8 @@ body {
   max-width: 600px;
   height: auto;
   padding: 20px;
-  background-color: #000000;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  background-color: rgba(219, 219, 249, 0.44);
+  border-radius: 41px;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700&display=swap");
@@ -855,7 +854,6 @@ h2.stockdetails1 {
   background-color: transparent;
   color: #000000;
   font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
-
   font-size: 50px;
   cursor: pointer;
   border-color: transparent;
@@ -971,7 +969,6 @@ h2.stockdetails1 {
   color: #000000;
   text-align: center;
   font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
-
   font-size: 40px;
   top: 650px;
   left: 532px;
@@ -1019,4 +1016,53 @@ h2.stockdetails1 {
 .small-icon1 {
   width: 115px;
   height: 115px;
+}
+
+.signup-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.signup-form label {
+  font-size: 30px;
+  font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
+  display: contents;
+  margin-bottom: 8px; /* Add some spacing between label and input */
+}
+
+.signup-form .ant-form-item {
+  display: block; /* Use flexbox to align label and input on the same line */
+  align-items: center; /* Vertically align label and input */
+  margin-bottom: 12px;
+}
+
+.signup-form input[type="text"],
+.signup-form input[type="password"] {
+  flex: 1; /* Allow the input to take up the remaining space */
+  font-size: 18px;
+  font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
+  padding: 8px;
+}
+
+.centered-button-container {
+  display: flex;
+  justify-content: center; /* Horizontally center the button */
+  margin-top: 20px; /* Add some spacing between the last input and the button */
+}
+
+.centered-button-container button[type="submit"] {
+  font-size: 20px;
+  font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
+  padding: 10px 20px;
+  background-color: #1e7b85;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 41px;
+  border: none;
+  margin-top: 20px;
+}
+
+.centered-button-container button[type="submit"]:hover {
+  background-color: #1b6871;
 }
