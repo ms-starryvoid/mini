@@ -28,4 +28,32 @@ const visitModel =require("../models/visitModel")
     }
     
  }
- module.exports={addreportController,viewrepController}
+ const reportEntry =async(req,res)=>{
+  try {
+    const { patient_id, asha_id, visit_date, blood_sugar, blood_pressure, remarks } = req.body;
+
+    // Create a new visit document
+    const newVisit = new Visit({
+      patient_id,
+      asha_id,
+      day: new Date(visit_date), // Ensure 'visit_date' is in a valid date format
+      report: {
+        blood_sugar,
+        blood_pressure,
+        remarks,
+      },
+    });
+
+    // Save the visit document to the database
+    const savedVisit = await newVisit.save();
+
+    // Respond with a success message and the saved visit data
+    res.status(200).json({ message: 'Visit saved successfully', visit: savedVisit });
+  } catch (error) {
+    console.error('Error saving visit:', error);
+    // Handle the error and respond with an appropriate error message
+    res.status(500).json({ error: 'Failed to save visit' });
+  }
+
+ }
+ module.exports={addreportController,viewrepController,reportEntry}
