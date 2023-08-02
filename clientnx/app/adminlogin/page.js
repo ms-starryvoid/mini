@@ -35,92 +35,27 @@ const Login = () => {
     }
   };
   return (
-    <section>
-      <div className="circle"></div>
-      <div className="patientsignup-container">
-        <div className="patientsignup-rounded-rectangle">
-          <h1 className="signup-heading">Admin login</h1>
-          <Form
-            name="basic"
-            labelCol={{
-              span: 6,
-            }}
-            wrapperCol={{
-              span: 14,
-            }}
-            style={{
-              maxWidth: 400,
-            }}
-            initialValues={{
-              remember: true,
-            }}
-            onFinish={onFinishHandler}
-            autoComplete="off"
-          >
-            <Form.Item
-              label="Username"
-              name="email"
-              rules={[
-                {
-                  required: true,
-                  message: "Please input your email!",
-                },
-              ]}
-            >
-              <Input />
-            </Form.Item>
+    <div className="container">
+      <div className="signupcontainer">
+        <h2 className="signup-heading">Admin login</h2>
+        <Form
+          layout="vertical"
+          onFinish={onFinishHandler}
+          className="signup-form"
+        >
+          <Form.Item label="Username" name="email">
+            <Input type="text" required />
+          </Form.Item>
 
-            <Form.Item
-              label="Password"
-              name="password"
-              rules={[
-                {
-                  required: true,
-                  message: "Please input your password!",
-                },
-              ]}
-            >
-              <Input />
-            </Form.Item>
-
-            {/* <Form.Item
-                label="Password"
-                name="password"
-                rules={[
-                  {
-                    required: true,
-                    message: "Please input your password!",
-                  },
-                ]}
-              >
-                <Input onChange={(e) => setEmail(e.target.value)} />
-              </Form.Item> */}
-
-            <Form.Item
-              name="remember"
-              valuePropName="checked"
-              wrapperCol={{
-                offset: 8,
-                span: 16,
-              }}
-            >
-              <Checkbox>Remember me</Checkbox>
-            </Form.Item>
-
-            <Form.Item
-              wrapperCol={{
-                offset: 8,
-                span: 16,
-              }}
-            >
-              <Button type="primary" htmlType="submit">
-                Submit
-              </Button>
-            </Form.Item>
-          </Form>
-        </div>
+          <Form.Item label="Password" name="password">
+            <Input type="password" required />
+          </Form.Item>
+          <div className="centered-button-container">
+            <button type="submit">Submit</button>
+          </div>
+        </Form>
       </div>
-    </section>
+    </div>
   );
 };
 

@@ -16,7 +16,8 @@ img {
 .heading1 {
   color: #000000;
   text-align: center;
-  font-family: "Poppins", sans-serif;
+  font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
+
   font-size: 52px;
   top: 662px;
   left: 532px;
@@ -28,7 +29,8 @@ img {
 .heading3 {
   color: #000000;
   text-align: center;
-  font-family: "Poppins", sans-serif;
+  font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
+
   font-size: 53px;
   top: 662px;
   left: 532px;
@@ -39,7 +41,8 @@ img {
 .heading5 {
   color: #000000;
   text-align: center;
-  font-family: "Poppins", sans-serif;
+  font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
+
   font-size: 90px;
   top: 662px;
   left: 532px;
@@ -50,7 +53,8 @@ img {
 .heading4 {
   color: #000000;
   text-align: center;
-  font-family: "Poppins", sans-serif;
+  font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
+
   font-size: 40px;
   top: 662px;
   left: 532px;
@@ -60,7 +64,8 @@ img {
 .heading2 {
   color: #000000;
   text-align: center;
-  font-family: "Poppins", sans-serif;
+  font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
+
   font-size: 52px;
   top: 662px;
   left: 532px;
@@ -70,7 +75,8 @@ img {
 .heading-main {
   color: #000000;
   text-align: center;
-  font-family: "Poppins", sans-serif;
+  font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
+
   font-size: 52px;
   top: 662px;
   left: 532px;
@@ -80,7 +86,8 @@ img {
 
 .option {
   color: #000000;
-  font-family: "Poppins", sans-serif;
+  font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
+
   font-size: 30px;
   top: 557px;
   left: 554px;
@@ -117,7 +124,8 @@ img {
 p.name {
   position: absolute;
   color: #000000;
-  font-family: "Poppins", sans-serif;
+  font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
+
   font-size: 35px;
   top: 15px;
   left: 177px;
@@ -135,7 +143,8 @@ p.admin {
   font-weight: 600;
   position: absolute;
   color: #000000;
-  font-family: "Poppins", sans-serif;
+  font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
+
   font-size: 64px;
   top: 174px;
   left: 390px;
@@ -170,7 +179,8 @@ p.logout {
 p.patients {
   position: absolute;
   color: #000000;
-  font-family: "Poppins", sans-serif;
+  font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
+
   font-size: 36px;
   top: 505px;
   left: 350px;
@@ -178,7 +188,8 @@ p.patients {
 p.stock {
   position: absolute;
   color: #000000;
-  font-family: "Poppins", sans-serif;
+  font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
+
   font-size: 36px;
   top: 815px;
   left: 360px;
@@ -186,7 +197,8 @@ p.stock {
 p.visit {
   position: absolute;
   color: #000000;
-  font-family: "Poppins", sans-serif;
+  font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
+
   font-size: 36px;
   top: 505px;
   left: 879px;
@@ -194,7 +206,8 @@ p.visit {
 p.staff {
   position: absolute;
   color: #000000;
-  font-family: "Poppins", sans-serif;
+  font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
+
   font-size: 36px;
   top: 815px;
   left: 900px;
@@ -279,7 +292,8 @@ body {
   display: contents;
   background-color: #1e7b85;
   color: beige;
-  font-family: "Poppins", sans-serif;
+  font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
+
   font-size: 36px;
   margin-bottom: 30px;
 }
@@ -289,12 +303,27 @@ body {
   display: contents;
   background-color: #1e7b85;
   color: beige;
-  font-family: "Poppins", sans-serif;
+  font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
   font-size: 29px;
   bottom: 10px;
   margin-left: 30px;
 }
-
+.icon-button {
+  position: absolute;
+  display: contents;
+  font-size: 29px;
+  bottom: 10px;
+}
+.inside-button12 {
+  position: relative;
+  display: contents;
+  background-color: #1e7b85;
+  color: #000000;
+  font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
+  font-size: 29px;
+  bottom: 10px;
+  margin-left: 30px;
+}
 .icon-img {
   position: relative;
   border-radius: 50px;
@@ -337,11 +366,8 @@ body {
   width: 982px;
   height: 562px;
   border-radius: 41px;
-  background-color: rgba(219, 219, 249, 0.3);
-
+  background-color: rgba(175, 175, 199, 0.6);
   margin-right: 60px;
-  margin-top: 120px;
-  padding: px;
   text-align: center;
   justify-content: center;
 }
@@ -351,11 +377,13 @@ body {
   width: 206px;
   height: 206px;
   border-radius: 41px;
-  background-color: rgba(72, 77, 115, 0.76);
+  background-color: #1e7b85;
   margin-right: 60px;
   margin-left: 50px;
-  padding: px;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .rounded-rectangle-login {
@@ -395,7 +423,8 @@ body {
   width: 470px;
   height: 100px;
   color: #000000;
-  font-family: "Poppins", sans-serif;
+  font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
+
   font-size: 50px;
   flex: 0 0 200px;
 }
@@ -420,9 +449,8 @@ body {
   max-width: 600px;
   height: auto;
   padding: 20px;
-  background-color: #000000;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  background-color: rgba(219, 219, 249, 0.44);
+  border-radius: 41px;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700&display=swap");
@@ -673,7 +701,8 @@ nav {
 h2.stockdetails {
   position: absolute;
   color: #000000;
-  font-family: "Poppins", sans-serif;
+  font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
+
   font-size: 26px;
   left: 20px;
   top: 10px;
@@ -682,7 +711,8 @@ h2.stockdetails {
 h2.stockdetails1 {
   position: absolute;
   color: #000000;
-  font-family: "Poppins", sans-serif;
+  font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
+
   font-size: 45px;
   top: 70px;
   left: 70px;
@@ -703,7 +733,8 @@ h2.stockdetails1 {
 .comment-checkbox {
   margin-left: 10px;
   color: #000000;
-  font-family: "Poppins", sans-serif;
+  font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
+
   font-size: 21px;
 }
 .addbox {
@@ -727,7 +758,8 @@ h2.stockdetails1 {
   align-items: center;
   margin-bottom: 10px;
   color: #000000;
-  font-family: "Poppins", sans-serif;
+  font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
+
   font-size: 22px;
   justify-content: space-between;
 }
@@ -737,7 +769,8 @@ h2.stockdetails1 {
   margin-bottom: 10px;
   margin-left: 30px;
   color: #000000;
-  font-family: "Poppins", sans-serif;
+  font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
+
   font-size: 22px;
   justify-content: space-between;
 }
@@ -746,7 +779,8 @@ h2.stockdetails1 {
   position: relative;
   background-color: transparent;
   color: #000000;
-  font-family: "Poppins", sans-serif;
+  font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
+
   font-size: 25px;
   margin-left: 23px;
   margin-top: 5px;
@@ -757,7 +791,8 @@ h2.stockdetails1 {
   position: relative;
   background-color: transparent;
   color: #000000;
-  font-family: "Poppins", sans-serif;
+  font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
+
   font-size: 25px;
   margin-right: 140px;
   margin-top: 5px;
@@ -768,7 +803,8 @@ h2.stockdetails1 {
   position: relative;
   background-color: transparent;
   color: #000000;
-  font-family: "Poppins", sans-serif;
+  font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
+
   font-size: 25px;
   cursor: pointer;
   border-color: transparent;
@@ -780,7 +816,8 @@ h2.stockdetails1 {
   position: relative;
   background-color: transparent;
   color: #000000;
-  font-family: "Poppins", sans-serif;
+  font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
+
   font-size: 25px;
   cursor: pointer;
   border-color: transparent;
@@ -816,7 +853,7 @@ h2.stockdetails1 {
   position: relative;
   background-color: transparent;
   color: #000000;
-  font-family: "Poppins", sans-serif;
+  font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
   font-size: 50px;
   cursor: pointer;
   border-color: transparent;
@@ -834,7 +871,8 @@ h2.stockdetails1 {
   position: relative;
   color: #000000;
   text-align: center;
-  font-family: "Poppins", sans-serif;
+  font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
+
   font-size: medium;
   font-weight: 500;
 }
@@ -930,7 +968,7 @@ h2.stockdetails1 {
 .signup-heading {
   color: #000000;
   text-align: center;
-  font-family: "Poppins", sans-serif;
+  font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
   font-size: 40px;
   top: 650px;
   left: 532px;
@@ -970,4 +1008,61 @@ h2.stockdetails1 {
 .nav-link {
   display: flex;
   align-items: center;
+}
+.small-icon {
+  width: 100px;
+  height: 100px;
+}
+.small-icon1 {
+  width: 115px;
+  height: 115px;
+}
+
+.signup-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.signup-form label {
+  font-size: 30px;
+  font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
+  display: contents;
+  margin-bottom: 8px; /* Add some spacing between label and input */
+}
+
+.signup-form .ant-form-item {
+  display: block; /* Use flexbox to align label and input on the same line */
+  align-items: center; /* Vertically align label and input */
+  margin-bottom: 12px;
+}
+
+.signup-form input[type="text"],
+.signup-form input[type="password"] {
+  flex: 1; /* Allow the input to take up the remaining space */
+  font-size: 18px;
+  font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
+  padding: 8px;
+}
+
+.centered-button-container {
+  display: flex;
+  justify-content: center; /* Horizontally center the button */
+  margin-top: 20px; /* Add some spacing between the last input and the button */
+}
+
+.centered-button-container button[type="submit"] {
+  font-size: 20px;
+  font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
+  padding: 10px 20px;
+  background-color: #1e7b85;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 41px;
+  border: none;
+  margin-top: 20px;
+}
+
+.centered-button-container button[type="submit"]:hover {
+  background-color: #1b6871;
 }

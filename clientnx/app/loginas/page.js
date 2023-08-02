@@ -5,6 +5,8 @@ import api from "@/api";
 import { Form, Input, message, Checkbox, Button } from "antd";
 import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
+import Image from "next/image";
+import * as Ast from "/assets";
 
 const LoginAs = () => {
   const router = useRouter();
@@ -32,22 +34,37 @@ const LoginAs = () => {
 
             <div className="container">
               <div>
-                <div className="rounded-rectangle-darker"></div>
-                <Button onClick={OnclickNavAdmin} className="inside-button1">
+                <div className="rounded-rectangle-darker">
+                  <Button onClick={OnclickNavAsha} className="icon-button">
+                    <Image className="small-icon" src={Ast.admin} alt="Admin" />
+                  </Button>
+                </div>
+                <Button onClick={OnclickNavAsha} className="inside-button12">
                   Admin
                 </Button>
               </div>
 
               <div>
-                <div className="rounded-rectangle-darker"></div>
-                <Button onClick={OnclickNavAsha} className="inside-button1">
-                  Asha worker
+                <div className="rounded-rectangle-darker">
+                  <Button onClick={OnclickNavAsha} className="icon-button">
+                    <Image className="small-icon" src={Ast.asha} alt="Asha" />
+                  </Button>
+                </div>
+                <Button onClick={OnclickNavAsha} className="inside-button12">
+                  Asha Worker
                 </Button>
               </div>
-
               <div>
-                <div className="rounded-rectangle-darker"></div>
-                <Button onClick={OnclickNavPatient} className="inside-button1">
+                <div className="rounded-rectangle-darker">
+                  <Button onClick={OnclickNavAsha} className="icon-button">
+                    <Image
+                      className="small-icon1"
+                      src={Ast.user}
+                      alt="Patient"
+                    />
+                  </Button>
+                </div>
+                <Button onClick={OnclickNavAsha} className="inside-button12">
                   Patient
                 </Button>
               </div>
