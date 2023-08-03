@@ -5,6 +5,8 @@ import api from "@/api";
 import { Form, Input, message, Checkbox, Button } from "antd";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
+import * as Ast from "/assets";
 
 const AshaHome = () => {
   const router = useRouter();

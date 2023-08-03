@@ -5,6 +5,8 @@ import api from "@/api";
 import { Form, Input, message, Checkbox, Button } from "antd";
 import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
+import Image from "next/image";
+import * as Ast from "/assets";
 
 const AdminHome = () => {
   const router = useRouter();
@@ -50,38 +52,71 @@ const AdminHome = () => {
   return (
     <section className="zoom-out">
       <div className="page-container75">
-        <div className="circle"></div>
         <h2 className="heading1">Welcome back, Admin</h2>
-
         <div className="container-short">
           <div className="rounded-rectangle">
-            <div className="inside-button">
+            <div className="rounded-rectangle-darker">
+              <Button onClick={Onclickviewpatient} className="icon-button">
+                <Image
+                  className="medium-icon"
+                  src={Ast.user}
+                  alt="View Patient"
+                />
+              </Button>
+
               <Button onClick={Onclickviewpatient} className="inside-button">
-                View patients
+                View Patient
               </Button>
             </div>
           </div>
 
           <div className="rounded-rectangle">
-            <Button onClick={Onclickvisit} className="inside-button">
-              Visit Schedules
-            </Button>
+            <div className="rounded-rectangle-darker">
+              <Button onClick={Onclickviewpatient} className="icon-button">
+                <Image
+                  className="small-icon1"
+                  src={Ast.schedule}
+                  alt="Visit Schedule"
+                />
+              </Button>
+
+              <Button onClick={Onclickviewpatient} className="inside-button">
+                Visit Schedule
+              </Button>
+            </div>
           </div>
         </div>
         <div className="container-short">
           <div className="rounded-rectangle">
-            <Button onClick={Onclickstock} className="inside-button">
-              Stock Details
-            </Button>
+            <div className="rounded-rectangle-darker">
+              <Button onClick={Onclickviewpatient} className="icon-button">
+                <Image
+                  className="small-icon1"
+                  src={Ast.stock}
+                  alt="Stock Details"
+                />
+              </Button>
+
+              <Button onClick={Onclickviewpatient} className="inside-button">
+                Stock Details
+              </Button>
+            </div>
           </div>
 
           <div className="rounded-rectangle">
-            <Button onClick={OnclickNavViewAsha} className="inside-button">
-              Staff Details
-            </Button>
-            {/*<Button onClick={OnClickProfile} className='inside-button'>
-                Profile
-            </Button>*/}
+            <div className="rounded-rectangle-darker">
+              <Button onClick={Onclickviewpatient} className="icon-button">
+                <Image
+                  className="small-icon1"
+                  src={Ast.asha}
+                  alt="Staff Details"
+                />
+              </Button>
+
+              <Button onClick={Onclickviewpatient} className="inside-button">
+                Staff Details
+              </Button>
+            </div>
           </div>
         </div>
       </div>

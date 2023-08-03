@@ -283,8 +283,9 @@ body {
   background-color: #1e7b85;
   margin-bottom: 60px;
   margin-right: 60px;
-  padding: px;
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .inside-button {
@@ -374,6 +375,7 @@ body {
 
 .rounded-rectangle-darker {
   position: relative;
+  flex-direction: column;
   width: 206px;
   height: 206px;
   border-radius: 41px;
@@ -983,7 +985,7 @@ h2.stockdetails1 {
 }
 
 .zoom-out {
-  transform: scale(0.75);
+  transform: scale(0.54);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1017,7 +1019,10 @@ h2.stockdetails1 {
   width: 115px;
   height: 115px;
 }
-
+.medium-icon {
+  width: 130px;
+  height: 130px;
+}
 .signup-form {
   max-width: 400px;
   margin: 0 auto;
