@@ -5,6 +5,8 @@ import api from "@/api";
 import { Form, Input, message, Checkbox, Button } from "antd";
 import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
+import Image from "next/image";
+import * as Ast from "/assets";
 
 const PatientHome = () => {
   const router = useRouter();
@@ -50,6 +52,13 @@ const PatientHome = () => {
         <div className="container">
           <div className="rounded-rectangle-long">
             <div className="inside-button">
+              <Button onClick={OnclickNavViewR} className="icon-button">
+                <Image
+                  className="medium-icon"
+                  src={Ast.report}
+                  alt="View Report"
+                />
+              </Button>
               <Button onClick={OnclickNavViewR} className="inside-button">
                 View Report
               </Button>
@@ -57,12 +66,26 @@ const PatientHome = () => {
           </div>
 
           <div className="rounded-rectangle-long">
+            <Button onClick={OnclickNavViewS} className="icon-button">
+              <Image
+                className="medium-icon"
+                src={Ast.schedule}
+                alt="Visit Schedule"
+              />
+            </Button>
             <Button onClick={OnclickNavViewS} className="inside-button">
               Visit Schedule
             </Button>
           </div>
 
           <div className="rounded-rectangle-long">
+            <Button onClick={OnclickNavStockR} className="icon-button">
+              <Image
+                className="small-icon1"
+                src={Ast.stock}
+                alt="Stock Request"
+              />
+            </Button>
             <Button onClick={OnclickNavStockR} className="inside-button">
               Stock Request
             </Button>

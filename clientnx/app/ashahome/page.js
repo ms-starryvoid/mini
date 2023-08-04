@@ -55,6 +55,14 @@ const AshaHome = () => {
         <div className="container">
           <div className="rounded-rectangle-long">
             <div className="inside-button">
+            <Button onClick={OnclickNavViewP} className="icon-button">
+                <Image
+                  className="medium-icon"
+                  src={Ast.user}
+                  alt="View Patient"
+                />
+              </Button>
+
               <Button onClick={OnclickNavViewP} className="inside-button">
                 View Patient
               </Button>
@@ -62,15 +70,31 @@ const AshaHome = () => {
           </div>
 
           <div className="rounded-rectangle-long">
-            <Button onClick={OnclickNavViewS} className="inside-button">
-              Visit Schedule
-            </Button>
+          <Button onClick={OnclickNavViewS} className="icon-button">
+                <Image
+                  className="medium-icon"
+                  src={Ast.schedule}
+                  alt="Visit schedule"
+                />
+              </Button>
+
+              <Button onClick={OnclickNavViewS} className="inside-button">
+                Visit Schedule
+              </Button>
           </div>
 
           <div className="rounded-rectangle-long">
-            <Button onClick={OnclickNavAddP} className="inside-button">
-              Add Patient
-            </Button>
+          <Button onClick={OnclickNavAddP} className="icon-button">
+                <Image
+                  className="medium-icon"
+                  src={Ast.addpatient}
+                  alt="Add Patient"
+                />
+              </Button>
+
+              <Button onClick={OnclickNavAddP} className="inside-button">
+               Add Patient
+              </Button>
           </div>
         </div>
       </div>

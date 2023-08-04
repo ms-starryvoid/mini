@@ -5,3 +5,4 @@ export { default as user } from "./user.png";
 export { default as addpatient } from "./addpatient.png";
 export { default as report } from "./report.png";
 export { default as schedule } from "./schedule.png";
+export { default as stock } from "./stock.png";
