@@ -20,7 +20,7 @@ const addpatientController = async (req,res)=>{
             service: 'gmail',
             auth: {
               user: 'homecarejourneys@gmail.com',
-              pass: 'homecare',
+              pass: 'ugomdpeoapizlpij',
             },
           });
         const newAsha = new patientModel(req.body)
