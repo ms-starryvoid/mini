@@ -10,3 +10,5 @@ export { default as smalluser } from "./smalluser.png";
 export { default as smalluserb } from "./smalluserb.png";
 export { default as userb } from "./userb.png";
 export { default as addpatientb } from "./addpatientb.png";
+export { default as ashab } from "./ashab.png";
+export { default as smallashab } from "./smallashab.png";
