@@ -98,13 +98,7 @@ const AdminProfile = () => {
                 <p>Phone: {userdetails.phone}</p>
               </div>
             </div>
-            <Button
-              type="submit"
-              onClick={handleEdit}
-              className="insid-button5"
-            >
-              Edit
-            </Button>
+            <Button className="smalltext-profile">Edit profile</Button>
           </>
         )}
       </div>
