@@ -6,3 +6,4 @@ export { default as addpatient } from "./addpatient.png";
 export { default as report } from "./report.png";
 export { default as schedule } from "./schedule.png";
 export { default as stock } from "./stock.png";
+export { default as smalluser } from "./smalluser.png";

@@ -49,13 +49,12 @@ const AshaHome = () => {
   return (
     <section className="zoom-out">
       <div className="page-container75">
-        <div className="circle"></div>
         <h2 className="heading1">Welcome back, {ashadata.name}</h2>
 
         <div className="container">
-          <div className="rounded-rectangle-long">
+          <div className="rounded-rectangle-long-home">
             <div className="inside-button">
-            <Button onClick={OnclickNavViewP} className="icon-button">
+              <Button onClick={OnclickNavViewP} className="icon-button">
                 <Image
                   className="medium-icon"
                   src={Ast.user}
@@ -69,32 +68,32 @@ const AshaHome = () => {
             </div>
           </div>
 
-          <div className="rounded-rectangle-long">
-          <Button onClick={OnclickNavViewS} className="icon-button">
-                <Image
-                  className="medium-icon"
-                  src={Ast.schedule}
-                  alt="Visit schedule"
-                />
-              </Button>
+          <div className="rounded-rectangle-long-home">
+            <Button onClick={OnclickNavViewS} className="icon-button">
+              <Image
+                className="medium-icon"
+                src={Ast.schedule}
+                alt="Visit schedule"
+              />
+            </Button>
 
-              <Button onClick={OnclickNavViewS} className="inside-button">
-                Visit Schedule
-              </Button>
+            <Button onClick={OnclickNavViewS} className="inside-button">
+              Visit Schedule
+            </Button>
           </div>
 
-          <div className="rounded-rectangle-long">
-          <Button onClick={OnclickNavAddP} className="icon-button">
-                <Image
-                  className="medium-icon"
-                  src={Ast.addpatient}
-                  alt="Add Patient"
-                />
-              </Button>
+          <div className="rounded-rectangle-long-home">
+            <Button onClick={OnclickNavAddP} className="icon-button">
+              <Image
+                className="medium-icon"
+                src={Ast.addpatient}
+                alt="Add Patient"
+              />
+            </Button>
 
-              <Button onClick={OnclickNavAddP} className="inside-button">
-               Add Patient
-              </Button>
+            <Button onClick={OnclickNavAddP} className="inside-button">
+              Add Patient
+            </Button>
           </div>
         </div>
       </div>

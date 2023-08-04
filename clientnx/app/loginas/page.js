@@ -35,11 +35,11 @@ const LoginAs = () => {
             <div className="container">
               <div>
                 <div className="rounded-rectangle-darker">
-                  <Button onClick={OnclickNavAsha} className="icon-button">
+                  <Button onClick={OnclickNavAdmin} className="icon-button">
                     <Image className="small-icon" src={Ast.admin} alt="Admin" />
                   </Button>
                 </div>
-                <Button onClick={OnclickNavAsha} className="inside-button12">
+                <Button onClick={OnclickNavAdmin} className="inside-button12">
                   Admin
                 </Button>
               </div>

@@ -54,7 +54,7 @@ const AdminHome = () => {
       <div className="page-container75">
         <h2 className="heading1">Welcome back, Admin</h2>
         <div className="container-short">
-          <div className="rounded-rectangle">
+          <div className="rounded-rectangle-home">
             <div className="rounded-rectangle-darker">
               <Button onClick={Onclickviewpatient} className="icon-button">
                 <Image
@@ -70,7 +70,7 @@ const AdminHome = () => {
             </div>
           </div>
 
-          <div className="rounded-rectangle">
+          <div className="rounded-rectangle-home">
             <div className="rounded-rectangle-darker">
               <Button onClick={Onclickviewpatient} className="icon-button">
                 <Image
@@ -87,7 +87,7 @@ const AdminHome = () => {
           </div>
         </div>
         <div className="container-short">
-          <div className="rounded-rectangle">
+          <div className="rounded-rectangle-home">
             <div className="rounded-rectangle-darker">
               <Button onClick={Onclickviewpatient} className="icon-button">
                 <Image
@@ -103,7 +103,7 @@ const AdminHome = () => {
             </div>
           </div>
 
-          <div className="rounded-rectangle">
+          <div className="rounded-rectangle-home">
             <div className="rounded-rectangle-darker">
               <Button onClick={Onclickviewpatient} className="icon-button">
                 <Image

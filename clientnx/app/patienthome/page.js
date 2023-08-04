@@ -46,11 +46,10 @@ const PatientHome = () => {
   return (
     <section className="zoom-out">
       <div className="page-container75">
-        <div className="circle"></div>
         <h2 className="heading1">Welcome back, Edna</h2>
 
         <div className="container">
-          <div className="rounded-rectangle-long">
+          <div className="rounded-rectangle-long-home">
             <div className="inside-button">
               <Button onClick={OnclickNavViewR} className="icon-button">
                 <Image
@@ -65,7 +64,7 @@ const PatientHome = () => {
             </div>
           </div>
 
-          <div className="rounded-rectangle-long">
+          <div className="rounded-rectangle-long-home">
             <Button onClick={OnclickNavViewS} className="icon-button">
               <Image
                 className="medium-icon"
@@ -78,7 +77,7 @@ const PatientHome = () => {
             </Button>
           </div>
 
-          <div className="rounded-rectangle-long">
+          <div className="rounded-rectangle-long-home">
             <Button onClick={OnclickNavStockR} className="icon-button">
               <Image
                 className="small-icon1"

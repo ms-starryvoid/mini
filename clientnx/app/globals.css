@@ -287,6 +287,19 @@ body {
   display: flex;
   justify-content: center;
 }
+.rounded-rectangle-home {
+  position: relative;
+  width: 486px;
+  height: 267px;
+  border-radius: 41px;
+  background-color: #1e7b85;
+  margin-bottom: 60px;
+  margin-right: 60px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .inside-button {
   position: relative;
@@ -294,7 +307,6 @@ body {
   background-color: #1e7b85;
   color: beige;
   font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
-
   font-size: 36px;
   margin-bottom: 30px;
 }
@@ -315,6 +327,13 @@ body {
   font-size: 29px;
   bottom: 10px;
 }
+.icon-button-list {
+  position: absolute;
+  display: contents;
+  font-size: 22px;
+  bottom: 10px;
+}
+
 .inside-button12 {
   position: relative;
   display: contents;
@@ -346,6 +365,35 @@ body {
   text-align: center;
   margin-right: 100px;
 }
+.rounded-rectangle-long-home {
+  position: relative;
+  flex-direction: column;
+  width: 339px;
+  height: 374px;
+  border-radius: 41px;
+  background-color: #1e7b85;
+  margin-right: 60px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 100px;
+}
+
+.rounded-rectangle-darker {
+  position: relative;
+  flex-direction: column;
+  width: 206px;
+  height: 206px;
+  border-radius: 41px;
+  background-color: #1e7b85;
+  margin-right: 60px;
+  margin-left: 50px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .rounded-rectangle-button {
   position: relative;
@@ -373,21 +421,6 @@ body {
   justify-content: center;
 }
 
-.rounded-rectangle-darker {
-  position: relative;
-  flex-direction: column;
-  width: 206px;
-  height: 206px;
-  border-radius: 41px;
-  background-color: #1e7b85;
-  margin-right: 60px;
-  margin-left: 50px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .rounded-rectangle-login {
   position: relative;
   display: block;
@@ -395,8 +428,6 @@ body {
   height: 694px;
   border-radius: 41px;
   background-color: rgba(219, 219, 249, 0.3);
-
-  padding: px;
   text-align: center;
   justify-content: center;
 }
@@ -451,7 +482,7 @@ body {
   max-width: 600px;
   height: auto;
   padding: 20px;
-  background-color: rgba(219, 219, 249, 0.44);
+  background-color: rgba(175, 175, 199, 0.3);
   border-radius: 41px;
 }
 
@@ -690,7 +721,7 @@ nav {
   left: 50px;
   top: 175px;
   border-radius: 41px;
-  background-color: #1e7b85;
+  background-color: rgba(175, 175, 199, 0.3);
 }
 
 .listContainer {
@@ -714,11 +745,10 @@ h2.stockdetails1 {
   position: absolute;
   color: #000000;
   font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
-
   font-size: 45px;
-  top: 70px;
+  top: 100px;
   left: 70px;
-  font-weight: 600;
+  font-weight: 300;
 }
 
 .list-checkbox {
@@ -761,7 +791,6 @@ h2.stockdetails1 {
   margin-bottom: 10px;
   color: #000000;
   font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
-
   font-size: 22px;
   justify-content: space-between;
 }
@@ -794,7 +823,6 @@ h2.stockdetails1 {
   background-color: transparent;
   color: #000000;
   font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
-
   font-size: 25px;
   margin-right: 140px;
   margin-top: 5px;
@@ -1010,6 +1038,11 @@ h2.stockdetails1 {
 .nav-link {
   display: flex;
   align-items: center;
+}
+
+.tiny-icon {
+  width: 50px;
+  height: 50px;
 }
 .small-icon {
   width: 100px;
