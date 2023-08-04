@@ -8,6 +8,7 @@ const nodemailer = require('nodemailer');
 
 const addpatientController = async (req,res)=>{
     try {
+        console.log(req.body)
        const asha = await patientModel.findOne({patient_id:req.body.patient_id})
        if(asha)
        {
