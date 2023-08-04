@@ -31,43 +31,56 @@ const PatientView = () => {
   }, []);
   return (
     <section>
-      <h2 className="stockdetails1">Patients</h2>
+      <div className="patient-container">
+        <Image className="small-icon2" src={Ast.userb} alt="patient" />
+        <h2 className="patientdetails">Patients</h2>
+      </div>
       <div className="roundrect3"></div>
       <div className="roundrect">
         <ul className="patientList">
           {patient.map((p, index) => (
             <li className="patientItem" key={index}>
-              <Button
-                onClick={() => {
-                  console.log("adsad");
-                  onclickNavProfile(p.patient_id);
-                }}
-                className="icon-button-list"
-              >
-                <Image
-                  className="tiny-icon"
-                  src={Ast.smalluser}
-                  alt="patient"
-                />
-              </Button>
-              <Button
-                onClick={() => {
-                  console.log("adsad");
-                  onclickNavProfile(p.patient_id);
-                }}
-                className="inside-button4"
-              >
-                {p.name}
-              </Button>
+              <div className="patient-container">
+                <Button
+                  onClick={() => {
+                    console.log("adsad");
+                    onclickNavProfile(p.patient_id);
+                  }}
+                  className="icon-button-list"
+                >
+                  <Image
+                    className="tiny-icon"
+                    src={Ast.smalluserb}
+                    alt="patient"
+                  />
+                </Button>
+                <Button
+                  onClick={() => {
+                    console.log("adsad");
+                    onclickNavProfile(p.patient_id);
+                  }}
+                  className="inside-button-patient"
+                >
+                  {p.name}
+                </Button>
+              </div>
             </li>
           ))}
         </ul>
       </div>
 
       <div className="roundrect1">
-        <div className="addbox-centre1">
+        <div className="addbox-centre2">
+          <Button onClick={OnclickNav} className="icon-button">
+            <Image
+              className="small-icon"
+              src={Ast.addpatientb}
+              alt="Add Patient"
+            />
+          </Button>
+
           <Button onClick={OnclickNav} className="inside-button1">
-            Add patient
+            Add Patient
           </Button>
         </div>
       </div>

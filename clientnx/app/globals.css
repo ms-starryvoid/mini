@@ -213,7 +213,7 @@ p.staff {
   left: 900px;
 }
 body {
-  background-color: azure;
+  background-color: #fff;
   font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
   font-synthesis: none;
   background-size: 1440px 1024px;
@@ -314,8 +314,7 @@ body {
 .inside-button1 {
   position: relative;
   display: contents;
-  background-color: #1e7b85;
-  color: beige;
+  color: #000000;
   font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
   font-size: 29px;
   bottom: 10px;
@@ -641,7 +640,7 @@ nav {
   left: 680px;
   top: 175px;
   border-radius: 41px;
-  background-color: #1e7b85;
+  background-color: rgba(175, 175, 199, 0.3);
   overflow: hidden;
   overflow-y: scroll;
 }
@@ -668,7 +667,7 @@ nav {
   left: 680px;
   top: 400px;
   border-radius: 41px;
-  background-color: #1e7b85;
+  background-color: rgba(175, 175, 199, 0.3);
   overflow: hidden;
   overflow-y: scroll;
 }
@@ -750,7 +749,17 @@ h2.stockdetails1 {
   left: 70px;
   font-weight: 300;
 }
-
+h2.patientdetails {
+  position: absolute;
+  color: #000000;
+  font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
+  font-size: 45px;
+  top: 100px;
+  left: 110px;
+  margin-bottom: 30px;
+  font-weight: 300;
+  line-height: 10px;
+}
 .list-checkbox {
   margin-top: 83px;
   margin-left: 10px;
@@ -781,7 +790,6 @@ h2.stockdetails1 {
 }
 .patientList {
   list-style-type: none;
-  padding: 20px;
   margin: 20px;
 }
 
@@ -801,11 +809,14 @@ h2.stockdetails1 {
   margin-left: 30px;
   color: #000000;
   font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
-
   font-size: 22px;
   justify-content: space-between;
 }
-
+.patient-container {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
 .inside-button3 {
   position: relative;
   background-color: transparent;
@@ -828,6 +839,17 @@ h2.stockdetails1 {
   margin-top: 5px;
   cursor: pointer;
   border-color: transparent;
+}
+.inside-button-patient {
+  position: relative;
+  background-color: transparent;
+  color: #000000;
+  font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
+  font-size: 25px;
+  margin-right: 140px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border: none;
 }
 .inside-button5 {
   position: relative;
@@ -879,6 +901,21 @@ h2.stockdetails1 {
   text-align: center;
 }
 
+.addbox-centre2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px;
+  height: 50px;
+  border-radius: 41px;
+  text-align: center;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 .inside-button6 {
   position: relative;
   background-color: transparent;
@@ -1043,6 +1080,7 @@ h2.stockdetails1 {
 .tiny-icon {
   width: 50px;
   height: 50px;
+  margin-right: 10px;
 }
 .small-icon {
   width: 100px;
@@ -1051,6 +1089,11 @@ h2.stockdetails1 {
 .small-icon1 {
   width: 115px;
   height: 115px;
+}
+.small-icon2 {
+  width: 67px;
+  height: 67px;
+  margin-left: 30px;
 }
 .medium-icon {
   width: 130px;
