@@ -3,6 +3,14 @@ const bcrypt = require('bcryptjs')
 const jwt =require('jsonwebtoken')
 const patientModel = require('../models/patientModel')
 const userModel = require('../models/userModel')
+const nodemailer = require('nodemailer');
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'homecarejourneys@gmail.com',
+    pass: 'homecare',
+  },
+});
 
 const addpatientController = async (req,res)=>{
     try {
@@ -15,6 +23,24 @@ const addpatientController = async (req,res)=>{
         const newAsha = new patientModel(req.body)
         await newAsha.save()
         console.log(newAsha)
+        if(req.body.email)
+        {
+            const mailOptions = {
+                from: 'homecarejourneys@gmail.com',
+                to: req.body.email,
+                subject: 'Patient ID Notification',
+                text: `Your patient ID is: ${req.body.patient_id}`,
+              };
+        
+              transporter.sendMail(mailOptions, (error, info) => {
+                if (error) {
+                  console.log('Error sending email:', error);
+                } else {
+                  console.log('Patient ID notification email sent:', info.response);
+                }
+              });
+        }
+        
         return res.status(200).send({message:"NEW PATIENT SUCCESSFULLY ADDED", success:true})
        }
     } catch (error) {

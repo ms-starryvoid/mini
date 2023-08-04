@@ -34,7 +34,7 @@ const ashaSchema = new mongoose.Schema(
           },
         email:{
             type:String,
-            required:[true,'email is required']
+           
         },
         phone:{
             type:Number,
@@ -43,7 +43,10 @@ const ashaSchema = new mongoose.Schema(
         ward_number:{
             type:Number,
             default:1
-        }
+        },
+        dob:{
+            type:Date
+          }
 
     }
 )

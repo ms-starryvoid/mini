@@ -34,7 +34,7 @@ const patientSchema = new mongoose.Schema(
             },
           email:{
               type:String,
-              required:[true,'email is required']
+              
           },
           phone:{
               type:Number,
@@ -50,6 +50,9 @@ const patientSchema = new mongoose.Schema(
           },
           user_id:{
             type:Number
+          },
+          dob:{
+            type:Date
           }
           
           
