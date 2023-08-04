@@ -792,7 +792,9 @@ h2.patientdetails {
   list-style-type: none;
   margin: 20px;
 }
-
+.patientList p {
+  margin: 20px 0; /* Adjust this value for the desired vertical spacing between each item */
+}
 .patientItem {
   display: flex;
   align-items: center;
@@ -949,7 +951,7 @@ h2.patientdetails {
   width: 50%;
   height: 60%;
   border-radius: 41px;
-  background-color: rgba(219, 219, 249, 0.3);
+  background-color: rgba(175, 175, 199, 0.3);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -962,38 +964,39 @@ h2.patientdetails {
   right: 1in;
   bottom: 1in;
   font-size: 20px;
-  color: white;
+  color: #000000;
 }
 
 .circle-profile {
   position: absolute;
   left: 1in;
   top: 3in;
-  /* top: calc(50% + 5vh); */
   transform: translateY(-50%);
   width: 45vh;
   height: 45vh;
   border-radius: 50%;
-  background-color: rgba(219, 219, 249, 0.3);
+  background-color: rgba(175, 175, 199, 0.3);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .heading-profile {
   font-size: 50px;
   padding-top: 0.5in;
   padding-left: 0.5in;
-  color: white;
+  color: #000000;
 }
 
 .line-profile {
   width: 90%;
   height: 1px;
-  background-color: white;
+  background-color: rgba(175, 175, 199, 0.3);
 }
 
 .smalltext-profile {
-  font-size: 14px;
-  color: white;
-  background-color: transparent;
+  font-size: 22px;
   border: 0px;
   bottom: 15px;
   left: 270px;
@@ -1098,6 +1101,13 @@ h2.patientdetails {
 .medium-icon {
   width: 130px;
   height: 130px;
+}
+
+.huge-icon {
+  width: 200px;
+  height: 200px;
+  align-items: centre;
+  object-fit: cover;
 }
 .signup-form {
   max-width: 400px;

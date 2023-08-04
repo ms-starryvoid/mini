@@ -5,6 +5,8 @@ import api from "@/api";
 import { Form, Input, message, Checkbox, Button } from "antd";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
+import * as Ast from "/assets";
 
 const AdminProfile = () => {
   const [userdetails, setuserdetails] = useState([]);
@@ -61,10 +63,16 @@ const AdminProfile = () => {
   return (
     <div className="container-profile">
       <h1 className="heading-profile">Admin's Profile</h1>
-      <div className="circle-profile" />
+      <div className="circle-profile">
+        <Image className="huge-icon" src={Ast.adminb} alt="admin" />
+      </div>
       <div className="rectangle-profile">
         {editing ? (
-          <Form onFinish={handleSubmit} initialValues={userdetails}>
+          <Form
+            onFinish={handleSubmit}
+            initialValues={userdetails}
+            className="signup-form"
+          >
             <Form.Item name="email" label="Email">
               <Input />
             </Form.Item>
@@ -74,7 +82,6 @@ const AdminProfile = () => {
             <Form.Item name="address" label="Address">
               <Input />
             </Form.Item>
-            <div className="line-profile" />
             <Button type="primary" htmlType="submit">
               Save
             </Button>
@@ -82,15 +89,21 @@ const AdminProfile = () => {
           </Form>
         ) : (
           <>
-            <p>Name: {userdetails.name}</p>
-            <p>Age: {userdetails.age}</p>
-            <p>Gender: {userdetails.gender}</p>
-            <p>Email: {userdetails.email}</p>
-            <p>Phone: {userdetails.phone}</p>
-
-            <div className="line-profile" />
-            <Button className="smalltext-profile" onClick={handleEdit}>
-              Edit profile
+            <div className="patient-container">
+              <div className="patientList">
+                <p>Name: {userdetails.name}</p>
+                <p>Age: {userdetails.age}</p>
+                <p>Gender: {userdetails.gender}</p>
+                <p>Email: {userdetails.email}</p>
+                <p>Phone: {userdetails.phone}</p>
+              </div>
+            </div>
+            <Button
+              type="submit"
+              onClick={handleEdit}
+              className="insid-button5"
+            >
+              Edit
             </Button>
           </>
         )}

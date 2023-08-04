@@ -36,12 +36,19 @@ const SignupAs = () => {
               <div className="container">
                 <div>
                   <div className="rounded-rectangle-darker">
-                    <Button onClick={OnclickNavAsha} className="icon-button">
-                      <Image className="small-icon" src={Ast.admin} alt="Admin" />
+                    <Button onClick={OnclickNavPatient} className="icon-button">
+                      <Image
+                        className="small-icon1"
+                        src={Ast.user}
+                        alt="Patient"
+                      />
                     </Button>
                   </div>
-                  <Button onClick={OnclickNavAsha} className="inside-button12">
-                    Admin
+                  <Button
+                    onClick={OnclickNavPatient}
+                    className="inside-button12"
+                  >
+                    Patient
                   </Button>
                 </div>
 

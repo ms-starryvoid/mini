@@ -12,3 +12,4 @@ export { default as userb } from "./userb.png";
 export { default as addpatientb } from "./addpatientb.png";
 export { default as ashab } from "./ashab.png";
 export { default as smallashab } from "./smallashab.png";
+export { default as adminb } from "./adminb.png";
