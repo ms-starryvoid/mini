@@ -10,6 +10,7 @@ const addpatientController = async (req,res)=>{
     try {
         console.log(req.body)
        const asha = await patientModel.findOne({patient_id:req.body.patient_id})
+       console.log(asha)
        if(asha)
        {
         return res.status(500).send({message:'THIS patient already exists', success:false})

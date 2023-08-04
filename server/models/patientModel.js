@@ -50,9 +50,6 @@ const patientSchema = new mongoose.Schema(
           },
           user_id:{
             type:Number
-          },
-          dob:{
-            type:Date
           }
           
           
