@@ -4,13 +4,7 @@ const jwt =require('jsonwebtoken')
 const patientModel = require('../models/patientModel')
 const userModel = require('../models/userModel')
 const nodemailer = require('nodemailer');
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: 'homecarejourneys@gmail.com',
-    pass: 'homecare',
-  },
-});
+
 
 const addpatientController = async (req,res)=>{
     try {
@@ -20,6 +14,13 @@ const addpatientController = async (req,res)=>{
         return res.status(500).send({message:'THIS patient already exists', success:false})
        } 
        else{
+        const transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+              user: 'homecarejourneys@gmail.com',
+              pass: 'homecare',
+            },
+          });
         const newAsha = new patientModel(req.body)
         await newAsha.save()
         console.log(newAsha)

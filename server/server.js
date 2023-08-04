@@ -46,7 +46,7 @@ app.use('/api/v1/user',require('./routes/patientRoute'))
 app.use('/api/v1/user',require('./controllers/stockControll'))
 app.use('/api/v1/user',require('./controllers/stockControll'))
 app.use('/api/v1/user',require('./controllers/stockControll'))
-
+app.use('/api/v1/user',require('./routes/patientRoute'))
 
 app.use('/api/v1/user',require('./routes/reportRoute'))
 app.use('/api/v1/user',require('./routes/reportRoute'))
