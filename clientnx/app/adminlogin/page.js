@@ -51,7 +51,7 @@ const Login = () => {
             <Input type="password" required />
           </Form.Item>
           <div className="centered-button-container">
-            <Button type="submit">Submit</Button>
+            <button type="submit">Submit</button>
           </div>
         </Form>
       </div>

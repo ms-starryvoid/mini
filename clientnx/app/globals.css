@@ -158,6 +158,16 @@ p.home {
   left: 954px;
   font-weight: 100;
 }
+p.home1 {
+  position: absolute;
+  color: #000000;
+  font-family: "Noto Nastaliq Urdu";
+  font-size: 29px;
+  top: 21px;
+  left: 954px;
+  font-weight: 100;
+  font-weight: 500px;
+}
 p.about {
   position: absolute;
   color: #000000;
@@ -869,7 +879,6 @@ h2.patientdetails {
   background-color: transparent;
   color: #000000;
   font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
-
   font-size: 25px;
   cursor: pointer;
   border-color: transparent;
@@ -1218,4 +1227,26 @@ h2.patientdetails {
 
 .centered-button-container button[type="submit"]:hover {
   background-color: #1b6871;
+}
+p.todaysdate{ 
+  position: absolute; 
+  color: #515151; 
+  font-family: 'Poppins',sans-serif; 
+  font-size: 18px; 
+  top: 14px; 
+  left: 458px; 
+}
+
+.visitList {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.visitItem {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0;
 }

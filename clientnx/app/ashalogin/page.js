@@ -52,8 +52,8 @@ const Ashalogin = () => {
           <Input type="password" required />
         </Form.Item>
         <div className="centered-button-container">
-          <button type="submit">Submit</button>
-        </div>
+            <button type="submit">Submit</button>
+          </div>
       </Form>
     </div>
   </div>

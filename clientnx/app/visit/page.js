@@ -71,57 +71,59 @@ const StockRequest = () => {
   }, []);
   return (
     <section>
-      <h2 className="stockdetails1">Stock request</h2>
+      <h2 className="stockdetails1">Visit Schedule</h2>
       <div className="roundrect3"></div>
       <div className="roundrect">
         <ul className="patientList">
-          {items.map((item) => (
-            <li className="patientItem" key={item.id}>
-              {item.stock_name}
-              <div className="addbox">
-                <Button
-                  onClick={() => {
-                    OnclickNavReq(item.stock_name);
-                  }}
-                  className="inside-button5"
-                >
-                  Request
-                </Button>
-              </div>
-            </li>
-          ))}
+          <li className="patientItem">
+            <Button className="inside-button5">Edna Jason</Button>
+          </li>
+          <li className="patientItem">
+            <Button className="inside-button5">Dona Johnson</Button>
+          </li>
+          <li className="patientItem">
+            <Button className="inside-button5">Megha Joy</Button>
+          </li>
+          <li className="patientItem">
+            <Button className="inside-button5">Amalia Firoz</Button>
+          </li>
+          <li className="patientItem">
+            <Button className="inside-button5">Arya KS</Button>
+          </li>
+          <li className="patientItem">
+            <Button className="inside-button5">Vigil George</Button>
+          </li>
         </ul>
       </div>
-
-      <div className="roundrect1">
-        <h2 className="stockdetails">Accepted Requests</h2>
+      <div className="roundrect2">
+        <h2 className="stockdetails">Today's Visits</h2>
         <div className="list-checkbox">
           <ul className="patientList">
-            {appitems.length > 0 ? (
-              appitems.map((item) => (
-                <li className="patientItem" key={item.id}>
-                  {item.stock_name}
-                </li>
-              ))
-            ) : (
-              <li>No approved requests</li>
-            )}
+            <li className="patientItem">
+              <Button className="inside-button5">Edna Jason</Button>
+            </li>
+            <li className="patientItem">
+              <Button className="inside-button5">Dona Johnson</Button>
+            </li>
+            <li className="patientItem">
+              <Button className="inside-button5">Megha Joy</Button>
+            </li>
           </ul>
         </div>
       </div>
-      <div className="roundrect2">
-        <h2 className="stockdetails">Pending Requests</h2>
+      <div className="roundrect1">
+        <h2 className="stockdetails">Upcoming Visits</h2>
         <div className="list-checkbox">
           <ul className="patientList">
-            {penditems.length > 0 ? (
-              penditems.map((item) => (
-                <li className="patientItem" key={item.id}>
-                  {item.stock_name}
-                </li>
-              ))
-            ) : (
-              <li>No pending requests</li>
-            )}
+            <li className="patientItem">
+              <Button className="inside-button5">Aswathy S </Button>
+            </li>
+            <li className="patientItem">
+              <Button className="inside-button5">Naveena Liz</Button>
+            </li>
+            <li className="patientItem">
+              <Button className="inside-button5">Rebecca Susan</Button>
+            </li>
           </ul>
         </div>
       </div>
