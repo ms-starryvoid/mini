@@ -12,15 +12,9 @@ import {
 } from "antd";
 import { useRouter } from "next/navigation";
 import React from "react";
-// import axios from 'axios';
-// import React from 'react';
-// import './Addpatient.css';
-// import { PlusOutlined } from '@ant-design/icons';
-// import { DatePicker, Form, Input, Select, Upload } from 'antd';
 import { useState } from "react";
 import Layout from "../layout";
 
-// import api from '../../components/api';
 const { RangePicker } = DatePicker;
 const { TextArea } = Input;
 const normFile = (e) => {
@@ -36,7 +30,7 @@ const Addpatient = () => {
     try {
       values.age = Number(values.age);
       values.phone = Number(values.phone);
-      values.ward_number=Number(values.ward_number)
+      values.ward_number = Number(values.ward_number);
       const response = await api.post("/api/v1/user/addpatient", values);
       console.log(response.data);
       if (response.data.success) {
@@ -49,75 +43,62 @@ const Addpatient = () => {
   };
   return (
     <Layout>
-      <div className="asd">
-        <h1>Add Patient</h1>
-        <Form
-          labelCol={{
-            span: 10,
-          }}
-          wrapperCol={{
-            span: 20,
-          }}
-          layout="horizontal"
-          disabled={componentDisabled}
-          style={{
-            maxWidth: 1000,
-          }}
-          onFinish={onFinish}
-        >
-          <div className="rectangular"></div>
+      <h2 className="heading-add">Add Patient</h2>
+      <div className="container-short">
+        <div className="huge-container">
+          <Form
+            layout="horizontal"
+            disabled={componentDisabled}
+            onFinish={onFinish}
+            className="add-form"
+          >
+            <div className="left-content">
+              <p>
+                <Form.Item label="Name" name="name">
+                  <Input />
+                </Form.Item>
+                <Form.Item label="Age" name="age">
+                  <Input type="text"></Input>
+                </Form.Item>
+                <Form.Item label="Gender" name="gender">
+                  <Select>
+                    <Select.Option value="male">male</Select.Option>
 
-          <fieldset>
-            <div className="rectangular">
-              <div className="left-content">
-                <p>
-                  <Form.Item label="Name" name="name">
-                    <Input />
-                  </Form.Item>
-                  <Form.Item label="Age" name="age">
-                    <Input type="text"></Input>
-                  </Form.Item>
-                  <Form.Item label="Gender" name="gender">
-                    <Select>
-                      <Select.Option value="male">male</Select.Option>
-                   
-                      <Select.Option value="female">female</Select.Option>
-                    </Select>
-                  </Form.Item>
-                  
-                  
-                  <Form.Item label="Phone" name="phone">
-                    <Input />
-                  </Form.Item>
-                  <Form.Item label="Email" name="email">
-                    <Input />
-                  </Form.Item>
-                </p>
-              </div>
-              <div className="right-content">
-                <p>
-                  <Form.Item label="Patient ID" name="patient_id">
-                    <Input />
-                  </Form.Item>
-                  <Form.Item label="birthday" name="visit_date">
-                    <DatePicker />
-                  </Form.Item>
-                  <Form.Item label="Ward number" name="ward_number">
-                    <Input />
-                  </Form.Item>
-                  <Form.Item label="Asha Worker" name="assignd_asha">
-                    <Input />
-                  </Form.Item>
-                </p>
-              </div>
+                    <Select.Option value="female">female</Select.Option>
+                  </Select>
+                </Form.Item>
+
+                <Form.Item label="Phone" name="phone">
+                  <Input />
+                </Form.Item>
+                <Form.Item label="Email" name="email">
+                  <Input />
+                </Form.Item>
+              </p>
             </div>
-          </fieldset>
-          <Space wrap>
-            <Button type="primary" htmlType="submit">
-              Submit
-            </Button>
-          </Space>
-        </Form>
+            <div className="right-content">
+              <p>
+                <Form.Item label="Patient ID" name="patient_id">
+                  <Input />
+                </Form.Item>
+                <Form.Item label="Date of Birth" name="visit_date">
+                  <DatePicker />
+                </Form.Item>
+                <Form.Item label="Ward number" name="ward_number">
+                  <Input />
+                </Form.Item>
+                <Form.Item label="Asha Worker" name="assignd_asha">
+                  <Input />
+                </Form.Item>
+              </p>
+            </div>
+            <Space wrap>
+              <Button type="primary" htmlType="submit" style={{ backgroundColor: "#1b6871", borderColor: "#1b6871" }}>
+                Submit
+              </Button>
+            </Space>
+          </Form>
+        </div>
       </div>
     </Layout>
   );
