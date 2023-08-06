@@ -6,7 +6,7 @@ import { Form, Input, message, Checkbox, Button } from "antd";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
-const StockRequest = () => {
+const StockRequest = ({params}) => {
   const router = useRouter();
   const [items, setItems] = useState([]);
   const [appitems, setappItems] = useState([] || ["no approved"]);
