@@ -14,7 +14,8 @@ const PatientView = () => {
     router.push("/addpatient");
   };
   const onclickNavProfile = (uid) => {
-    router.push(`/just/${uid}`);
+    router.push(`/just/${uid}`); //slug use pushing uid to next page
+    //use params.slug to get it in new page
   };
   const fetchpatient = async () => {
     try {

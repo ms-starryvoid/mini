@@ -4,12 +4,13 @@ import api from "@/api";
 
 import { Form, Input, message, Checkbox, Button } from "antd";
 import { useRouter } from "next/navigation";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import * as Ast from "/assets";
 
 const PatientHome = () => {
   const router = useRouter();
+  const [user,setuser]=useState([])
   const OnclickNavViewR = () => {
     router.push("/viewreport");
   };
@@ -19,8 +20,8 @@ const PatientHome = () => {
   const OnclickNavViewS = () => {
     router.push("/viewschedule");
   };
-  const OnclickNavStockR = () => {
-    router.push("/stockrequest");
+  const OnclickNavStockR = (id) => {
+    router.push(`/stockrequest/${id}`);
   };
   const getUserData = async () => {
     try {
@@ -34,9 +35,10 @@ const PatientHome = () => {
         }
       );
       console.log(res.data);
+      setuser(res.data)
       localStorage.setItem("userData", JSON.stringify(res.data));
     } catch (error) {
-      console.log(error);
+      console.log(error);//take data from the local storage if it hasnt changed on back button
     }
   };
 
@@ -46,7 +48,7 @@ const PatientHome = () => {
   return (
     <section className="zoom-out">
       <div className="page-container75">
-        <h2 className="heading1">Welcome back, Edna</h2>
+        <h2 className="heading1">Welcome back, {user.name}</h2> 
 
         <div className="container">
           <div className="rounded-rectangle-long-home">
