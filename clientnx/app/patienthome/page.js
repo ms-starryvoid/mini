@@ -34,7 +34,7 @@ const PatientHome = () => {
           },
         }
       );
-      console.log(res.data.data);
+      console.log(res);
       setuser(res.data.data)
       console.log(user)
       localStorage.setItem("userData", JSON.stringify(res.data.data));

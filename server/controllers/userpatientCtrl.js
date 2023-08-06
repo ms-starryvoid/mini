@@ -79,8 +79,8 @@ const patientauthController = async (req,res)=>{
         else{
             //const userdata = await ashaModel.findOne({asha_id:ashaid})
             res.status(200).send({success:true, data :{
-                name:user.name,
-                email:user.email,
+                name:ashaData.name,
+                email:ashaData.email,
                 uid:user.ashaid,
                 phone:ashaData.phone,
                 address:ashaData.address.housen
