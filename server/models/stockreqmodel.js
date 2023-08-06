@@ -4,7 +4,7 @@ const stockreqSchema = new mongoose.Schema(
     {
         requestNo: {
             type: String,
-            
+            default:'not neded'
             
           },
         stock_name:{
