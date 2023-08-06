@@ -34,9 +34,9 @@ const PatientHome = () => {
           },
         }
       );
-      console.log(res.data);
-      setuser(res.data)
-      localStorage.setItem("userData", JSON.stringify(res.data));
+      console.log(res.data.data);
+      setuser(res.data.data)
+      localStorage.setItem("userData", JSON.stringify(res.data.data));
     } catch (error) {
       console.log(error);//take data from the local storage if it hasnt changed on back button
     }
@@ -80,7 +80,7 @@ const PatientHome = () => {
           </div>
 
           <div className="rounded-rectangle-long-home">
-            <Button onClick={OnclickNavStockR} className="icon-button">
+            <Button onClick={OnclickNavStockR(user.uid)} className="icon-button">
               <Image
                 className="small-icon1"
                 src={Ast.stock}
