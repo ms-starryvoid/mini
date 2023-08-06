@@ -15,7 +15,7 @@ const stockreqCtrl= async (req,res)=>{
         if(!Sreq){
             return res.status(200).send({message: 'stock not found', success :false})
         }
-        const Stockrequestquantity = req.body.quantity
+        const Stockrequestquantity = req.body.request_quantity
         if(Sreq.quantity< Stockrequestquantity)
         {
             return res.status(200).send({message:"not enough quantity", success: false})
