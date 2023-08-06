@@ -49,7 +49,7 @@ const AshaHome = () => {
   return (
     <section className="zoom-out">
       <div className="page-container75">
-        <h2 className="heading1">Welcome back, {ashadata.name}</h2>
+        <h2 className="heading1">Welcome back,{ashadata.name}</h2>
 
         <div className="container">
           <div className="rounded-rectangle-long-home">

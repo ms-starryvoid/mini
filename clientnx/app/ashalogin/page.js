@@ -38,7 +38,7 @@ const Ashalogin = () => {
   return (
     <div className="container">
     <div className="signupcontainer">
-      <h2 className="signup-heading">ASHA Worker Login</h2>
+      <h2 className="signup-heading">Staff Login</h2>
       <Form
         layout="vertical"
         onFinish={OnFinishHandler}

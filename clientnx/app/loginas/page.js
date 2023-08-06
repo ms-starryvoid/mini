@@ -27,7 +27,6 @@ const LoginAs = () => {
   return (
     <section className="zoom-out">
       <div className="page-container75">
-        <div className="circle"></div>
         <div className="container">
           <div className="rounded-rectangle-huge">
             <h2 className="heading3">Login as</h2>

@@ -91,14 +91,20 @@ const AdminProfile = () => {
           <>
             <div className="patient-container">
               <div className="patientList">
-                <p>Name: {userdetails.name}</p>
-                <p>Age: {userdetails.age}</p>
-                <p>Gender: {userdetails.gender}</p>
-                <p>Email: {userdetails.email}</p>
-                <p>Phone: {userdetails.phone}</p>
+                <p>Name: Amalia {userdetails.name}</p>
+                <p>Age: 50{userdetails.age}</p>
+                <p>Gender: Female{userdetails.gender}</p>
+                <p>Email: amalia19@gmail.com{userdetails.email}</p>
+                <p>Phone: 7835468212{userdetails.phone}</p>
               </div>
             </div>
-            <Button className="smalltext-profile">Edit profile</Button>
+            <Button
+              type="submit"
+              onClick={handleEdit}
+              className="insid-button5"
+            >
+              Edit
+            </Button>
           </>
         )}
       </div>

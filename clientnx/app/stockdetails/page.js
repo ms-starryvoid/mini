@@ -139,10 +139,6 @@ const StockDetails = () => {
 
   return (
     <section>
-      <div className="circle1"></div>
-      <div className="circle2"></div>
-      <div className="circle3"></div>
-
       <h2 className="stockdetails1">Stock details</h2>
       <div className="roundrect3"></div>
       <div className="roundrect">
