@@ -53,7 +53,7 @@ const StockRequest = () => {
   };
   const fetchpendingreq = async () => {
     try {
-      const patient_id = "1001";
+      const patient_id = params.slug;
       const res = await api.post("api/v1/user/pendingreq", {
         patient_id: patient_id,
       });
