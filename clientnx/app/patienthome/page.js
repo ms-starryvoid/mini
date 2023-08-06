@@ -36,6 +36,7 @@ const PatientHome = () => {
       );
       console.log(res.data.data);
       setuser(res.data.data)
+      console.log(user)
       localStorage.setItem("userData", JSON.stringify(res.data.data));
     } catch (error) {
       console.log(error);//take data from the local storage if it hasnt changed on back button
