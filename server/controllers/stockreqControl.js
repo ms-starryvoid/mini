@@ -1,7 +1,13 @@
 
 const stockModel= require('../models/stockModel')
 const stockreqModel = require('../models/stockreqmodel')
+function generateUniqueRequestId() {
+  const timestamp = Date.now().toString(36); // Convert current timestamp to base36 string
+  const randomChars = Math.random().toString(36).substr(2, 5); // Generate random string of 5 characters
+  const requestId = `${timestamp}-${randomChars}`; // Combine timestamp and random string
 
+  return requestId;
+}
 const stockreqCtrl= async (req,res)=>{
     try {
         console.log(req.body)
@@ -14,8 +20,8 @@ const stockreqCtrl= async (req,res)=>{
         {
             return res.status(200).send({message:"not enough quantity", success: false})
         }
-        
-        const stockreq = await stockreqModel.insertMany({stock_id:Sreq.stock_id , request_quantity: Stockrequestquantity,patient_id:req.body.patient_id,status:'pending', stock_name:req.body.stock_name})
+        const reqid= generateUniqueRequestId()
+        const stockreq = await stockreqModel.insertMany({requestNo:reqid,stock_id:Sreq.stock_id , request_quantity: Stockrequestquantity,patient_id:req.body.patient_id,status:'pending', stock_name:req.body.stock_name})
 
         
         
