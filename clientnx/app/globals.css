@@ -1228,13 +1228,13 @@ h2.patientdetails {
 .centered-button-container button[type="submit"]:hover {
   background-color: #1b6871;
 }
-p.todaysdate{ 
-  position: absolute; 
-  color: #515151; 
-  font-family: 'Poppins',sans-serif; 
-  font-size: 18px; 
-  top: 14px; 
-  left: 458px; 
+p.todaysdate {
+  position: absolute;
+  color: #515151;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  top: 14px;
+  left: 458px;
 }
 
 .visitList {
@@ -1267,7 +1267,7 @@ p.todaysdate{
   justify-content: center;
   width: 50%;
   max-width: 1000px;
-  background-color:rgba(175, 175, 199, 0.3);
+  background-color: rgba(175, 175, 199, 0.3);
   border-radius: 41px;
 }
 
@@ -1275,4 +1275,75 @@ p.todaysdate{
   float: center;
   width: 100%;
   flex: 1;
+}
+
+/* Add your existing styles */
+.report {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.rectangle-report {
+  width: 1000px;
+  height: 800px;
+  margin-top: 20px;
+  position: relative;
+  display: block;
+  border-radius: 41px;
+  background-color: rgba(175, 175, 199, 0.6);
+  margin-right: 60px;
+  text-align: center;
+  justify-content: center;
+}
+
+.roundrect-report {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(175, 175, 199, 0.3);
+  border-radius: 41px;
+  width: 700px;
+  height: 460px;
+  position: absolute;
+  left: 50px;
+  top: 175px;
+}
+
+.reports {
+  display: flex;
+  flex: 1;
+  margin: 30px;
+}
+
+.reportno {
+  border: none;
+  background: none;
+  color: #000000;
+  margin-left: 30px;
+}
+
+.dates {
+  text-align: right;
+  margin: 30px;
+}
+
+.date {
+  font-size: 16px;
+  color: #000000;
+}
+.report-view-container {
+  display: block;
+  align-items: center;
+  position: fixed;
+  left: 20%;
+  top: 2%;
+}
+.report-heading{
+  color: #000000;
+  text-align: center;
+  font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
+  font-size: 40px;
+  top: 650px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  font-weight: 500;
 }
