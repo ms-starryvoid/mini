@@ -208,7 +208,7 @@ const StockDetails = () => {
                 {item.patient_id}
                 <Button
                   onClick={() => {
-                    OnclickAcc();
+                    approveStockRequest(item);
                   }}
                   className="inside-button5"
                 >
@@ -216,7 +216,7 @@ const StockDetails = () => {
                 </Button>
                 <Button
                   onClick={() => {
-                    OnclickAcc();
+                    rejectStockRequest(item);
                   }}
                   className="inside-button7"
                 >

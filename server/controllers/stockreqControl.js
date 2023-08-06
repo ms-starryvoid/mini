@@ -12,6 +12,11 @@ const stockreqCtrl= async (req,res)=>{
     try {
         console.log(req.body)
         const Sreq= await stockModel.findOne({stock_name:req.body.stock_name})
+        const sr= await stockreqModel.find({stock_name:req.body.stock_name, patient_id:req.body.stock_name})
+        if(sr)
+        {
+          return res.status(500).send({message:'already requested',success:false})
+        }
         if(!Sreq){
             return res.status(200).send({message: 'stock not found', success :false})
         }
