@@ -51,4 +51,5 @@ router.post('/ashadetail',async  (req, res) => {
     }
   });
   
+  
 module.exports = router

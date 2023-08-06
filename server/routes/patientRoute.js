@@ -2,6 +2,7 @@ const express=require('express')
 
 const { addpatientController, viewpatientController,getWorkerDetails, getpatientDetails, deletepatientController } = require('../controllers/patientCtrl')
 const { getApprovedRequests, getPendingRequests, stockreqCtrl } = require('../controllers/stockreqControl')
+const { stockstatusupdate } = require('../controllers/stockstatus')
 
 
 const router= express.Router()
@@ -34,4 +35,5 @@ router.post('/patientdetail',async  (req, res) => {
   router.post('/approvedreq',getApprovedRequests)
   router.post('/pendingreq',getPendingRequests)
   router.post('/stockrequets',stockreqCtrl)
+  router.post('/statusupdate',stockstatusupdate)
 module.exports = router

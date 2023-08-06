@@ -14,7 +14,9 @@ const StockDetails = () => {
   const approveStockRequest = async (request) => {
     console.log(request);
     try {
-      await api.put(`/api/v1/user/requests/${request.stock_name}`, {
+      await api.put('/api/v1/user/statusupdate', {
+        patient_id:request.patient_id,
+        stock_name:request.stock_name,
         status: "approved",
       });
       console.log("Stock request approved");
@@ -51,7 +53,9 @@ const StockDetails = () => {
   const rejectStockRequest = async (request) => {
     console.log(request);
     try {
-      await api.put(`/api/v1/user/requests/${request.stock_name}`, {
+      await api.put('/api/v1/user/statusupdate', {
+        patient_id:request.patient_id,
+        stock_name:request.stock_name,
         status: "rejected",
       });
       console.log("Stock request rejected");
