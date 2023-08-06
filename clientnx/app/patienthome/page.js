@@ -81,14 +81,14 @@ const PatientHome = () => {
           </div>
 
           <div className="rounded-rectangle-long-home">
-            <Button onClick={OnclickNavStockR(user.uid)} className="icon-button">
+            <Button onClick={()=> OnclickNavStockR(user.uid)} className="icon-button">
               <Image
                 className="small-icon1"
                 src={Ast.stock}
                 alt="Stock Request"
               />
             </Button>
-            <Button onClick={OnclickNavStockR} className="inside-button">
+            <Button onClick={()=>OnclickNavStockR} className="inside-button">
               Stock Request
             </Button>
           </div>
