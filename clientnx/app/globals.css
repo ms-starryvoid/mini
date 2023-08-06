@@ -1250,3 +1250,29 @@ p.todaysdate{
   list-style: none;
   padding: 0;
 }
+
+.heading-report {
+  font-size: 50px;
+  padding-top: 1%;
+  padding-left: 12%;
+  color: #000000;
+  padding-bottom: 35px;
+}
+
+.report-container {
+  position: absolute; /* Change to 'absolute' for centering */
+  display: block;
+  margin-right: 60px;
+  text-align: center;
+  justify-content: center;
+  width: 50%;
+  max-width: 1000px;
+  background-color:rgba(175, 175, 199, 0.3);
+  border-radius: 41px;
+}
+
+.content-report {
+  float: center;
+  width: 100%;
+  flex: 1;
+}
