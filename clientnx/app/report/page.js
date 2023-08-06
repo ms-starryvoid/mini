@@ -9,6 +9,15 @@ import Layout from "../layout";
 
 
 const Report = () => {
+  const onFinishH=(values)=>{
+     try {
+         const res= api.post('/api/v1/user/report',values)
+         message.success("report successfully entered")
+     } catch (error) {
+      message.error("something went wrong")
+      console.log(error)
+     }
+  }
     return(
         <Layout>
       <div className="asd">
@@ -24,7 +33,7 @@ const Report = () => {
         //   style={{
         //     maxWidth: 1000,
         //   }}
-        //   onFinish={onFinish}
+         onFinish={onFinishH}
           >
 
           <p>

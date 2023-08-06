@@ -4,6 +4,7 @@ const jwt =require('jsonwebtoken')
 const patientModel = require('../models/patientModel')
 const userModel = require('../models/userModel')
 const nodemailer = require('nodemailer');
+const visitModel = require('../models/visitModel');
 
 
 const addpatientController = async (req,res)=>{
@@ -55,7 +56,10 @@ const deletepatientController = async(req,res)=>{
     try{
         const asha = await patientModel.findOne({patient_id:req.body.patient_id})
         const user= await userModel.findOne({asha_id:req.body.patient_id})
+        const visit= await visitModel.deleteMany({patient_id:req.body.patient_id})
+        const stockreq= await stockreqModel.deleteMany({patient_id:req.body.patient_id})
         asha.deleteOne()
+       
         if(user && typeof user !=="null")user.deleteOne()
         return res.send({message:'deleted',success:true})
     }

@@ -84,4 +84,38 @@ function getPreviousMonthEndDate() {
 
       }
 
-  module.exports={scheduler}
+      const todayvisit =async(req,res)=>{
+        try {
+          
+    const currentDate = new Date();
+    const currentMonthStart = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
+    const currentMonthEnd = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0);
+
+    // Fetch visits for today
+    const visitsForToday = await visitModel.find({ day: currentDate });
+
+    // Fetch visits for the current month
+    const visitsForCurrentMonth = await visitModel.find({
+      day: { $gte: currentMonthStart, $lte: currentMonthEnd },
+    });
+
+    // Extract patient names from the fetched visits
+    const patientsForToday = visitsForToday.map((visit) => visit.patient_id);
+    const patientsForCurrentMonth = visitsForCurrentMonth.map((visit) => visit.patient_id);
+
+    // You can also fetch additional patient details here if needed
+
+    res.status(200).json({
+      today: patientsForToday,
+      currentMonth: patientsForCurrentMonth,
+    });
+ 
+    
+  
+
+
+        } catch (error) {
+          res.status(500).json({ error: "Internal server error" });
+        }
+      }
+  module.exports={scheduler,todayvisit}
