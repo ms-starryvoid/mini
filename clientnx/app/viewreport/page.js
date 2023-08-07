@@ -9,10 +9,7 @@ import React, { useEffect, useState } from "react";
 const Viewreport = () => {
   const router = useRouter();
   const [reportItems, setReportItems] = useState([]);
-  useEffect(() => {
-    // Fetch report items from the backend here
-    fetchReportItems();
-  }, []);
+  
 
   const fetchReportItems = async () => {
     try {
@@ -34,7 +31,10 @@ const Viewreport = () => {
   const onClickReport = (date) => {
     router.push(`/patientreport/${date}`);
   };
-
+  useEffect(() => {
+    // Fetch report items from the backend here
+    fetchReportItems();
+  }, []);
   return (
     <section>
       <h2 className="report-heading">Report</h2>
