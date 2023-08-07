@@ -53,7 +53,7 @@ const StockDetails = () => {
   const rejectStockRequest = async (request) => {
     console.log(request);
     try {
-      await api.put('/api/v1/user/statusupdate', {
+      await api.post('/api/v1/user/statusupdate', {
         patient_id:request.patient_id,
         stock_name:request.stock_name,
         status: "rejected",
