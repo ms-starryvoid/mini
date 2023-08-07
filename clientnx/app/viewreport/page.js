@@ -15,7 +15,7 @@ const Viewreport = () => {
     try {
       const patient_id = "1001";
       const response = await api.get("/api/v1/user/viewreport", {
-        patient_id: patient_id,
+        patient_id: patient_id
       }); // Adjust the API endpoint
       setReportItems(response.data);
       console.log(reportItems);
@@ -42,8 +42,8 @@ const Viewreport = () => {
         <div className="roundrect-report">
           <div className="reports">
             <ul className="patientList">
-              {reportItems.map((item, index) => (
-                <li key={index} className="patientItem">
+              {reportItems.map((item) => (
+                <li key={item.id} className="patientItem">
                   <div className="report">
                     <Button
                       onClick={() => {
