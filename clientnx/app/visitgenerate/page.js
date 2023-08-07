@@ -10,6 +10,7 @@ const VisitGenerate = () => {
   const router = useRouter();
   const [scheduleItems, setScheduleItems] = useState([]);
   const [patientList, setPatientList] = useState([]);
+  const [showPatientList, setShowPatientList] = useState(false);
 
   useEffect(() => {
     // Fetch schedule items from the backend here
@@ -29,7 +30,7 @@ const VisitGenerate = () => {
     }
   };
 
-  const fetchPatientList = async (data) => {
+  const fetchPatientList = async (date) => {
     try {
       const response = await api.get("/api/v1/user/patientlist", {
         date: date,

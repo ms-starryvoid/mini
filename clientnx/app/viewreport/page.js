@@ -9,11 +9,11 @@ import React, { useEffect, useState } from "react";
 const Viewreport = () => {
   const router = useRouter();
   const [reportItems, setReportItems] = useState([]);
-  
-
+  const storedData = localStorage.getItem("userData");
+      const userData = JSON.parse(storedData)
   const fetchReportItems = async () => {
     try {
-      const patient_id = "1001";
+      const patient_id = userData.uid;
       const response = await api.get("/api/v1/user/viewreport", {
        params:{patient_id: patient_id} 
       }); // Adjust the API endpoint

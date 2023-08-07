@@ -84,7 +84,7 @@ const ashaauthController = async (req,res)=>{
         else{
             //const userdata = await ashaModel.findOne({asha_id:ashaid})
             res.status(200).send({success:true, data :{
-                name:user.name,
+                name:ashaData.name,
                 email:user.email,
                 uid:user.ashaid,
                 phone:ashaData.phone,

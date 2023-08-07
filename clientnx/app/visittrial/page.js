@@ -1,13 +1,9 @@
-"use client";
-
+"use client"
 import api from "@/api";
-
-import { Form, Input, message, Checkbox, Button } from "antd";
-import { useRouter } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import { Button } from "antd";
+import { useEffect, useState } from "react";
 
 const StockRequest = () => {
-  const router= useRouter()
   const [todaysVisits, setTodaysVisits] = useState([]);
   const [upcomingVisits, setUpcomingVisits] = useState([]);
   const [patient,setpatient]=useState([])
@@ -21,9 +17,6 @@ const StockRequest = () => {
       console.log(error);
     }
   };
-  const generate=()=>{
-     router.push(visitgenerate)
-  }
   const fetchTodaysVisits = async () => {
     try {
         const currentDate = new Date();
@@ -31,8 +24,7 @@ const StockRequest = () => {
       //const formattedDate = currentDate.toISOString().split("T")[0]; // Format: YYYY-MM-DD
       
       const response = await api.post("/api/v1/user/visitday",{day:currentDate})
-      console.log(response.data)
-      setTodaysVisits(response.data.patients);
+      setTodaysVisits(response.data);
     } catch (error) {
       console.error("Error fetching today's visits:", error);
     }
@@ -52,13 +44,15 @@ const StockRequest = () => {
     fetchUpcomingVisits();
     fetchpatient()
   }, []);
+
   return (
     <section>
       <div className="visit-schedule">
         <h2 className="stockdetails1">Visit Schedule</h2>
-        <Button className="visit-button" type="primary" onClick={generate}>
+        <Button className="visit-button" type="primary">
           Generate Visit
         </Button>
+
       </div>
       <div className="roundrect3"></div>
       <div className="roundrect">
@@ -69,12 +63,15 @@ const StockRequest = () => {
             </li>
           ))}
         </ul>
+          
+        
       </div>
-      <div className="roundrect2">
+      <div className="roundrect3"></div>
+      <div className="roundrect">
         <h2 className="stockdetails">Today's Visits</h2>
         <div className="list-checkbox">
           <ul className="patientList">
-          {Array.isArray(todaysVisits) && todaysVisits.length === 0 ? (
+          {todaysVisits.length === 0 ? (
         <li className="patientItem">
           <p>No visits today</p>
         </li>
@@ -88,7 +85,7 @@ const StockRequest = () => {
           </ul>
         </div>
       </div>
-      <div className="roundrect1">
+      <div className="roundrect2">
         <h2 className="stockdetails">Upcoming Visits</h2>
         <div className="list-checkbox">
           <ul className="patientList">
@@ -109,4 +106,5 @@ const StockRequest = () => {
     </section>
   );
 };
+
 export default StockRequest;
