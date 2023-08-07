@@ -55,7 +55,7 @@ const LoginAs = () => {
               </div>
               <div>
                 <div className="rounded-rectangle-darker">
-                  <Button onClick={OnclickNavAsha} className="icon-button">
+                  <Button onClick={OnclickNavPatient} className="icon-button">
                     <Image
                       className="small-icon1"
                       src={Ast.user}
@@ -63,7 +63,7 @@ const LoginAs = () => {
                     />
                   </Button>
                 </div>
-                <Button onClick={OnclickNavAsha} className="inside-button12">
+                <Button onClick={OnclickNavPatient} className="inside-button12">
                   Patient
                 </Button>
               </div>
