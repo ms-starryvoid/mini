@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
 import Image from "next/image";
 import * as Ast from "/assets";
+import withAuth from "../withAuth";
 
 const AdminHome = () => {
   const router = useRouter();

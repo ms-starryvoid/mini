@@ -28,6 +28,19 @@ const visitModel =require("../models/visitModel")
     }
     
  }
+ const viewIndividualController= async(req,res)=>{
+  try {
+     // Assuming the patient ID is provided in the request body
+     
+     const reports = await visitModel.find({patient_id: req.query.patient_id, day:req.query.day });
+    console.log(report)
+    return res.status(200).json({report, success:true});
+   } catch (error) {
+     console.error('Error fetching reports:', error);
+     return res.status(500).json({ error: 'An error occurred while fetching reports' });
+   }
+   
+}
  const reportEntry =async(req,res)=>{
   try {
     const { patient_id, asha_id, visit_date, blood_sugar, blood_pressure, remarks } = req.body;
@@ -56,4 +69,4 @@ const visitModel =require("../models/visitModel")
   }
 
  }
- module.exports={addreportController,viewrepController,reportEntry}
+ module.exports={addreportController,viewrepController,reportEntry,viewIndividualController}

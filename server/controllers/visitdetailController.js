@@ -5,7 +5,36 @@
 const ashaModel = require("../models/ashaModel");
 const patientModel = require("../models/patientModel");
 const visitModel = require('../models/visitModel');
+const visitdaypatient=async(req,res)=>{
+    try {
+        console.log(req.body.day)
+        const visits = await visitModel.aggregate([
+            { $match: { day: req.body.day } }, // Filter by the specified day
+            {
+                $lookup: {
+                    from: 'patientModel', // Name of the patient collection
+                    localField: 'patient_id',
+                    foreignField: 'patient_id',
+                    as: 'patientDetails'
+                }
+            }
+        ]);
 
+        // Modify the result to only include patient names
+        const patients = visits.map(visit => {
+            const patientDetails = visit.patientDetails[0]; // Assuming each visit only has one patient
+            return {
+                patient_id: visit.patient_id,
+                patient_name: patientDetails ? patientDetails.patient_name : 'Unknown'
+            };
+        });
+
+        return res.status(200).json({ patients });
+
+    } catch (error) {
+        res.status(500).send({message:"not found", success:false})
+    }
+}
 
 const visitDateCtrl =async(req,res)=>{
     const { month, year } = req.body;
@@ -32,8 +61,8 @@ const visitDateCtrl =async(req,res)=>{
 }
 const visitDetail =async(req,res)=>{
     try {
-        const visitdate= req.query
-        const visit= await visitModel.find({Day:visitdate},'patient_id asha_id report')
+        const visitdate= req.query.day
+        const visit= await visitModel.find({day:visitdate},'patient_id asha_id report')
         const patientIds = visit.map((visit) => visit.patient_id);
         const ashaIds = visit.map((visit) => visit.asha_id);
         const patients = await patientModel.find({ patient_id: { $in: patientIds } });
@@ -71,4 +100,4 @@ const reportentryCtrl = async (req,res)=>{
  
     }
 }
-module.exports={visitDateCtrl,reportentryCtrl,visitDetail}
+module.exports={visitDateCtrl,reportentryCtrl,visitDetail,visitdaypatient}
