@@ -60,8 +60,8 @@ const Viewreport = () => {
           </div>
           <div className="dates">
             <ul className="patientList">
-              {reportItems.map((item, index) => (
-                <li key={index} className="patientItem">
+              {reportItems.map((item) => (
+                <li key={item.id} className="patientItem">
                   <div className="date">
                     <p className="reportno">{item.date}</p>
                   </div>
