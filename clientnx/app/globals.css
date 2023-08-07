@@ -1252,15 +1252,25 @@ p.todaysdate {
 }
 
 .heading-report {
-  font-size: 50px;
-  padding-top: 1%;
-  padding-left: 12%;
-  color: #000000;
   padding-bottom: 35px;
-  position: absolute;
+  position: relative;
   font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
   top: 100px;
   left: 70px;
+  font-weight: 300;
+  font-size: 50px;
+  padding-top: 0.5in;
+  padding-left: 0.5in;
+  color: #000000;
+}
+
+.heading-report-entry {
+  font-size: 50px;
+  padding-top: 7%;
+  padding-left: 37%;
+  color: #000000;
+  padding-bottom: 35px;
+  font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
   font-weight: 300;
 }
 
@@ -1403,7 +1413,7 @@ p.todaysdate {
 
 .button-container-report {
   display: block;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
 }
 .button-container-report button {

@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import * as Ast from "/assets";
+import withAuth from "../withAuth";
 
 const AshaHome = () => {
   const router = useRouter();
@@ -101,4 +102,4 @@ const AshaHome = () => {
   );
 };
 
-export default AshaHome;
+export default withAuth(AshaHome);

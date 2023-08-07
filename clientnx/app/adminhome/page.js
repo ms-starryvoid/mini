@@ -125,4 +125,4 @@ const AdminHome = () => {
   );
 };
 
-export default AdminHome;
+export default withAuth(AdminHome);
