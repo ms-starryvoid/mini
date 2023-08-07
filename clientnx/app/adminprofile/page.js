@@ -101,7 +101,7 @@ const AdminProfile = () => {
             <Button
               type="submit"
               onClick={handleEdit}
-              className="insid-button5"
+              className="inside-button5"
             >
               Edit
             </Button>
