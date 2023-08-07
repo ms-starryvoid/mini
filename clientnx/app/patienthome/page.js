@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import * as Ast from "/assets";
+import withAuth from "../withAuth";
 
 const PatientHome = () => {
   const router = useRouter();
@@ -99,4 +100,4 @@ const PatientHome = () => {
   );
 };
 
-export default PatientHome;
+export default withAuth(PatientHome);
