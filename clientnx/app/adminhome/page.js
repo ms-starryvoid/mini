@@ -25,7 +25,7 @@ const AdminHome = () => {
   };
 
   const Onclickvisit = () => {
-    router.push("/visitdetail");
+    router.push("/visit");
   };
   const getUserData = async () => {
     try {
@@ -72,7 +72,7 @@ const AdminHome = () => {
 
           <div className="rounded-rectangle-home">
             <div className="rounded-rectangle-darker">
-              <Button onClick={Onclickviewpatient} className="icon-button">
+              <Button onClick={Onclickvisit} className="icon-button">
                 <Image
                   className="small-icon1"
                   src={Ast.schedule}
@@ -80,7 +80,7 @@ const AdminHome = () => {
                 />
               </Button>
 
-              <Button onClick={Onclickviewpatient} className="inside-button">
+              <Button onClick={Onclickvisit} className="inside-button">
                 Visit Schedule
               </Button>
             </div>
@@ -89,7 +89,7 @@ const AdminHome = () => {
         <div className="container-short">
           <div className="rounded-rectangle-home">
             <div className="rounded-rectangle-darker">
-              <Button onClick={Onclickviewpatient} className="icon-button">
+              <Button onClick={Onclickstock} className="icon-button">
                 <Image
                   className="small-icon1"
                   src={Ast.stock}
@@ -97,7 +97,7 @@ const AdminHome = () => {
                 />
               </Button>
 
-              <Button onClick={Onclickviewpatient} className="inside-button">
+              <Button onClick={Onclickstock} className="inside-button">
                 Stock Details
               </Button>
             </div>
@@ -105,7 +105,7 @@ const AdminHome = () => {
 
           <div className="rounded-rectangle-home">
             <div className="rounded-rectangle-darker">
-              <Button onClick={Onclickviewpatient} className="icon-button">
+              <Button onClick={OnclickNavViewAsha} className="icon-button">
                 <Image
                   className="small-icon1"
                   src={Ast.asha}
@@ -113,7 +113,7 @@ const AdminHome = () => {
                 />
               </Button>
 
-              <Button onClick={Onclickviewpatient} className="inside-button">
+              <Button onClick={OnclickNavViewAsha} className="inside-button">
                 Staff Details
               </Button>
             </div>
