@@ -10,6 +10,7 @@ const VisitGenerate = () => {
   const router = useRouter();
   const [scheduleItems, setScheduleItems] = useState([]);
   const [patientList, setPatientList] = useState([]);
+  const [showPatientList, setShowPatientList] = useState(false);
 
   useEffect(() => {
     // Fetch schedule items from the backend here
