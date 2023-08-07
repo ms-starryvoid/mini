@@ -45,6 +45,7 @@ const StockDetails = () => {
       if (response.success) {
         message.success("added successfully");
       }
+      fetchstockdetails()
     } catch (error) {
       console.error("Error adding stock item:", error);
     }
