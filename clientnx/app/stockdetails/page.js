@@ -59,7 +59,7 @@ const StockDetails = () => {
         status: "rejected",
       });
       console.log("Stock request rejected");
-      fetchStockRequests();
+      fetchstockreqs();
     } catch (error) {
       console.error("Error approving stock request:", error);
     }
