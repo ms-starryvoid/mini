@@ -5,6 +5,7 @@ const patientModel = require('../models/patientModel')
 const userModel = require('../models/userModel')
 const nodemailer = require('nodemailer');
 const visitModel = require('../models/visitModel');
+const stockreqModel = require('../models/stockreqmodel');
 
 
 const addpatientController = async (req,res)=>{

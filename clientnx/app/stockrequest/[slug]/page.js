@@ -35,6 +35,7 @@ const StockRequest = ({params}) => {
         patient_id: patient_id,
         request_quantity: request_quantity,
       });
+      fetchpendingreq()
     } catch (error) {
       console.log(error);
     }
