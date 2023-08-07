@@ -9,13 +9,14 @@ import React, { useEffect, useState } from "react";
 const Viewreport = () => {
   const router = useRouter();
   const [reportItems, setReportItems] = useState([]);
-  const storedData = localStorage.getItem("userData");
-      const userData = JSON.parse(storedData)
+  //const storedData = localStorage.getItem("userData");
+  const [userData, setUserData] = useState(null);
+  //const userData = JSON.parse(storedData);
   const fetchReportItems = async () => {
     try {
       const patient_id = userData.uid;
       const response = await api.get("/api/v1/user/viewreport", {
-       params:{patient_id: patient_id} 
+        params: { patient_id: patient_id },
       }); // Adjust the API endpoint
       setReportItems(response.data.reports);
       console.log(response.data);
@@ -32,6 +33,10 @@ const Viewreport = () => {
     router.push(`/patientreport/${date}`);
   };
   useEffect(() => {
+    const storedData = localStorage.getItem("userData");
+    const parsedData = JSON.parse(storedData);
+    setUserData(parsedData);
+
     // Fetch report items from the backend here
     fetchReportItems();
   }, []);

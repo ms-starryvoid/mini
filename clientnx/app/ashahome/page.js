@@ -27,7 +27,7 @@ const AshaHome = () => {
   const getUserData = async () => {
     try {
       const res = await api.post(
-        "/api/v1/user/getUserData",
+        "/api/v1/user/getashaData",
         {},
         {
           headers: {
