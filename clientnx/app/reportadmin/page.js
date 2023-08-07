@@ -28,10 +28,10 @@ const ReportAdmin = () => {
   const [componentDisabled, setComponentDisabled] = useState(false);
   const onFinish = async (values) => {
     try {
-      values.age = Number(values.age);
-      values.phone = Number(values.phone);
-      values.ward_number = Number(values.ward_number);
-      const response = await api.post("/api/v1/user/addpatient", values);
+    
+      values.blood_sugar = Number(values.blood_sugar);
+      values.pressure = Number(values.blood_pressure);
+      const response = await api.get("/api/v1/user/reportentryr", values);
       console.log(response.data);
       if (response.data.success) {
         message.success("added successfully"); // Optional: Display the response from the backend
@@ -61,16 +61,19 @@ const ReportAdmin = () => {
                   <Form.Item label="Patient ID" name="patient_id">
                     <Input />
                   </Form.Item>
+                  <Form.Item label="Asha ID" name="asha_id">
+                    <Input />
+                  </Form.Item>
                   <Form.Item label="Visit Date" name="visit_date">
                     <DatePicker />
                   </Form.Item>
-                  <Form.Item label="Bood Pressure" name="assignd_asha">
+                  <Form.Item label="Blood Pressure" name="blood_pressure">
                     <Input />
                   </Form.Item>
-                  <Form.Item label="Sugar">
+                  <Form.Item label="Blood Sugar" name="blood_sugar">
                     <Input />
                   </Form.Item>
-                  <Form.Item label="Remarks">
+                  <Form.Item label="Remarks" name="remarks">
                     <Input />
                   </Form.Item>
                 </p>
