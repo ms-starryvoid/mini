@@ -21,7 +21,7 @@ const visitModel =require("../models/visitModel")
       console.log(req.query)
       const reports = await visitModel.find({patient_id: req.query.patient_id });
       console.log(reports)
-     return res.status(200).send({reports, success:true});
+     return res.status(200).json({reports, success:true});
     } catch (error) {
       console.error('Error fetching reports:', error);
       return res.status(500).json({ error: 'An error occurred while fetching reports' });
