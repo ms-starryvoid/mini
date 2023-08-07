@@ -17,11 +17,12 @@ const PatientHome = () => {
   const OnClickProfile = () => {
     router.push("/");
   };
-  const OnclickNavViewS = () => {
-    router.push("/viewschedule");
+  const Onclickvisit = () => {
+    router.push("/visit");
   };
   const OnclickNavStockR = (id) => {
     router.push(`/stockrequest/${id}`);
+    // router.push("/stockrequest");
   };
   const getUserData = async () => {
     try {
@@ -68,14 +69,14 @@ const PatientHome = () => {
           </div>
 
           <div className="rounded-rectangle-long-home">
-            <Button onClick={OnclickNavViewS} className="icon-button">
+            <Button onClick={Onclickvisit} className="icon-button">
               <Image
                 className="medium-icon"
                 src={Ast.schedule}
                 alt="Visit Schedule"
               />
             </Button>
-            <Button onClick={OnclickNavViewS} className="inside-button">
+            <Button onClick={Onclickvisit} className="inside-button">
               Visit Schedule
             </Button>
           </div>
