@@ -17,7 +17,7 @@ const Viewreport = () => {
       const response = await api.get("/api/v1/user/viewreport", {
        params:{patient_id: patient_id} 
       }); // Adjust the API endpoint
-      setReportItems(response.reports.report);
+      setReportItems(response.data.report);
       console.log(response.data);
     } catch (error) {
       console.error("Error fetching report items:", error);
