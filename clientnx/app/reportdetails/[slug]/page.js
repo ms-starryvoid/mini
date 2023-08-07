@@ -11,6 +11,7 @@ import * as Ast from "/assets";
 const ReportDetails = ({ params }) => {
   const [userdetails, setuserdetails] = useState([]);
   const [report, setreport] = useState([]);
+  const router = useRouter();
 
   const getdata = async () => {
     try {
@@ -45,13 +46,12 @@ const ReportDetails = ({ params }) => {
   useEffect(() => {
     getdata();
   }, []);
-  const router = useRouter();
 
   return (
     <div className="container-profile">
       <h1 className="heading-profile">Report</h1>
       <div className="circle-profile">
-        <Image className="huge-icon" src={Ast.report} alt="report" />
+        <Image className="huge-icon" src={Ast.reportb} alt="report" />
       </div>
       <div className="rectangle-profile">
         <div className="patient-container">
