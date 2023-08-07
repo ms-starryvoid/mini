@@ -32,7 +32,7 @@ const visitModel =require("../models/visitModel")
   try {
      // Assuming the patient ID is provided in the request body
      
-     const reports = await visitModel.find({patient_id: req.query.patient_id, day:req.query.day });
+     const report = await visitModel.find({patient_id: req.query.patient_id, day:req.query.day });
     console.log(report)
     return res.status(200).json({report, success:true});
    } catch (error) {
