@@ -14,7 +14,7 @@ const PatientProfile = () => {
     try {
       const storedData = localStorage.getItem("userData");
       const userData = JSON.parse(storedData);
-
+     // setuserdetails(userData.data);
       
       const name = userData.data.uid;
       console.log(name);
@@ -65,12 +65,12 @@ const PatientProfile = () => {
         <h1 className="heading-profile">Patient's Profile</h1>
         <div className="circle-profile" />
         <div className="rectangle-profile">
-          <p>Name :{userData.name}</p>
-          <p>Patient ID :{userData.patient_id}</p>
+          <p>Name :{userdetails.name}</p>
+          <p>Patient ID :{userdetails.patient_id}</p>
           <p>Age :{userdetails.age}</p>
           <p>Gender :{userdetails.gender}</p>
-          <p>email :{userData.email}</p>
-          <p>phone no. :{userData.phone}</p>
+          <p>email :{userdetails.email}</p>
+          <p>phone no. :{userdetails.phone}</p>
 
           <div className="line-profile" />
           <Button className="smalltext-profile">Edit profile</Button>
