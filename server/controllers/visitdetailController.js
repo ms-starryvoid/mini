@@ -71,4 +71,4 @@ const reportentryCtrl = async (req,res)=>{
  
     }
 }
-module.exports={visitDateCtrl,reportentryCtrl}
+module.exports={visitDateCtrl,reportentryCtrl,visitDetail}
