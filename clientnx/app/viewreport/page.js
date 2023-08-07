@@ -17,7 +17,7 @@ const Viewreport = () => {
       const response = await api.get("/api/v1/user/viewreport", {
        params:{patient_id: patient_id} 
       }); // Adjust the API endpoint
-      setReportItems(response.data.report);
+      setReportItems(response.data.reports);
       console.log(response.data);
     } catch (error) {
       console.error("Error fetching report items:", error);
@@ -43,15 +43,15 @@ const Viewreport = () => {
           <div className="reports">
             <ul className="patientList">
               {reportItems.map((item) => (
-                <li key={item.id} className="patientItem">
+                <li key={item._id} className="patientItem">
                   <div className="report">
                     <Button
                       onClick={() => {
-                        onClickReport(item.date);
+                        onClickReport(item.day);
                       }}
                       className="reportno"
                     >
-                      {item.report_name}
+                      1
                     </Button>
                   </div>
                 </li>
@@ -63,7 +63,7 @@ const Viewreport = () => {
               {reportItems.map((item) => (
                 <li key={item.id} className="patientItem">
                   <div className="date">
-                    <p className="reportno">{item.date}</p>
+                    <p className="reportno">{item.day}</p>
                   </div>
                 </li>
               ))}
