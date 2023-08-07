@@ -18,9 +18,9 @@ const visitModel =require("../models/visitModel")
  const viewrepController= async(req,res)=>{
    try {
       // Assuming the patient ID is provided in the request body
-      console.log(req.query)
+      
       const reports = await visitModel.find({patient_id: req.query.patient_id });
-      console.log(reports)
+     // console.log(reports)
      return res.status(200).json({reports, success:true});
     } catch (error) {
       console.error('Error fetching reports:', error);
