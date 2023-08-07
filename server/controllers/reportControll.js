@@ -17,14 +17,14 @@ const visitModel =require("../models/visitModel")
 
  const viewrepController= async(req,res)=>{
    try {
-      const { patient_id } = req.body; // Assuming the patient ID is provided in the request body
+      // Assuming the patient ID is provided in the request body
   
-      const reports = await visitModel.find({patient_id: patient_id });
+      const reports = await visitModel.find({patient_id: req.body.patient_id });
       console.log(reports)
-     return res.status(200).json(reports);
+     return res.status(200).json({reports, success:true});
     } catch (error) {
       console.error('Error fetching reports:', error);
-      res.status(500).json({ error: 'An error occurred while fetching reports' });
+      return res.status(500).json({ error: 'An error occurred while fetching reports' });
     }
     
  }
