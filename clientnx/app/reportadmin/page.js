@@ -43,43 +43,49 @@ const ReportAdmin = () => {
   };
   return (
     <Layout>
-      <h2 className="heading-report">Report Number</h2>
-      <div className="container-short">
-        <div className="report-container">
-          <Form
-            layout="horizontal"
-            disabled={componentDisabled}
-            onFinish={onFinish}
-            className="add-form"
-          >
-            <div className="content-report">
-              <p>
-                    <Form.Item label="Patient Name" name="name">
+      <div className="container-profile">
+        <h2 className="heading-report-entry">Enter Report</h2>
+        <div className="container-short">
+          <div className="report-container">
+            <Form
+              layout="horizontal"
+              disabled={componentDisabled}
+              onFinish={onFinish}
+              className="add-form"
+            >
+              <div className="content-report">
+                <p>
+                  <Form.Item label="Patient Name" name="name">
                     <Input />
-                    </Form.Item>
-                    <Form.Item label="Patient ID" name="patient_id">
+                  </Form.Item>
+                  <Form.Item label="Patient ID" name="patient_id">
                     <Input />
-                    </Form.Item>
-                    <Form.Item label="Visit Date" name="visit_date">
+                  </Form.Item>
+                  <Form.Item label="Visit Date" name="visit_date">
                     <DatePicker />
-                    </Form.Item>
-                    <Form.Item label="Bood Pressure" name="assignd_asha">
+                  </Form.Item>
+                  <Form.Item label="Bood Pressure" name="assignd_asha">
                     <Input />
-                    </Form.Item>
-                    <Form.Item label="Sugar" >
+                  </Form.Item>
+                  <Form.Item label="Sugar">
                     <Input />
-                    </Form.Item>
-                    <Form.Item label="Remarks">
+                  </Form.Item>
+                  <Form.Item label="Remarks">
                     <Input />
-                    </Form.Item>
-              </p>
-            </div>
-            <Space wrap>
-              <Button type="primary" htmlType="submit" style={{ backgroundColor: "#1b6871", borderColor: "#1b6871" }}>
-                Submit
-              </Button>
-            </Space>
-          </Form>
+                  </Form.Item>
+                </p>
+              </div>
+              <Space wrap>
+                <Button
+                  type="primary"
+                  htmlType="submit"
+                  style={{ backgroundColor: "#1b6871", borderColor: "#1b6871" }}
+                >
+                  Submit
+                </Button>
+              </Space>
+            </Form>
+          </div>
         </div>
       </div>
     </Layout>
