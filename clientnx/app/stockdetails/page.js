@@ -20,7 +20,7 @@ const StockDetails = () => {
         status: "approved",
       });
       console.log("Stock request approved");
-      fetchStockRequests();
+      fetchstockreqs();
     } catch (error) {
       console.error("Error approving stock request:", error);
     }
