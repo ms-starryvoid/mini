@@ -1337,7 +1337,7 @@ p.todaysdate {
   left: 20%;
   top: 2%;
 }
-.report-heading{
+.report-heading {
   color: #000000;
   text-align: center;
   font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
@@ -1346,4 +1346,51 @@ p.todaysdate {
   padding-top: 30px;
   padding-bottom: 30px;
   font-weight: 500;
+}
+.visit-button {
+  margin: 0;
+  position: absolute;
+  color: #ffffff;
+  background-color: #1e7b85;
+  font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  top: 120px;
+  right: 100px;
+  border-radius: 41px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.visit-schedule {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.inside-button-accept,
+.inside-button-reject {
+  position: relative;
+  background-color: #1e7b85;
+  color: #ffffff;
+  border-radius: 41px;
+  font-family: "Instacart Sans", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  cursor: pointer;
+  border-color: transparent;
+  border-style: hidden;
+  margin-right: 20px;
+}
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 1;
+}
+.item-details {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
 }

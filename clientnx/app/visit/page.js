@@ -71,7 +71,12 @@ const StockRequest = () => {
   }, []);
   return (
     <section>
-      <h2 className="stockdetails1">Visit Schedule</h2>
+      <div className="visit-schedule">
+        <h2 className="stockdetails1">Visit Schedule</h2>
+        <Button className="visit-button" type="primary">
+          Generate Visit
+        </Button>
+      </div>
       <div className="roundrect3"></div>
       <div className="roundrect">
         <ul className="patientList">

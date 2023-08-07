@@ -14,9 +14,9 @@ const StockDetails = () => {
   const approveStockRequest = async (request) => {
     console.log(request);
     try {
-      await api.post('/api/v1/user/statusupdate', {
-        patient_id:request.patient_id,
-        stock_name:request.stock_name,
+      await api.post("/api/v1/user/statusupdate", {
+        patient_id: request.patient_id,
+        stock_name: request.stock_name,
         status: "approved",
       });
       console.log("Stock request approved");
@@ -53,9 +53,9 @@ const StockDetails = () => {
   const rejectStockRequest = async (request) => {
     console.log(request);
     try {
-      await api.post('/api/v1/user/statusupdate', {
-        patient_id:request.patient_id,
-        stock_name:request.stock_name,
+      await api.put("/api/v1/user/statusupdate", {
+        patient_id: request.patient_id,
+        stock_name: request.stock_name,
         status: "rejected",
       });
       console.log("Stock request rejected");
@@ -198,30 +198,28 @@ const StockDetails = () => {
         <h2 className="stockdetails">Stock required </h2>
         <ul className="list-checkbox">
           {StockRequests.map((item) => (
-            <li key={item.id} className="listItem-checkbox">
-              <Checkbox
-                checked={item.isChecked}
-                onChange={() => handleCheckboxChange(item.id)}
-              />
-              <span className="comment-checkbox">
-                {item.stock_name} quantity {item.request_quantity} requested by{" "}
-                {item.patient_id}
-                <Button
-                  onClick={() => {
-                    approveStockRequest(item);
-                  }}
-                  className="inside-button5"
-                >
-                  Accept
-                </Button>
-                <Button
-                  onClick={() => {
-                    rejectStockRequest(item);
-                  }}
-                  className="inside-button7"
-                >
-                  Reject
-                </Button>
+            <li key={item.id}>
+              <span className="item-details">
+                {item.stock_name} - Quantity: {item.request_quantity} (Requested
+                by {item.patient_id})
+                <div className="button-container">
+                  <Button
+                    onClick={() => {
+                      approveStockRequest(item);
+                    }}
+                    className="inside-button-accept"
+                  >
+                    Accept
+                  </Button>
+                  <Button
+                    onClick={() => {
+                      rejectStockRequest(item);
+                    }}
+                    className="inside-button-reject"
+                  >
+                    Reject
+                  </Button>
+                </div>
               </span>
             </li>
           ))}
