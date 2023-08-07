@@ -8,81 +8,96 @@ import React, { useEffect, useState } from "react";
 
 const VisitGenerate = () => {
   const router = useRouter();
-  const OnclickNav = () => {
+  const [scheduleItems, setScheduleItems] = useState([]);
+  const [patientList, setPatientList] = useState([]);
+
+  useEffect(() => {
+    // Fetch schedule items from the backend here
+    fetchScheduleItems();
+  }, []);
+
+  const fetchScheduleItems = async () => {
+    try {
+      const date = "2023-04-05";
+      const response = await api.post("/api/v1/user/visitdetail", {
+        day: date,
+      }); // Adjust the API endpoint
+      setScheduleItems(response.data.visitDetails);
+      console.log(scheduleItems);
+    } catch (error) {
+      console.error("Error fetching schedule items:", error);
+    }
+  };
+
+  const fetchPatientList = async (data) => {
+    try {
+      const response = await api.get("/api/v1/user/patientlist", {
+        date: date,
+      });
+      setPatientList(response.data);
+      console.log(patientList);
+    } catch (error) {
+      console.error("Error fetching patient list:", error);
+    }
+  };
+
+  const onClickNav = () => {
     router.push("/login");
   };
+
   return (
     <section>
-      <h2 className="stockdetails1">Stock details</h2>
+      <h2 className="stockdetails1">Schedule Generate</h2>
       <div className="roundrect3"></div>
       <div className="roundrect">
         <ul className="patientList">
           <li className="patientItem">
-            <div className="addbox">
+            <div className="report">
               <Button
-                onClick={() => {
-                  OnclickNavInc();
-                }}
-                className="inside-button3"
+                className="reportno"
+                onClick={() => fetchPatientList(item.date)}
               >
-                +
-              </Button>
-              <Button
-                onClick={() => {
-                  OnclickNavdec();
-                }}
-                className="inside-button3"
-              >
-                -
+                date
               </Button>
             </div>
           </li>
         </ul>
+      </div>
+
+      <div className="roundrect1">
+        <h2 className="stockdetails">Patients</h2>
+      </div>
+      {showPatientList && (
+        <div className="roundrect1">
+          <div className="list-checkbox">
+            <ul>
+              {patientList.map((patient, index) => (
+                <li ke={index} className="patientItem1">
+                  <div className="inside-button4">
+                    {" "}
+                    {patient.name}
+                    <Button className="inside-button-accept">Delete</Button>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )}
+
+      <div className="roundrect2">
+        <h2 className="stockdetails">Add new patient</h2>
         <div className="form-container">
           <Input
             className="form-input"
             type="text"
-            placeholder="Stock Item"
-            name="stockname"
-          />
-
-          <Input
-            className="form-input"
-            type="number"
-            placeholder="Quantity"
-            name="quantity"
+            placeholder="Patient name"
+            name="patientname"
           />
 
           <div className="addbox2">
-            <Button className="inside-button5">Add new stock</Button>
+            <Button className="inside-button-accept">Add new patient</Button>
           </div>
-        </div>
-      </div>
-
-      <div className="roundrect1">
-        <h2 className="stockdetails">Stock required </h2>
-
-        <div className="roundrect1">
-          <h2 className="stockdetails">Stock required </h2>
-          <ul className="list-checkbox">
-            <li>
-              <span className="item-details">
-                <div className="button-container">
-                  <Button className="inside-button-accept">Delete</Button>
-                </div>
-              </span>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div className="roundrect2">
-        <h2 className="stockdetails">This month's stock</h2>
-        <div className="list-checkbox">
-          <ul>
-            <li className="patientItem1">
-              <div className="inside-button4"> gfhj</div>
-            </li>
-          </ul>
         </div>
       </div>
     </section>

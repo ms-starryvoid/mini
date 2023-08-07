@@ -483,7 +483,7 @@ body {
 }
 .form-input {
   position: relative;
-  background-color: rgba(219, 219, 249, 0.3);
+  background-color: white;
   margin-top: 20px;
   width: 300px;
 }
@@ -1284,7 +1284,7 @@ p.todaysdate {
 
 /* Add your existing styles */
 .report {
-  font-size: 24px;
+  font-size: 27px;
   font-weight: bold;
 }
 
@@ -1324,6 +1324,7 @@ p.todaysdate {
   background: none;
   color: #000000;
   margin-left: 30px;
+  font-size: 27px;
 }
 
 .dates {
@@ -1398,4 +1399,14 @@ p.todaysdate {
   justify-content: space-between;
   align-items: center;
   padding-bottom: 20px;
+}
+
+.button-container-report {
+  display: block;
+  justify-content:center;
+  align-items: center;
+}
+.button-container-report button {
+  flex: 1;
+  margin: 0 20px;
 }

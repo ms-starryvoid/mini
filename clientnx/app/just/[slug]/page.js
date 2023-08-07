@@ -6,7 +6,7 @@ import {useRouter} from 'next/navigation'
 
 function Page({ params }) {
   const router = useRouter()
-  console.log(params.slug);
+  //console.log(params.slug);
   const [data, setData] = useState(null);
   useEffect(() => {
     const fetchData = async () => {
