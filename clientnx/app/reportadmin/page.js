@@ -28,7 +28,7 @@ const ReportAdmin = () => {
   const [componentDisabled, setComponentDisabled] = useState(false);
   const onFinish = async (values) => {
     try {
-    
+       console.log(values)
       values.blood_sugar = Number(values.blood_sugar);
       values.pressure = Number(values.blood_pressure);
       const response = await api.get("/api/v1/user/reportentryr", values);
