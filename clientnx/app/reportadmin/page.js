@@ -64,7 +64,7 @@ const ReportAdmin = () => {
                   <Form.Item label="Visit Date" name="visit_date">
                     <DatePicker />
                   </Form.Item>
-                  <Form.Item label="Bood Pressure" name="assignd_asha">
+                  <Form.Item label="Blood Pressure" name="assignd_asha">
                     <Input />
                   </Form.Item>
                   <Form.Item label="Sugar">

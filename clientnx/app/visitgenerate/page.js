@@ -6,7 +6,7 @@ import { Form, Input, message, Checkbox, Button } from "antd";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
-const VisitGenerate = () => {
+/*const VisitGenerate = () => {
   const router = useRouter();
   const [scheduleItems, setScheduleItems] = useState([]);
   const [patientList, setPatientList] = useState([]);
@@ -105,4 +105,13 @@ const VisitGenerate = () => {
   );
 };
 
-export default VisitGenerate;
+export default VisitGenerate;*/
+
+
+const page = () => {
+  return (
+    <div>page</div>
+  )
+}
+
+export default page

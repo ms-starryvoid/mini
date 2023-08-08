@@ -61,7 +61,7 @@ const visitModel =require("../models/visitModel")
     const savedVisit = await newVisit.save();
 
     // Respond with a success message and the saved visit data
-    res.status(200).json({ message: 'Visit saved successfully', visit: savedVisit });
+    res.status(200).json({ message: 'Report saved successfully', visit: savedVisit });
   } catch (error) {
     console.error('Error saving visit:', error);
     // Handle the error and respond with an appropriate error message

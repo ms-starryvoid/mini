@@ -83,7 +83,9 @@ const patientauthController = async (req,res)=>{
                 email:ashaData.email,
                 uid:user.ashaid,
                 phone:ashaData.phone,
-                address:ashaData.address.housen
+                address:ashaData.address.housen,
+                age:ashaData.age,
+                gender:ashaData.gender
                 //isAdmin:user.isAdmin
             },
         })
