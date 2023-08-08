@@ -11,7 +11,7 @@ router.get('/reportentry',reportentryCtrl)
 router.get('/viewreport',viewrepController)
 
 router.get('/addreport',addreportController)
-router.get('/reportentryr',reportEntry)
+router.post('/reportentryr',reportEntry)
 router.post('/viewindi',viewIndividualController)
 
 module.exports=router

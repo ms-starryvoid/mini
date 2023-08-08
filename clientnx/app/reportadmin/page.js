@@ -31,7 +31,7 @@ const ReportAdmin = () => {
        console.log(values)
       values.blood_sugar = Number(values.blood_sugar);
       values.pressure = Number(values.blood_pressure);
-      const response = await api.get("/api/v1/user/reportentryr", values);
+      const response = await api.post("/api/v1/user/reportentryr", values);
       console.log(response.data);
       if (response.data.success) {
         message.success("added successfully"); // Optional: Display the response from the backend
