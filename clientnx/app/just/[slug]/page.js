@@ -1,23 +1,22 @@
 "use client";
 import api from "@/api";
-import { Button, message } from "antd";
+import { Button, message, Space } from "antd";
 import React, { useEffect, useState } from "react";
-import {useRouter} from 'next/navigation'
+import { useRouter } from "next/navigation";
 
 function Page({ params }) {
-  const router = useRouter()
+  const router = useRouter();
   //console.log(params.slug);
   const [data, setData] = useState(null);
   useEffect(() => {
     const fetchData = async () => {
-      setData("loading...")
+      setData("loading...");
       try {
         const res = await api.post("/api/v1/user/patientdetail", {
           patient_id: params.slug,
         });
         console.log(res);
-        if(res.status==200)
-        setData(res.data);
+        if (res.status == 200) setData(res.data);
       } catch (err) {
         console.log(err);
         setData("err");
@@ -27,56 +26,46 @@ function Page({ params }) {
   }, []);
   const handleDelete = async () => {
     try {
-        const res = await api.post('/api/v1/user/deletepatient',{patient_id: params.slug })
+      const res = await api.post("/api/v1/user/deletepatient", {
+        patient_id: params.slug,
+      });
       console.log(res);
-      if(res.status==204)
-      setData("Patient deleted successfully!")
-      message.success("deleted successfully")
-      router.push('/viewpatient')
+      if (res.status == 204) setData("Patient deleted successfully!");
+      message.success("deleted successfully");
+      router.push("/viewpatient");
     } catch (err) {
       console.log(err);
-      setData("Patient could not be deleted due to an error!")
-      message.error("Patient could not be deleted due to an error!")
+      setData("Patient could not be deleted due to an error!");
+      message.error("Patient could not be deleted due to an error!");
     }
   };
-  if (data && data != null && typeof data !=="string")
+  if (data && data != null && typeof data !== "string")
     return (
-      <div
-        style={{
-          color: "white",
-          fontSize: "1.4rem",
-          display: "grid",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: "1.2rem",
-        }}
-      >
-        <div>
-          <span>Name: </span>
-          <span>{data.name}</span>
+      <div className="container-profile">
+        <h1 className="heading-profile">Delete patient</h1>
+        <div className="rectangle-profile-delete">
+          <div className="patient-container">
+            <div className="patientList">
+              <p>Name: {data.name}</p>
+              <p>Age: {data.age}</p>
+              <p>Gender: {data.gender}</p>
+              <p>Email: {data.email}</p>
+              <p>Phone: {data.phone}</p>
+              <p>Ward number: {data.ward_number}</p>
+            </div>
+          </div>
+          <div className="center-button">
+            <Space>
+              <Button
+                type="primary"
+                onClick={handleDelete}
+                style={{ backgroundColor: "#1b6871", borderColor: "#1b6871" }}
+              >
+                Delete
+              </Button>
+            </Space>
+          </div>
         </div>
-        <div>
-          <span>Age: </span>
-          <span>{data.age}</span>
-        </div>
-        <div>
-          <span>Gender: </span>
-          <span>{data.gender}</span>
-        </div>
-        <div>
-          <span>Email: </span>
-          <span>{data.email}</span>
-        </div>
-        <div>
-          <span>Phone: </span>
-          <span>{data.phone}</span>
-        </div>
-        <div>
-          <span>Ward number: </span>
-          <span>{data.ward_number}</span>
-        </div>
-        <br></br>
-        <Button onClick={handleDelete}>Delete Patient</Button>
       </div>
     );
   else if (data === "err")
@@ -106,7 +95,7 @@ function Page({ params }) {
           gap: "1.2rem",
         }}
       >
-        {typeof data==="string" && data}
+        {typeof data === "string" && data}
       </div>
     );
 }
