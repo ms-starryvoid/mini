@@ -3,6 +3,7 @@ const visitModel =require("../models/visitModel")
 
  const addreportController = async(req,res)=>{
    try {
+    console.log(req.body)
       const report = new reportModel(req.body);
       await report.save();
   
