@@ -8,6 +8,7 @@ import React, { useEffect } from "react";
 import Image from "next/image";
 import * as Ast from "/assets";
 import withAuth from "../withAuth";
+import Layout from "../layout";
 
 const AdminHome = () => {
   const router = useRouter();
@@ -51,6 +52,7 @@ const AdminHome = () => {
   }, []);
 
   return (
+    <Layout>
     <section className="zoom-out">
       <div className="page-container75">
         <h2 className="heading1">Welcome back, Admin</h2>
@@ -122,6 +124,7 @@ const AdminHome = () => {
         </div>
       </div>
     </section>
+    </Layout>
   );
 };
 
